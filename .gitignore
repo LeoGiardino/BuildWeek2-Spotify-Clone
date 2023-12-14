@@ -2,3 +2,5 @@
 *.css.map
 *.sass.map
 *.scss.map
+node_modules/
+bootstrap-5.3.2/
