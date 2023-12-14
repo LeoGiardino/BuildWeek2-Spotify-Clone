@@ -1,0 +1,14 @@
+body {
+  height: 100vh;
+}
+
+.menu {
+  height: 30%;
+}
+
+.player {
+  position: sticky;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(139, 143, 197, 0.8196078431);
+}/*# sourceMappingURL=style.css.map */
