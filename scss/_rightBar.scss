@@ -1,0 +1,49 @@
+.colonnaDestra {
+    background-color: #000000;
+    color: #636363;
+    i{
+        color: #636363 !important;
+        margin-left:0.3rem;
+        &:hover{
+            color:white !important;
+        }
+    }
+    .attività{
+        color:#E6E6E6;
+    }
+
+}
+
+.amici {    
+    font-size: 0.7rem;
+    font-weight: 600;  
+    
+    .amico{
+        margin-top:1rem;
+        padding-right: 0.1rem;
+        margin-left:0.1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0.8rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        li{
+            margin-bottom:0.2rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #636363 !important;
+        &:hover{
+            color:white !important;
+        }
+    }
+    .nomeAmico{
+        font-weight: bold;
+        font-size: 0.8rem;
+
+    }
+}
