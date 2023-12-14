@@ -9,6 +9,7 @@
 
 body{
     height: 100vh;
+    color: white!important;
 }
 
 .menu {
@@ -22,6 +23,141 @@ body{
  
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
+    ul {
+
+        background-color: #242323;
+        list-style-type: none;
+        padding: 0 2px;
+        border-radius: 25px;
+
+        li:nth-child(1) {
+
+            img {
+                width: 20px;
+            }
+        }
+
+        li:nth-child(2) {
+            margin-left: 10px;
+        }
+    }
+
+    .bi-chevron-left, .bi-chevron-right {
+        background-color: #262626;
+    }
+
+    .big-card {
+        background-image: linear-gradient(to right top, #0e0e0e, #101010, #111111, #131313, #141414, #181818, #1b1b1b, #1f1f1f, #262626, #2d2d2d, #343434, #3c3b3b);
+
+        color: white;
+        border: none;
+
+        height: 30%;
+
+        .card-body {
+            font-size: 0.8em;
+        }
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .testoUp {
+        p:nth-child(2) {
+            color: #9B9B9B;
+            padding: 1% 1.5%;
+            background-color: rgb(48, 48, 48);
+            border-radius: 15px;
+            font-size: 0.5em;
+        }
+        
+    }
+
+    .bottoniUp {
+
+        display: flex;
+        align-items: center;
+
+        button:nth-child(1){
+            background-color: #1db954;
+            padding: 1.5% 6%;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 0.8em;
+        }
+
+        button:nth-child(2){
+            background-color: #141414;
+            padding: 1.5% 5%;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            border: 1px solid snow;
+            color: snow;
+            margin-right: 0.8em;
+        }
+
+        i {
+            font-size: 1.5em;
+        }
+    }
+
+
+    .cards {
+
+        .card {
+            height: 50%;
+            font-size: 0.8em;
+            border: none;
+        }
+
+        .body {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: rgb(48, 48, 48);
+            border: none;
+            color: snow;
+        }
+    }
+
+    .para {
+        font-size: 0.7em;
+    }
+
+
+    .longCard {
+
+        .card {
+            background-color: rgb(29, 29, 29);
+            color: snow;
+
+            img {
+                padding: 10px;
+                border-radius: 20px;
+            }
+
+            .card-body {
+
+                p:nth-child(1) {
+                    font-weight: bold;
+                }
+
+                p:nth-child(2) {
+                    font-size: 0.8em;
+                    color: #9B9B9B;
+                }
+
+            }
+            
+        }
+        
+
+
+        
+    }
 
 }
 
