@@ -3,19 +3,19 @@
   background-color: #000000;
   color: #636363;
 }
-.colonnaDestra i {
-  color: #636363 !important;
-  margin-left: 0.3rem;
-}
-.colonnaDestra i:hover {
-  color: white !important;
-}
 .colonnaDestra .attività {
   color: #E6E6E6;
 }
+.colonnaDestra .attività i {
+  color: #636363 !important;
+  margin-left: 0rem;
+}
+.colonnaDestra .attività i:hover {
+  color: white !important;
+}
 
 .amici {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 600;
 }
 .amici .amico {
@@ -41,7 +41,7 @@
 }
 .amici .nomeAmico {
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 /* --- PLAYER --- */

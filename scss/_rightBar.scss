@@ -1,21 +1,25 @@
 .colonnaDestra {
     background-color: #000000;
     color: #636363;
-    i{
+  
+    .attività{
+        color:#E6E6E6;  
+        i{
         color: #636363 !important;
-        margin-left:0.3rem;
+        margin-left:0rem;
         &:hover{
             color:white !important;
         }
     }
-    .attività{
-        color:#E6E6E6;
+
+
+
     }
 
 }
 
 .amici {    
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: 600;  
     
     .amico{
@@ -43,7 +47,7 @@
     }
     .nomeAmico{
         font-weight: bold;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
 
     }
 }
