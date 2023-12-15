@@ -5,6 +5,7 @@
 }
 
 .commenti {
+  height: 50vh;
   border: #9B9B9B;
 }
 
@@ -73,8 +74,6 @@
 }
 .amici .amico {
   margin-top: 1rem;
-  padding-right: 0.1rem;
-  margin-left: 0.1rem;
 }
 .amici ul {
   list-style: none;
@@ -127,6 +126,14 @@
 
 .playerNowText > a:hover {
   color: #1ED760;
+}
+
+.playerNowSong:hover, .playerNowArtist:hover {
+  color: #1ED760;
+}
+
+.bi-heart {
+  color: #9B9B9B;
 }
 
 .bi-heart:hover {
@@ -246,6 +253,8 @@ input[type=range]:focus::-moz-range-thumb {
 
 /* ------ CENTRO FELIPE ------ */
 .centroFelipe {
+  height: 95vh;
+  overflow-y: auto;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .centroFelipe .bannerimg {
@@ -318,6 +327,7 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
 body {
   height: 100vh;
   color: white !important;
+  overflow-y: hidden;
 }
 
 .menu {
@@ -326,6 +336,7 @@ body {
 
 /* --- CENTRO --- */
 .centroLeo {
+  height: 99vh;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .centroLeo .freccette {
@@ -447,4 +458,25 @@ body {
 .centroLeo .longCard .card .card-body p:nth-child(2) {
   font-size: 0.8em;
   color: #9B9B9B;
+}
+
+/* Stile della scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Larghezza della scrollbar */
+}
+
+/* Stile del pollice (la parte mobile) della scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #4CAF50; /* Colore del pollice */
+  border-radius: 6px; /* Bordo arrotondato del pollice */
+}
+
+/* Stile della traccia (la parte fissa) della scrollbar */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Colore della traccia */
+}
+
+/* Cambia lo stile della scrollbar quando è attiva (quando l'utente la sta trascinando) */
+::-webkit-scrollbar-thumb:active {
+  background-color: #555; /* Cambia il colore del pollice quando è attivo */
 }/*# sourceMappingURL=style.css.map */

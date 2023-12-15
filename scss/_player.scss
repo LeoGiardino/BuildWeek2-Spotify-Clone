@@ -1,7 +1,4 @@
-
-
 /* --- PLAYER --- */
-
 $customGreen: #1ED760;
 $customGreenLight: lighten(#1ED760, 10%);
 $playerBg: #181818;
@@ -12,11 +9,8 @@ $customGrey: #9B9B9B;
     position: sticky;
     bottom: 0;
     z-index: 999;
-
 }
-
 .iconsSx {
-
     .bi {
         font-size: 1.8rem;
         color: $customGrey;
@@ -24,14 +18,11 @@ $customGrey: #9B9B9B;
             color: $customGreen;
         }
     }
-
 }
-
 .playerImg {
     width: 5rem;
     height: 5rem;
 }
-
 
 //SX - PlayerNowText
 .playerNowText {
@@ -40,12 +31,18 @@ $customGrey: #9B9B9B;
         color: $customGrey;
     }
 }
-
 //da vedere
 .playerNowText>a:hover{
     color: $customGreen;
 }
 
+.playerNowSong:hover, .playerNowArtist:hover {
+    color: $customGreen;
+}
+
+.bi-heart {
+  color: $customGrey;
+}
 .bi-heart:hover {
     color: $customGreen;
 }
@@ -70,7 +67,6 @@ $customGrey: #9B9B9B;
         color: $customGreen;
     }
 }
-
 
 //Player che scorre
 .round-time-bar {
