@@ -2,7 +2,7 @@
 const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 
 /* we need to pass an ID to make this beaty work */
-let artistid = "1";
+let artistid = "415";
 
 function artistFetch(artistid){
 
