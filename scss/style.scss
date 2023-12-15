@@ -23,25 +23,6 @@ body{
  
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
-    ul {
-        padding: 0.2rem 0.5rem 0.3rem;
-        background-color: #242323;
-        list-style-type: none;
-        border-radius: 25px;
-
-        .fotoProfilo {
-
-            img {
-                width: 1.5rem;
-            }
-        }
-
-        .nomeProfilo {
-            margin-left: 10px;
-        }
-    }
-
-
     .freccette {
         width: 2rem;
         height: 2rem;
@@ -59,6 +40,23 @@ body{
         }
     }
 
+    ul {
+        padding: 0.2rem 0.5rem 0.3rem;
+        background-color: #242323;
+        list-style-type: none;
+        border-radius: 25px;
+        .fotoProfilo {
+            img {
+                width: 1.5rem;
+            }
+        }
+        .nomeProfilo {
+            margin-left: 10px;
+        }
+    }
+
+
+    
     .big-card {
         background-image: linear-gradient(to right top, #0e0e0e, #101010, #111111, #131313, #141414, #181818, #1b1b1b, #1f1f1f, #262626, #2d2d2d, #343434, #3c3b3b);
 
@@ -77,6 +75,7 @@ body{
     }
 
     .testoUp {
+
         p:nth-child(2) {
             color: #9B9B9B;
             padding: 1% 1.5%;
@@ -88,7 +87,8 @@ body{
     }
 
     .bottoniUp {
-
+        padding: 0.5rem 0 1rem 0;
+        padding-bottom: 1rem;
         display: flex;
         align-items: center;
 
@@ -99,6 +99,9 @@ body{
             border-radius: 20px;
             font-weight: bold;
             margin-right: 0.8em;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         button:nth-child(2){
@@ -110,10 +113,17 @@ body{
             border: 1px solid snow;
             color: snow;
             margin-right: 0.8em;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         i {
             font-size: 1.5em;
+            &:hover {
+                color: $customGreen;
+                cursor: pointer;
+            }
         }
     }
 
