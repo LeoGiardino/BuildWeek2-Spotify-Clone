@@ -12,6 +12,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
 })
     .then(response => response.json())
     .then(json => {
+        console.log("album", json);
         prova(json);
     })
     .catch(error => console.log(error))
@@ -37,8 +38,6 @@ function prova(json) {
     text1.textContent = contributorsText;
 
     console.log(arr);
-
-    const bodyz = document.querySelector("body");
 
     const playPause = document.querySelector("#playPause");
 
@@ -83,7 +82,6 @@ function prova(json) {
         }else if(volumeValue > 0.5){
             muteButton.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
         }
-
         // Normalizza il valore del volume da 0 a 1
         // L'elemento audio in JavaScript utilizza un valore di volume compreso tra 0 e 1
         // Quindi, dividiamo il valore del controllo del volume per 100 per normalizzarlo in questo intervallo
@@ -122,8 +120,6 @@ function prova(json) {
     });
 
 }
-
-
 
 
 fetch(urlArtist + idArtist, {

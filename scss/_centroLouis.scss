@@ -1,14 +1,44 @@
 /*-----CENTRO LOUIS-----*/
 
+body {
+  height: 100vh;
+}
+
+.menu {
+  height: 30%;
+}
+
 .centroLouis {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
 
+.dropdown button img {
+  width: 2em;
+  border-radius: 50%;
+}
 
+div.bg-transparent div.m-3 h1 {
+  font-size: 4em;
+}
 
+div.bg-transparent div.m-3 p span img {
+  width: 1em;
+  border-radius: 50%;
+}
 
+div.bg-transparent div.m-3 p span {
+  font-size: 0.9em;
+}
 
+div.bg-black div.d-flex i {
+  font-size: 2.5em;
+}
 
-
-
-
-
+div.bg-black div.d-flex i.bi-play-circle-fill {
+  color: #1ED760;
 }
