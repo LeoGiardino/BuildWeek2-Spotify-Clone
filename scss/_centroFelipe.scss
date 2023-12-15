@@ -4,24 +4,17 @@
 
 .centroFelipe {
 
-    background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+        background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
     .bannerimg{
         position: relative;
         height: 300px; 
         object-fit: cover;
+        filter: brightness(50%);
         
     }
 
-    .bannerimg::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 4); /* Ajusta el valor de la opacidad segÃºn lo que desees */
-    }
+
 
     .custom-user-logo{
         width: 30px;
@@ -32,11 +25,18 @@
         padding-top: 10px; 
     }
 
-   .piaccionoimg{
-    width: 30px;
-    height: 30px;
+   .brandimg{
+        width: 45px;
+        height: 45px;
    }
 
+   .list-group-item {
+    border: none;
+    }
 
-    
+
+
+    .text-lightgray{
+        color: #c0c0c0;
+    }
 }
