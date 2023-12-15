@@ -37,23 +37,24 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
             })
             .catch(error => console.log(error))
             console.log(j);
+
+
+            
     }
 
 
-    function longCards(data) {
+    function longCards(data) { 
 
-        const contenitore = document.querySelector(".longCard");
-
-        
+        const contenitore = document.querySelector(".longCard");        
 
         let div = document.createElement("div");
         div.classList.add("card");
         div.style.width = "18%";
         div.innerHTML = 
         `
-        <img src="${data.picture_medium}" class="card-img-top" alt="...">
+        <a href="#"><img src="${data.picture_medium}" class="card-img-top" alt="..."></a>        
         <div class="card-body">
-            <p class="card-title">${data.name}</p>
+            <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.name}</a></p>
             <p class="card-text">Artist</p>
         </div>
         
@@ -75,6 +76,8 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
     function onArtist (tracks) {
         console.log(tracks);
     }
+
+
 
 
 
