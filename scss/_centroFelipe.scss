@@ -5,13 +5,19 @@
 .centroFelipe {
 
         background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
-
+       
+    .cardSizing{
+       
+    }
     .bannerimg{
         position: relative;
         height: 300px; 
         object-fit: cover;
         filter: brightness(50%);
-        
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+     
     }
 
 
