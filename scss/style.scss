@@ -24,26 +24,39 @@ body{
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
     ul {
-
+        padding: 0.2rem 0.5rem 0.3rem;
         background-color: #242323;
         list-style-type: none;
-        padding: 0 2px;
         border-radius: 25px;
 
-        li:nth-child(1) {
+        .fotoProfilo {
 
             img {
-                width: 20px;
+                width: 1.5rem;
             }
         }
 
-        li:nth-child(2) {
+        .nomeProfilo {
             margin-left: 10px;
         }
     }
 
-    .bi-chevron-left, .bi-chevron-right {
-        background-color: #262626;
+
+    .freccette {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+        background-color: #131313;
+        text-align: center;
+        border-radius: 50%;
+        padding: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $customGrey;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .big-card {
@@ -107,7 +120,7 @@ body{
 
     .cards {
 
-        .card {
+        .card {  
             height: 50%;
             font-size: 0.8em;
             border: none;
@@ -136,7 +149,7 @@ body{
 
             img {
                 padding: 10px;
-                border-radius: 20px;
+                border-radius: 14px;
             }
 
             .card-body {
