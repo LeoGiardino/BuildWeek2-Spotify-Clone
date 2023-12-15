@@ -18,6 +18,71 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
     .catch(error => console.log(error))
 
 
+
+    let i =Math.floor(Math.random()*100);
+    console.log(i);
+    let h = 0;
+    for(let j=i; j<i+10;j++){
+        fetch(urlArtist + `${j}`, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(json => {
+                if(h<5 && json.picture_medium !== "https://e-cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg"){
+                    longCards(json);
+                    h++;
+                }
+                
+                console.log("artist", j, json);
+            })
+            .catch(error => console.log(error))
+            console.log(j);
+
+
+            
+    }
+
+
+    function longCards(data) { 
+
+        const contenitore = document.querySelector(".longCard");        
+
+        let div = document.createElement("div");
+        div.classList.add("card");
+        div.style.width = "18%";
+        div.innerHTML = 
+        `
+        <a href="#"><img src="${data.picture_medium}" class="card-img-top" alt="..."></a>        
+        <div class="card-body">
+            <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.name}</a></p>
+            <p class="card-text">Artist</p>
+        </div>
+        
+        `
+        contenitore.appendChild(div);
+
+        const carte = document.querySelectorAll(".longCard > .card");
+
+        console.dir(carte[h]);
+        carte[h].children[0].addEventListener("click", () => {
+            onArtist(data.tracklist);
+        })
+
+        carte[h].children[1].children[0].addEventListener("click", () => {
+            onArtist(data.tracklist);
+        })
+    }
+
+    function onArtist (tracks) {
+        console.log(tracks);
+    }
+
+
+
+
+
+
+
 function prova(json) {
     const titoloBC = document.querySelector(".card-title");
     titoloBC.textContent = json.title;
@@ -122,36 +187,36 @@ function prova(json) {
 }
 
 
-fetch(urlArtist + idArtist, {
-    method: 'GET',
-})
-    .then(response => response.json())
-    .then(json => {
+// fetch(urlArtist + idArtist, {
+//     method: 'GET',
+// })
+//     .then(response => response.json())
+//     .then(json => {
 
-        console.log("artist", json);
-    })
-    .catch(error => console.log(error))
-
-
-fetch(" https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=1", {
-    method: 'GET',
-})
-    .then(response => response.json())
-    .then(json => {
-
-        console.log("trackList100", json);
-    })
-    .catch(error => console.log(error))
+//         console.log("artist", json);
+//     })
+//     .catch(error => console.log(error))
 
 
+// fetch(" https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=1", {
+//     method: 'GET',
+// })
+//     .then(response => response.json())
+//     .then(json => {
+
+//         console.log("trackList100", json);
+//     })
+//     .catch(error => console.log(error))
 
 
-fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=viola", {
-    method: 'GET',
-})
-    .then(response => response.json())
-    .then(json => {
 
-        console.log("search", json);
-    })
-    .catch(error => console.log(error))
+
+// fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=viola", {
+//     method: 'GET',
+// })
+//     .then(response => response.json())
+//     .then(json => {
+
+//         console.log("search", json);
+//     })
+//     .catch(error => console.log(error))

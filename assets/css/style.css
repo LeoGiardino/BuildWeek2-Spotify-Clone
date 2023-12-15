@@ -1,11 +1,55 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-.leftBar a, .menu a p {
+.leftBar a, .menu a p, hr {
   color: #9B9B9B;
 }
 
 .commenti {
   border: #9B9B9B;
+}
+
+.menu a:hover {
+  color: white;
+}
+
+.commenti a p {
+  font-size: 0.8rem;
+}
+
+.firstUl li a {
+  line-height: 0;
+}
+
+.secondUl {
+  margin-bottom: 0;
+}
+.secondUl li a {
+  line-height: 1.2;
+}
+
+.btnHeart {
+  padding: 0.1rem 0.2rem;
+  background-image: linear-gradient(to right bottom, #3b1ba9, #4028a9, #4633a8, #4c3da7, #5246a5, #5b56ac, #6566b1, #7075b6, #848fc3, #9ba8cf, #b6c1da, #d4dae5);
+}
+.btnHeart .bi-suit-heart-fill {
+  color: #B2B2B2;
+}
+
+.btnBookmark {
+  padding: 0.1rem 0.2rem;
+  background-image: linear-gradient(to right bottom, #004537, #004537, #004537, #004537, #004537, #0f5148, #205d59, #306969, #57848c, #81a0ad, #abbcca, #d4dae5);
+}
+.btnBookmark .bi-bookmark-fill {
+  color: #149643;
+}
+
+.commenti hr {
+  width: 90%;
+  margin: 0 auto 1rem;
+}
+
+.SizeBtn {
+  font-size: 1.3rem;
 }
 
 .colonnaDestra {
@@ -281,20 +325,33 @@ body {
 .centroLeo {
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
+.centroLeo .freccette {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: #131313;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9B9B9B;
+}
+.centroLeo .freccette:hover {
+  cursor: pointer;
+}
 .centroLeo ul {
+  padding: 0.2rem 0.5rem 0.3rem;
   background-color: #242323;
   list-style-type: none;
-  padding: 0 2px;
   border-radius: 25px;
 }
-.centroLeo ul li:nth-child(1) img {
-  width: 20px;
+.centroLeo ul .fotoProfilo img {
+  width: 1.5rem;
 }
-.centroLeo ul li:nth-child(2) {
+.centroLeo ul .nomeProfilo {
   margin-left: 10px;
-}
-.centroLeo .bi-chevron-left, .centroLeo .bi-chevron-right {
-  background-color: #262626;
 }
 .centroLeo .big-card {
   background-image: linear-gradient(to right top, #0e0e0e, #101010, #111111, #131313, #141414, #181818, #1b1b1b, #1f1f1f, #262626, #2d2d2d, #343434, #3c3b3b);
@@ -316,6 +373,8 @@ body {
   font-size: 0.5em;
 }
 .centroLeo .bottoniUp {
+  padding: 0.5rem 0 1rem 0;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
 }
@@ -327,6 +386,9 @@ body {
   font-weight: bold;
   margin-right: 0.8em;
 }
+.centroLeo .bottoniUp button:nth-child(1):hover {
+  transform: scale(1.1);
+}
 .centroLeo .bottoniUp button:nth-child(2) {
   background-color: #141414;
   padding: 1.5% 5%;
@@ -337,8 +399,15 @@ body {
   color: snow;
   margin-right: 0.8em;
 }
+.centroLeo .bottoniUp button:nth-child(2):hover {
+  transform: scale(1.1);
+}
 .centroLeo .bottoniUp i {
   font-size: 1.5em;
+}
+.centroLeo .bottoniUp i:hover {
+  color: #1ED760;
+  cursor: pointer;
 }
 .centroLeo .cards .card {
   height: 50%;
@@ -362,7 +431,7 @@ body {
 }
 .centroLeo .longCard .card img {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 14px;
 }
 .centroLeo .longCard .card .card-body p:nth-child(1) {
   font-weight: bold;

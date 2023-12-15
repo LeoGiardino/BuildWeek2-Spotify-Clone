@@ -23,29 +23,40 @@ body{
  
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
-    ul {
+    .freccette {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+        background-color: #131313;
+        text-align: center;
+        border-radius: 50%;
+        padding: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $customGrey;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
+    ul {
+        padding: 0.2rem 0.5rem 0.3rem;
         background-color: #242323;
         list-style-type: none;
-        padding: 0 2px;
         border-radius: 25px;
-
-        li:nth-child(1) {
-
+        .fotoProfilo {
             img {
-                width: 20px;
+                width: 1.5rem;
             }
         }
-
-        li:nth-child(2) {
+        .nomeProfilo {
             margin-left: 10px;
         }
     }
 
-    .bi-chevron-left, .bi-chevron-right {
-        background-color: #262626;
-    }
 
+    
     .big-card {
         background-image: linear-gradient(to right top, #0e0e0e, #101010, #111111, #131313, #141414, #181818, #1b1b1b, #1f1f1f, #262626, #2d2d2d, #343434, #3c3b3b);
 
@@ -64,6 +75,7 @@ body{
     }
 
     .testoUp {
+
         p:nth-child(2) {
             color: #9B9B9B;
             padding: 1% 1.5%;
@@ -75,7 +87,8 @@ body{
     }
 
     .bottoniUp {
-
+        padding: 0.5rem 0 1rem 0;
+        padding-bottom: 1rem;
         display: flex;
         align-items: center;
 
@@ -86,6 +99,9 @@ body{
             border-radius: 20px;
             font-weight: bold;
             margin-right: 0.8em;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         button:nth-child(2){
@@ -97,17 +113,24 @@ body{
             border: 1px solid snow;
             color: snow;
             margin-right: 0.8em;
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
         i {
             font-size: 1.5em;
+            &:hover {
+                color: $customGreen;
+                cursor: pointer;
+            }
         }
     }
 
 
     .cards {
 
-        .card {
+        .card {  
             height: 50%;
             font-size: 0.8em;
             border: none;
@@ -136,7 +159,7 @@ body{
 
             img {
                 padding: 10px;
-                border-radius: 20px;
+                border-radius: 14px;
             }
 
             .card-body {
