@@ -1,7 +1,42 @@
 $customGrey: #9B9B9B;
-.leftBar a,.menu a p{
+.leftBar a,.menu a p,hr{
     color: $customGrey;
+    
 };
 .commenti{
    border:#9B9B9B;
+}
+.menu a:hover{
+    color: white;
+}
+
+.commenti a p{
+    font-size: 0.8rem;}
+
+
+
+
+  .btnHeart {
+        padding: 0.2rem;
+        background-image: linear-gradient(to right bottom, #3b1ba9, #4028a9, #4633a8, #4c3da7, #5246a5, #5b56ac, #6566b1, #7075b6, #848fc3, #9ba8cf, #b6c1da, #d4dae5);  
+          .bi-suit-heart-fill{
+            color: #B2B2B2;
+        }
+    }
+    .btnBookmark {
+        padding: 0.2rem;
+        background-image: linear-gradient(to right bottom, #004537, #004537, #004537, #004537, #004537, #0f5148, #205d59, #306969, #57848c, #81a0ad, #abbcca, #d4dae5);
+          .bi-bookmark-fill{
+            color: #149643;
+        }
+    }
+
+.commenti hr{
+    width: 90%;
+    margin: 0 auto 1rem;
+
+}
+
+.SizeBtn{
+    font-size: 1.3rem;
 }
