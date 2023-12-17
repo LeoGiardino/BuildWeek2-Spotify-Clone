@@ -48,14 +48,17 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
         const contenitore = document.querySelector(".longCard");        
 
         let div = document.createElement("div");
-        div.classList.add("card");
+        div.classList.add("card", "position-relative");
         div.style.width = "18%";
         div.innerHTML = 
         `
-        <a href="#"><img src="${data.picture_medium}" class="card-img-top" alt="..."></a>        
+        <a href="#"><img src="${data.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
         <div class="card-body">
             <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.name}</a></p>
             <p class="card-text">Artist</p>
+            <button class="playHoverLongCard position-absolute">
+                <i class="bi bi-play-fill"></i>
+            </button>
         </div>
         
         `

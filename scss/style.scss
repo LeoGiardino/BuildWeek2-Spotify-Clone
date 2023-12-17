@@ -4,6 +4,13 @@
 @import "centroFelipe";
 @import "centroLouis";
 
+@mixin hoverTransition {
+    transition: all 0.3s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 body{
     height: 100vh;
     color: white!important;
@@ -15,7 +22,7 @@ body{
 /* --- CENTRO --- */
 
 .centroLeo {
-    height: 99vh; //ALTEZZA PER PERMETTERE SCROLL
+    height: 85vh; //ALTEZZA PER PERMETTERE SCROLL
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
     .freccette {
@@ -103,9 +110,7 @@ body{
             border-radius: 20px;
             font-weight: bold;
             margin-right: 0.8em;
-            &:hover {
-                transform: scale(1.1);
-            }
+            @include hoverTransition()
         }
 
         button:nth-child(2){
@@ -117,9 +122,7 @@ body{
             border: 1px solid snow;
             color: snow;
             margin-right: 0.8em;
-            &:hover {
-                transform: scale(1.1);
-            }
+            @include hoverTransition()
         }
 
         i {
@@ -182,8 +185,58 @@ body{
         }
         
     }
-
+    //Hover PlayList
+    .playHover {
+        width: 2.3rem;
+        height: 2.3rem;
+        right: 0.3rem;
+        bottom: 0.3rem;
+        padding-left: 0.1rem ;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: $customGreen;
+        display: none;
+        i {
+            font-size: 1.5rem;
+        }
+    }
+    .card:hover .playHover {
+        cursor: pointer;
+        display: block;
+    }
+    .playHover:hover {
+        @include hoverTransition()
+    }
+    //Hover Long Card -album-
+    .playHoverLongCard {
+        width: 2.3rem;
+        height: 2.3rem;
+        right: 0.8rem;
+        bottom: 8rem;
+        padding-left: 0.5rem;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: $customGreen;
+        display: none;
+        i {
+            font-size: 1.5rem;
+        }
+    }
+    .card:hover .playHoverLongCard {
+        cursor: pointer;
+        display: block;
+    }
+    .playHoverLongCard:hover {
+        @include hoverTransition()
+    }
+    .card:hover {
+        cursor: pointer;
+        background-color: #232323;
+    }
 }
+
 
 /* Stile della scrollbar */
 ::-webkit-scrollbar {

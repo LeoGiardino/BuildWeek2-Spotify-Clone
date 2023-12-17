@@ -256,6 +256,8 @@ input[type=range]:focus::-moz-range-thumb {
   height: 95vh;
   overflow-y: auto;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  height: 95vh;
+  overflow: auto;
 }
 .centroFelipe .bannerimg {
   position: relative;
@@ -336,7 +338,7 @@ body {
 
 /* --- CENTRO --- */
 .centroLeo {
-  height: 99vh;
+  height: 85vh;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .centroLeo .freccette {
@@ -404,6 +406,7 @@ body {
   border-radius: 20px;
   font-weight: bold;
   margin-right: 0.8em;
+  transition: all 0.3s ease;
 }
 .centroLeo .bottoniUp button:nth-child(1):hover {
   transform: scale(1.1);
@@ -417,6 +420,7 @@ body {
   border: 1px solid snow;
   color: snow;
   margin-right: 0.8em;
+  transition: all 0.3s ease;
 }
 .centroLeo .bottoniUp button:nth-child(2):hover {
   transform: scale(1.1);
@@ -458,6 +462,60 @@ body {
 .centroLeo .longCard .card .card-body p:nth-child(2) {
   font-size: 0.8em;
   color: #9B9B9B;
+}
+.centroLeo .playHover {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  padding-left: 0.1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.centroLeo .playHover i {
+  font-size: 1.5rem;
+}
+.centroLeo .card:hover .playHover {
+  cursor: pointer;
+  display: block;
+}
+.centroLeo .playHover:hover {
+  transition: all 0.3s ease;
+}
+.centroLeo .playHover:hover:hover {
+  transform: scale(1.1);
+}
+.centroLeo .playHoverLongCard {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.8rem;
+  bottom: 8rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.centroLeo .playHoverLongCard i {
+  font-size: 1.5rem;
+}
+.centroLeo .card:hover .playHoverLongCard {
+  cursor: pointer;
+  display: block;
+}
+.centroLeo .playHoverLongCard:hover {
+  transition: all 0.3s ease;
+}
+.centroLeo .playHoverLongCard:hover:hover {
+  transform: scale(1.1);
+}
+.centroLeo .card:hover {
+  cursor: pointer;
+  background-color: #232323;
 }
 
 /* Stile della scrollbar */
