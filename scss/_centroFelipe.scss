@@ -10,6 +10,8 @@
         height: 95vh;
         overflow: auto;
 
+
+       
     .cardSizing{
        
     }
@@ -50,4 +52,48 @@
     .text-lightgray{
         color: #c0c0c0;
     }
+
+
+    /* --- MODIFICHE LEO ---*/
+
+    .truncate-text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%; /* Assicura che il testo non superi la larghezza massima della colonna */
+      }
+
+    .ascolti , .durata{
+        color: #c0c0c0;
+        font-size: 0.9em;
+    }
+
+    @media (max-width: 1278px) {
+        /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+        .destraInt{
+          display: none;
+        }
+
+        
+      
+        /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+      }
+      
+      @media (min-width: 1278px) {
+        /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+        .infoList {
+            width: 66.66%!important;
+        }
+      
+        /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+      }
+
+      @media (max-width: 880px) {
+        /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+        .colAscolti{
+          display: none!important;
+        }
+      
+        /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+      }
 }

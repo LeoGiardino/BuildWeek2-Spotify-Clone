@@ -258,6 +258,7 @@ input[type=range]:focus::-moz-range-thumb {
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
   height: 95vh;
   overflow: auto;
+  /* --- MODIFICHE LEO ---*/
 }
 .centroFelipe .bannerimg {
   position: relative;
@@ -284,6 +285,43 @@ input[type=range]:focus::-moz-range-thumb {
 }
 .centroFelipe .text-lightgray {
   color: #c0c0c0;
+}
+.centroFelipe .truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Assicura che il testo non superi la larghezza massima della colonna */
+}
+.centroFelipe .ascolti, .centroFelipe .durata {
+  color: #c0c0c0;
+  font-size: 0.9em;
+}
+@media (max-width: 1278px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .destraInt {
+    display: none;
+  }
+}
+@media (min-width: 1278px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .infoList {
+    width: 66.66% !important;
+  }
+}
+@media (max-width: 880px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .colAscolti {
+    display: none !important;
+  }
 }
 
 /*-----CENTRO LOUIS-----*/
