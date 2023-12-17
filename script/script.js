@@ -7,6 +7,24 @@ console.log("object");
 
 
 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const leftArrow = document.querySelector(".lefty");
+const rightArrow = document.querySelector(".righty");
+
+leftArrow.addEventListener("click", () => {
+    window.history.back().history.back();
+})
+
+rightArrow.addEventListener("click", () => {
+    window.history.forward();
+})
+    
+})
+
+
+
 fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
     method: 'GET',
 })
@@ -67,17 +85,20 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
         const carte = document.querySelectorAll(".longCard > .card");
 
         console.dir(carte[h]);
-        carte[h].children[0].addEventListener("click", () => {
-            onArtist(data.tracklist);
+
+        carte[h].addEventListener("click", () => {
+            onArtist(data.id);
         })
 
-        carte[h].children[1].children[0].addEventListener("click", () => {
-            onArtist(data.tracklist);
-        })
+        // carte[h].children[1].children[0].addEventListener("click", () => {
+        //     onArtist(data);
+        // })
     }
 
     function onArtist (tracks) {
         console.log(tracks);
+        window.location.href = `artist-page-copy.html?id=${encodeURIComponent(tracks)}`;
+      
     }
 
 
