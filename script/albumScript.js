@@ -4,7 +4,7 @@ album_url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 let album_id = "725251";
 
-// Ottieni i parametri di query dalla URL
+
 const urlParams = new URLSearchParams(window.location.search);
 const album_url = urlParams.get("album_url");
 
@@ -79,7 +79,7 @@ console.log("Album: ");
 albumFetch(album_id);
 
 
-function compilareHtmlAlbum(albumData) {  /*Collegato con il primo fetch  */
+function compilareHtmlAlbum(albumData) { 
     let imgAlbum = document.getElementById("#imgAlbum");
     imgAlbum.src = albumData.picture_xl;
 
