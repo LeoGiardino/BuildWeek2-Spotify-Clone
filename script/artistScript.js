@@ -83,6 +83,8 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
     let artistName = document.getElementById("artistName")
     artistName.textContent = artistData.name;
 
+    console.log(artistData);
+
     let artistBanner = document.getElementById("bannerArtist");
     artistBanner.src = artistData.picture_xl;
 
@@ -110,6 +112,9 @@ function compilareHtmlTracklist(trackData) {
     let rowCorrente = null;
 
     for (let i = 0; i < trackData.length; i++) {
+        if(i == 5){
+            break;
+        }
         const row = document.createElement('div');
         row.classList.add('row', 'mb-3');
 

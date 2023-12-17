@@ -253,17 +253,17 @@ input[type=range]:focus::-moz-range-thumb {
 
 /* ------ CENTRO FELIPE ------ */
 .centroFelipe {
-  height: 95vh;
+  height: 100vh;
   overflow-y: auto;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
   height: 95vh;
-  overflow: auto;
   /* --- MODIFICHE LEO ---*/
 }
 .centroFelipe .bannerimg {
   position: relative;
-  height: 300px;
+  height: 370px;
   object-fit: cover;
+  object-position: center 30%;
   filter: brightness(50%);
   margin: 0;
   padding: 0;
@@ -504,7 +504,7 @@ body {
   border: none;
 }
 .centroLeo .cards .body {
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   background-color: rgb(48, 48, 48);
@@ -586,18 +586,19 @@ body {
 
 /* Stile della scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* Larghezza della scrollbar */
+  width: 4px; /* Larghezza della scrollbar */
 }
 
-/* Stile del pollice (la parte mobile) della scrollbar */
 ::-webkit-scrollbar-thumb {
   background-color: #4CAF50; /* Colore del pollice */
   border-radius: 6px; /* Bordo arrotondato del pollice */
+  height: 5px; /* Altezza del pollice */
 }
 
 /* Stile della traccia (la parte fissa) della scrollbar */
 ::-webkit-scrollbar-track {
   background-color: transparent; /* Colore della traccia */
+  height: 5px; /* Altezza della traccia */
 }
 
 /* Cambia lo stile della scrollbar quando è attiva (quando l'utente la sta trascinando) */

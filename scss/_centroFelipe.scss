@@ -3,12 +3,12 @@
 
 
 .centroFelipe {
-        height: 95vh; //ALTEZZA PER PERMETTERE SCROLL
+        height: 100vh; //ALTEZZA PER PERMETTERE SCROLL
         overflow-y: auto; //Overflow Y PER PERMETTERE SCROLL
         background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
         height: 95vh;
-        overflow: auto;
+   
 
 
        
@@ -18,8 +18,9 @@
 
     .bannerimg{
         position: relative;
-        height: 300px; 
+        height: 370px; 
         object-fit: cover;
+        object-position: center 30%;
         filter: brightness(50%);
         margin: 0;
         padding: 0;
@@ -73,8 +74,6 @@
         .destraInt{
           display: none;
         }
-
-        
       
         /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
       }
