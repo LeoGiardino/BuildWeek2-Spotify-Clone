@@ -256,7 +256,7 @@ input[type=range]:focus::-moz-range-thumb {
   height: 100vh;
   overflow-y: auto;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
-  height: 95vh;
+  padding-bottom: 130px;
   /* --- MODIFICHE LEO ---*/
 }
 .centroFelipe .bannerimg {
@@ -286,6 +286,9 @@ input[type=range]:focus::-moz-range-thumb {
 .centroFelipe .text-lightgray {
   color: #c0c0c0;
 }
+.centroFelipe .fixed-width {
+  width: 210px !important;
+}
 .centroFelipe .truncate-text {
   overflow: hidden;
   white-space: nowrap;
@@ -305,7 +308,7 @@ input[type=range]:focus::-moz-range-thumb {
     display: none;
   }
 }
-@media (min-width: 1278px) {
+@media (min-width: 1346px) {
   .centroFelipe {
     /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
     /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
