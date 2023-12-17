@@ -1,12 +1,14 @@
 @charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-.leftBar a, .menu a p, hr {
-  color: #9B9B9B;
+.leftBar a,
+.menu a p,
+hr {
+  color: #9b9b9b;
 }
 
 .commenti {
   height: 50vh;
-  border: #9B9B9B;
+  border: #9b9b9b;
 }
 
 .menu a:hover {
@@ -30,15 +32,43 @@
 
 .btnHeart {
   padding: 0.1rem 0.2rem;
-  background-image: linear-gradient(to right bottom, #3b1ba9, #4028a9, #4633a8, #4c3da7, #5246a5, #5b56ac, #6566b1, #7075b6, #848fc3, #9ba8cf, #b6c1da, #d4dae5);
+  background-image: linear-gradient(
+    to right bottom,
+    #3b1ba9,
+    #4028a9,
+    #4633a8,
+    #4c3da7,
+    #5246a5,
+    #5b56ac,
+    #6566b1,
+    #7075b6,
+    #848fc3,
+    #9ba8cf,
+    #b6c1da,
+    #d4dae5
+  );
 }
 .btnHeart .bi-suit-heart-fill {
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .btnBookmark {
   padding: 0.1rem 0.2rem;
-  background-image: linear-gradient(to right bottom, #004537, #004537, #004537, #004537, #004537, #0f5148, #205d59, #306969, #57848c, #81a0ad, #abbcca, #d4dae5);
+  background-image: linear-gradient(
+    to right bottom,
+    #004537,
+    #004537,
+    #004537,
+    #004537,
+    #004537,
+    #0f5148,
+    #205d59,
+    #306969,
+    #57848c,
+    #81a0ad,
+    #abbcca,
+    #d4dae5
+  );
 }
 .btnBookmark .bi-bookmark-fill {
   color: #149643;
@@ -58,7 +88,7 @@
   color: #636363;
 }
 .colonnaDestra .attività {
-  color: #E6E6E6;
+  color: #e6e6e6;
 }
 .colonnaDestra .attività i {
   color: #636363 !important;
@@ -106,10 +136,10 @@
 
 .iconsSx .bi {
   font-size: 1.8rem;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 .iconsSx .bi:hover {
-  color: #1ED760;
+  color: #1ed760;
 }
 
 .playerImg {
@@ -121,23 +151,24 @@
   line-height: 0.5;
 }
 .playerNowText .playerNowArtist {
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 .playerNowText > a:hover {
-  color: #1ED760;
+  color: #1ed760;
 }
 
-.playerNowSong:hover, .playerNowArtist:hover {
-  color: #1ED760;
+.playerNowSong:hover,
+.playerNowArtist:hover {
+  color: #1ed760;
 }
 
 .bi-heart {
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 
 .bi-heart:hover {
-  color: #1ED760;
+  color: #1ed760;
 }
 
 .playerIcons a {
@@ -146,14 +177,14 @@
 
 .playerIcons .bi {
   font-size: 1.8rem;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 .playerIcons .bi:hover {
-  color: #1ED760;
+  color: #1ed760;
 }
 .playerIcons .bi-shuffle,
 .playerIcons .bi-repeat {
-  color: #1ED760;
+  color: #1ed760;
 }
 
 .round-time-bar {
@@ -161,7 +192,7 @@
   overflow: hidden;
   height: 10px;
   width: 500px;
-  background: linear-gradient(to bottom, #1ED760, #43e57d);
+  background: linear-gradient(to bottom, #1ed760, #43e57d);
   border-radius: 10px;
 }
 
@@ -170,14 +201,14 @@
   width: 500px;
   animation: roundtime calc(var(--duration) 1s) steps(var(--duration)) linear;
   transform-origin: right center;
-  background-color: #9B9B9B;
+  background-color: #9b9b9b;
 }
 
-.round-time-bar[data-style=smooth] div {
+.round-time-bar[data-style="smooth"] div {
   animation: roundtime calc(var(--duration) * 1s) linear forwards;
 }
 
-.round-time-bar[data-style=fixed] div {
+.round-time-bar[data-style="fixed"] div {
   width: calc(var(--duration) * 5%);
 }
 
@@ -192,7 +223,7 @@
 }
 
 /** Baseline, reset styles **/
-input[type=range] {
+input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   background: transparent;
@@ -201,20 +232,20 @@ input[type=range] {
 }
 
 /* Removes default focus */
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
 
 /** Chrome, Safari, Opera and Edge Chromium styles **/
 /* slider track */
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   background-color: #9b9b9b;
   border-radius: 0.5rem;
   height: 0.6rem;
 }
 
 /* slider thumb */
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
   margin-top: -3.2px; /* Centers thumb on the track */
@@ -224,21 +255,21 @@ input[type=range]::-webkit-slider-thumb {
   width: 1rem;
 }
 
-input[type=range]:focus::-webkit-slider-thumb {
+input[type="range"]:focus::-webkit-slider-thumb {
   outline: 3px solid #1ed760;
   outline-offset: 0.125rem;
 }
 
 /** Firefox styles **/
 /* slider track */
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   background-color: #9b9b9b;
   border-radius: 0.5rem;
   height: 0.6rem;
 }
 
 /* slider thumb */
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   background-color: #1ed760;
   border: none; /*Removes extra border that FF applies*/
   border-radius: 0.5rem;
@@ -246,7 +277,7 @@ input[type=range]::-moz-range-thumb {
   width: 1rem;
 }
 
-input[type=range]:focus::-moz-range-thumb {
+input[type="range"]:focus::-moz-range-thumb {
   outline: 3px solid #1ed760;
   outline-offset: 0.125rem;
 }
@@ -255,8 +286,27 @@ input[type=range]:focus::-moz-range-thumb {
 .centroFelipe {
   height: 100vh;
   overflow-y: auto;
+<<<<<<< HEAD
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
   padding-bottom: 130px;
+=======
+  background-image: linear-gradient(
+    to bottom,
+    #3c3b3b,
+    #343434,
+    #2d2d2d,
+    #262626,
+    #1f1f1f,
+    #1c1c1c,
+    #191919,
+    #161616,
+    #161616,
+    #151515,
+    #151515,
+    #141414
+  );
+  height: 95vh;
+>>>>>>> 66ca1b29abc988ae38d4bad5bc54db4cfbd323ba
   /* --- MODIFICHE LEO ---*/
 }
 .centroFelipe .bannerimg {
@@ -295,7 +345,8 @@ input[type=range]:focus::-moz-range-thumb {
   text-overflow: ellipsis;
   max-width: 100%; /* Assicura che il testo non superi la larghezza massima della colonna */
 }
-.centroFelipe .ascolti, .centroFelipe .durata {
+.centroFelipe .ascolti,
+.centroFelipe .durata {
   color: #c0c0c0;
   font-size: 0.9em;
 }
@@ -337,7 +388,7 @@ input[type=range]:focus::-moz-range-thumb {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 .centroFelipe .freccette:hover {
   cursor: pointer;
@@ -369,6 +420,10 @@ body {
   background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(253, 187, 45) 100%);
 }
 
+.centroLouis div.p-3 span div button:hover {
+ background-color: #1ed760 !important;
+}
+
 .dropdown button img {
   width: 2em;
   border-radius: 50%;
@@ -387,18 +442,36 @@ div.bg-transparent div.m-3 p span {
   font-size: 0.9em;
 }
 
-div.bg-black div.d-flex i {
+div.divTable div.d-flex i {
   font-size: 2.5em;
+  cursor: pointer;
 }
 
-div.bg-black div.d-flex i.bi-play-circle-fill {
-  color: #1ED760;
+div.divTable div.d-flex i:hover {
+  color: #1ed760 !important;
+}
+
+div.divTable div.d-flex i.bi-play-circle-fill {
+  color: #1ed760 !important;
+}
+
+.table_custom {
+  /*--bs-table-bg: transparent !important;*/
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(198, 171, 70, 1) 400%
+  );
+}
+
+div.divTable table {
+  color: white;
 }
 
 body {
   height: 100vh;
   color: white !important;
-  overflow-y: hidden;
 }
 
 .menu {
@@ -408,7 +481,21 @@ body {
 /* --- CENTRO --- */
 .centroLeo {
   height: 85vh;
-  background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  background-image: linear-gradient(
+    to bottom,
+    #3c3b3b,
+    #343434,
+    #2d2d2d,
+    #262626,
+    #1f1f1f,
+    #1c1c1c,
+    #191919,
+    #161616,
+    #161616,
+    #151515,
+    #151515,
+    #141414
+  );
 }
 .centroLeo .freccette {
   width: 2rem;
@@ -421,7 +508,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 .centroLeo .freccette:hover {
   cursor: pointer;
@@ -439,7 +526,21 @@ body {
   margin-left: 10px;
 }
 .centroLeo .big-card {
-  background-image: linear-gradient(to right top, #0e0e0e, #101010, #111111, #131313, #141414, #181818, #1b1b1b, #1f1f1f, #262626, #2d2d2d, #343434, #3c3b3b);
+  background-image: linear-gradient(
+    to right top,
+    #0e0e0e,
+    #101010,
+    #111111,
+    #131313,
+    #141414,
+    #181818,
+    #1b1b1b,
+    #1f1f1f,
+    #262626,
+    #2d2d2d,
+    #343434,
+    #3c3b3b
+  );
   color: white;
   border: none;
   height: 30%;
@@ -459,7 +560,7 @@ body {
   margin-bottom: 0.3rem;
 }
 .centroLeo .testoUp p:nth-child(2) {
-  color: #9B9B9B;
+  color: #9b9b9b;
   background-color: rgb(48, 48, 48);
   border-radius: 15px;
   font-size: 0.5em;
@@ -498,7 +599,7 @@ body {
   font-size: 1.5em;
 }
 .centroLeo .bottoniUp i:hover {
-  color: #1ED760;
+  color: #1ed760;
   cursor: pointer;
 }
 .centroLeo .cards .card {
@@ -530,7 +631,7 @@ body {
 }
 .centroLeo .longCard .card .card-body p:nth-child(2) {
   font-size: 0.8em;
-  color: #9B9B9B;
+  color: #9b9b9b;
 }
 .centroLeo .playHover {
   width: 2.3rem;
@@ -541,7 +642,7 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #1ED760;
+  background-color: #1ed760;
   display: none;
 }
 .centroLeo .playHover i {
@@ -566,7 +667,7 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #1ED760;
+  background-color: #1ed760;
   display: none;
 }
 .centroLeo .playHoverLongCard i {
@@ -593,7 +694,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #4CAF50; /* Colore del pollice */
+  background-color: #4caf50; /* Colore del pollice */
   border-radius: 6px; /* Bordo arrotondato del pollice */
   height: 5px; /* Altezza del pollice */
 }
@@ -607,4 +708,4 @@ body {
 /* Cambia lo stile della scrollbar quando è attiva (quando l'utente la sta trascinando) */
 ::-webkit-scrollbar-thumb:active {
   background-color: #555; /* Cambia il colore del pollice quando è attivo */
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
