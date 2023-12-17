@@ -298,10 +298,10 @@ function mettoAlbum1(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard2 > .card");
     carte[indiceAlbum].children[0].addEventListener("click", () => {
-        onArtist(data.album.id);
+       
     })
     carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
-        onArtist(data.album.id);
+        
     })
 }
 
