@@ -252,11 +252,20 @@ body{
         background-color: #282828;
     }
 
-    .mostraAltro, .mostraMeno{
+    .mostraAltro{
         p,h4{
             cursor: pointer;
         }
         p:hover, h4:hover{
+            text-decoration: underline;
+        }
+    }
+    .mostraMeno{
+        p{
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        p:hover{
             text-decoration: underline;
         }
     }

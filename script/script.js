@@ -261,7 +261,7 @@ function mettoArtisti(data) {
 }
 
 function mettoArtistiNascosti(data) {
-   /*  console.log("Sono dentro mettoArtistiNascosti");
+    console.log("Sono dentro mettoArtistiNascosti");
     const contenitore = document.querySelectorAll(`.carteNascoste`)[0]
     let div = document.createElement("div");
     div.classList.add("card");
@@ -278,9 +278,8 @@ function mettoArtistiNascosti(data) {
     contenitore.appendChild(div);
    const carte = contenitore.querySelectorAll(".card");
     carte[carte.length-1].addEventListener("click", () => {
-        console.log("cisao");
         onArtist(data.artist.id);
-    })  */
+    }) 
 }
 
 function onArtist(tracks) {
