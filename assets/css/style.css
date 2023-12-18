@@ -554,6 +554,75 @@ input[type=range]:focus::-moz-range-thumb {
   background-color: rgb(29, 29, 29);
   color: white;
 }
+.centroFelipe .longCard .card {
+  background-color: rgb(29, 29, 29);
+  color: snow;
+}
+.centroFelipe .longCard .card img {
+  padding: 10px;
+  border-radius: 14px;
+}
+.centroFelipe .longCard .card .card-body p:nth-child(1) {
+  font-weight: bold;
+}
+.centroFelipe .longCard .card .card-body p:nth-child(2) {
+  font-size: 0.8em;
+  color: #9B9B9B;
+}
+.centroFelipe .playHover {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  padding-left: 0.1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.centroFelipe .playHover i {
+  font-size: 1.5rem;
+}
+.centroFelipe .card:hover .playHover {
+  cursor: pointer;
+  display: block;
+}
+.centroFelipe .playHover:hover {
+  transition: all 0.3s ease;
+}
+.centroFelipe .playHover:hover:hover {
+  transform: scale(1.1);
+}
+.centroFelipe .playHoverLongCard {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.8rem;
+  bottom: 7rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.centroFelipe .playHoverLongCard i {
+  font-size: 1.5rem;
+}
+.centroFelipe .card:hover .playHoverLongCard {
+  cursor: pointer;
+  display: block;
+}
+.centroFelipe .playHoverLongCard:hover {
+  transition: all 0.3s ease;
+}
+.centroFelipe .playHoverLongCard:hover:hover {
+  transform: scale(1.1);
+}
+.centroFelipe .card:hover {
+  cursor: pointer;
+  background-color: #282828;
+}
 
 /*-----CENTRO LOUIS-----*/
 body {
