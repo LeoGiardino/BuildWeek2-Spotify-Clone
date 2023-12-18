@@ -246,8 +246,6 @@ function prendoArtisti() {
         }
         giàMesso = false;
     }
-    console.log(numeroArtistiDiversi);
-    console.log(indiceArtisti);
     while ( (indiceArtisti < numeroArtistiDiversi) && (indiceArtisti >= 4)) {
         console.log("sono dentro il secondo while");
         posizioneCasuale = Math.floor(Math.random() * primaChiamata.length);
@@ -355,6 +353,7 @@ let parola2 = arrayParole[Math.floor(Math.random() * arrayParole.length)];
 let indiceAlbum = 0;
 let albumMessi = [];
 let tracceAlbum1 = [];
+let numeroArtistiDiversi2;
 
 fetch(urlSearch + `${parola2}`, {
     method: 'GET',
@@ -362,13 +361,15 @@ fetch(urlSearch + `${parola2}`, {
     .then(response => response.json())
     .then(json => {
         console.log(`${parola2}`, json);
-        tracceAlbum1 = [...json.data]
+        tracceAlbum1 = [...json.data];
+        numeroArtistiDiversi2 = contaArtisti(json.data);
         prendoAlbum1(json.data);
     })
     .catch(error => console.log(error))
 
 
 function prendoAlbum1() {
+    mettoCanzonciona(tracceAlbum1[Math.floor(Math.random())*tracceAlbum1.length]);
     let giàMesso = false;
     let posizioneCasuale;
     while (indiceAlbum < 4) {
@@ -384,24 +385,33 @@ function prendoAlbum1() {
             }
         }
         if (!giàMesso) {
-            try {
                 albumMessi.push(tracceAlbum1[posizioneCasuale].artist.id);
+                mettoAlbumNascosti1(tracceAlbum1[posizioneCasuale]);            
                 mettoAlbum1(tracceAlbum1.splice(posizioneCasuale, 1)[0]);
                 indiceAlbum++;
-            } catch (error) {
-            }
+           
         }
         giàMesso = false;
     }
-    if (indiceAlbum == 4 && !giàMesso) {
+    while ( (indiceAlbum < numeroArtistiDiversi2) && (indiceAlbum >= 4)) {
+        console.log("sono nel while aiuto");
         posizioneCasuale = Math.floor(Math.random() * tracceAlbum1.length);
-
-        if (tracceAlbum1[posizioneCasuale].artist && tracceAlbum1[posizioneCasuale].album) {
-            mettoCanzonciona(tracceAlbum1[posizioneCasuale]);
-            giàMesso = true;
+        for (const ele of albumMessi) {
+            try {
+                if (tracceAlbum1[posizioneCasuale].artist.id == ele) {
+                    giàMesso = true;
+                    break
+                }
+            } catch (error) {
+                giàMesso = true;
+            }
         }
-
-
+        if (!giàMesso) {
+            albumMessi.push(tracceAlbum1[posizioneCasuale].artist.id);
+            mettoAlbumNascosti1(tracceAlbum1.splice(posizioneCasuale, 1)[0]);            
+            indiceAlbum++;
+        }
+        giàMesso = false;
     }
 }
 
@@ -424,14 +434,34 @@ function mettoAlbum1(data) {
                 `
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard2 > .card");
-    carte[indiceAlbum].children[0].addEventListener("click", () => {
-
-    })
-    carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
+    carte[indiceAlbum].addEventListener("click", () => {
 
     })
 }
 
+function mettoAlbumNascosti1(data) {
+    const contenitore = document.querySelectorAll(`.carteNascoste`)[1];
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.classList.add("mb-3");
+    div.style.width = "22%";
+    div.innerHTML = `
+                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <button class="playHoverLongCard position-absolute">
+                <i class="bi bi-play-fill"></i>
+            </button>       
+                <div class="card-body">
+                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">
+                    ${data.album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                  
+                </div>        
+                `
+    contenitore.appendChild(div);
+    const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length - 1].addEventListener("click", () => {
+    })
+}
 
 function mettoCanzonciona(data) {
     const titoloBC = document.querySelector(".card-title");
@@ -518,6 +548,7 @@ function mettoCanzonciona(data) {
 
 /* --------------- Terza Chiamata ------------------------------------*/
 parola1 = label.splice(Math.floor(Math.random() * label.length), 1)[0];
+let numeroArtistiDiversi3;
 let amici = [
     ["Anna Cerasoli"],
     ["Gregorio Vecchio"],
@@ -536,6 +567,7 @@ fetch(urlSearch + `label:"${parola1}"`, {
     .then(json => {
         console.log("label", `${parola1}`, json);
         tracceAlbum2 = [...json.data];
+        numeroArtistiDiversi3=contaArtisti(json.data);
         prendoAlbum2();
         creaAmici(json.data);
     })
@@ -559,10 +591,31 @@ function prendoAlbum2() {
         if (!giàMesso) {
             try {
                 albumMessi2.push(tracceAlbum2[posizioneCasuale].album.title);
+                mettoAlbumNascosti2(tracceAlbum2[posizioneCasuale]);
                 mettoAlbum2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
                 indiceAlbum2++;
             } catch (error) {
             }
+        }
+        giàMesso = false;
+    }
+    while ( (indiceAlbum2 < numeroArtistiDiversi3) && (indiceAlbum2 >= 4)) {
+        console.log("sono nel while aiuto");
+        posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
+        for (const ele of albumMessi2) {
+            try {
+                if (tracceAlbum2[posizioneCasuale].artist.id == ele) {
+                    giàMesso = true;
+                    break
+                }
+            } catch (error) {
+                giàMesso = true;
+            }
+        }
+        if (!giàMesso) {
+            albumMessi.push(tracceAlbum2[posizioneCasuale].artist.id);
+            mettoAlbumNascosti2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);            
+            indiceAlbum2++;
         }
         giàMesso = false;
     }
@@ -588,12 +641,35 @@ function mettoAlbum2(data) {
         `
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard3 > .card");
-    carte[indiceAlbum2].children[0].addEventListener("click", () => {
+    carte[indiceAlbum2].addEventListener("click", () => {
         onArtist(data.album.id);
     })
-    carte[indiceAlbum2].children[1].children[0].addEventListener("click", () => {
-        onArtist(data.album.id);
+ 
+}
+
+function mettoAlbumNascosti2(data) {
+    const contenitore = document.querySelectorAll(".carteNascoste")[2];
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.classList.add("mb-3");
+    div.style.width = "22%";
+    div.innerHTML = `
+        <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+        <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>       
+        <div class="card-body">
+            <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+            <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+            
+        </div>        
+        `
+    contenitore.appendChild(div);
+    const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length-1].addEventListener("click", () => {
+
     })
+    
 }
 
 function creaAmici(tracce) {
