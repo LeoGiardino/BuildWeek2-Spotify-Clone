@@ -389,9 +389,6 @@ let caseMetal = [
     "Relapse Records",
 ];
 
-
-
-/* 
 chiamateCasuali();
 let i = 0;
 function chiamateCasuali() {
@@ -418,7 +415,7 @@ function onTimesUp() {
     clearInterval(timerInterval);
 
 }
- */
+
 let caseRock = [
     "Atlantic Records",
     "Capitol Records",
@@ -466,7 +463,7 @@ const label = [
   
     
 
-
+/* 
 chiamateCasuali();
 let i = 0;
 function chiamateCasuali() {
@@ -519,4 +516,4 @@ function stampaNomi(tracce) {
         console.log(nomi[i] + " E' PRESENTE "+ ripetizioni[i]);
     }
 
-}
+} */

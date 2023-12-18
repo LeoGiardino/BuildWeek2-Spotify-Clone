@@ -103,6 +103,7 @@ let arrayParole = [
     'Hellfire',
     'Oracle'
 ];
+
 document.addEventListener("DOMContentLoaded", () => {
     const leftArrow = document.querySelector(".lefty");
     const rightArrow = document.querySelector(".righty");
