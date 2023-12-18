@@ -44,7 +44,7 @@ ul {
 
 .divCard {
     background: none;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .arancio{
@@ -91,11 +91,12 @@ background-color: #1F3263;
 .squareCard{
     width: 12rem !important;
     height: 12rem !important;
-    box-sizing: border-box;
+   box-sizing: border-box;
    
 }
 .squareCard h5{
     color: white;
+    
 }
 .divCard{
     background: none;

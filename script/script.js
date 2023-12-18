@@ -4,7 +4,7 @@ let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 let idAlbum = "75621062";
 let idArtist = "412";
 let indiceRigaAlbum = 1;
-let indiceRigaNascosta =1;
+let indiceRigaNascosta = 1;
 let indiceArtisti = 0;
 
 let artistiMessi = [];
@@ -147,11 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //----------------------Gregorio che aggiunge cose ----------------------------------------
-    
+
     let mostraAltro = document.querySelectorAll(".mostraAltro");
-    for(let i =0;i<mostraAltro.length;i++){
-        mostraAltro[i].addEventListener("click",()=>{
+    for (let i = 0; i < mostraAltro.length; i++) {
+        mostraAltro[i].addEventListener("click", () => {
             mostraRigaNascosta(i);
+        })
+    }
+
+    let mostraMeno = document.querySelectorAll(".mostraMeno p");
+    
+    for (let i = 0; i < mostraMeno.length; i++) {
+        mostraMeno[i].addEventListener("click", () => {
+            nascondiRigaNascosta(i);
         })
     }
 
@@ -199,7 +207,7 @@ let label = [
     "A&M Records",
 ];
 let parola1 = label.splice(Math.floor(Math.random() * label.length), 1)[0];
-
+let numeroArtistiDiversi;
 
 fetch(urlSearch + `label:"${parola1}"`, {
     method: 'GET',
@@ -209,6 +217,7 @@ fetch(urlSearch + `label:"${parola1}"`, {
         console.log("label", `${parola1}`, json);
         console.log(json);
         primaChiamata = [...json.data];
+        numeroArtistiDiversi = contaArtisti(json.data);
         prendoArtisti();
     })
     .catch(error => console.log(error))
@@ -228,6 +237,7 @@ function prendoArtisti() {
                 giàMesso = true;
             }
         }
+
         if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
             artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
             mettoArtistiNascosti(primaChiamata[posizioneCasuale]);
@@ -235,6 +245,32 @@ function prendoArtisti() {
             indiceArtisti++;
         }
         giàMesso = false;
+    }
+    console.log(numeroArtistiDiversi);
+    console.log(indiceArtisti);
+    while ( (indiceArtisti < numeroArtistiDiversi) && (indiceArtisti >= 4)) {
+        console.log("sono dentro il secondo while");
+        posizioneCasuale = Math.floor(Math.random() * primaChiamata.length);
+        for (const ele of artistiMessi) {
+            try {
+                if (primaChiamata[posizioneCasuale].artist.id == ele) {
+                    giàMesso = true;
+                    break
+                }
+            } catch (error) {
+                giàMesso = true;
+            }
+        }
+        if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
+            artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
+            mettoArtistiNascosti(primaChiamata.splice(posizioneCasuale, 1)[0]);
+            indiceArtisti++;
+        }
+        giàMesso = false;
+
+
+
+
     }
 }
 
@@ -261,10 +297,11 @@ function mettoArtisti(data) {
 }
 
 function mettoArtistiNascosti(data) {
-   /*  console.log("Sono dentro mettoArtistiNascosti");
+    console.log("Sono dentro mettoArtistiNascosti");
     const contenitore = document.querySelectorAll(`.carteNascoste`)[0]
     let div = document.createElement("div");
     div.classList.add("card");
+    div.classList.add("mb-3");
     div.style.width = "22%";
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
@@ -276,11 +313,36 @@ function mettoArtistiNascosti(data) {
                 </button>
             </div>`
     contenitore.appendChild(div);
-   const carte = contenitore.querySelectorAll(".card");
-    carte[carte.length-1].addEventListener("click", () => {
-        console.log("cisao");
+    const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length - 1].addEventListener("click", () => {
         onArtist(data.artist.id);
-    })  */
+    })
+}
+
+
+function contaArtisti(tracce) {
+    let idGiàPresente = false;
+    let ripetizioni = [];
+    let nomi = [];
+    tracce.forEach(ele => {
+        idGiàPresente = false;
+        for (let i = 0; i < nomi.length; i++) {
+            if (nomi[i] == ele.artist.id) {
+                ripetizioni[i] = ripetizioni[i] + 1;
+                idGiàPresente = true;
+                break
+            }
+        }
+        if (!idGiàPresente) {
+            nomi.push(ele.artist.id);
+            ripetizioni.push(1);
+
+        }
+    });
+    console.log(nomi);
+    console.log(nomi.length);
+    return nomi.length;
+
 }
 
 function onArtist(tracks) {
@@ -571,3 +633,9 @@ function mostraRigaNascosta(i) {
     righeNascoste[i].classList.remove('d-none');
 }
 
+function nascondiRigaNascosta(i) {
+    console.log("sono in mostraMeno");
+    let righeNascoste = document.querySelectorAll(".rigaNascosta")
+    document.querySelector(".finestrona").classList.remove('d-none');
+    righeNascoste[i].classList.add("d-none");
+}
