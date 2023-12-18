@@ -68,12 +68,19 @@ function artistFetch(artistid) {
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
-            console.log("Tracklist: ", trackData);
+            console.log("Tracklist: ", trackData.data[0].artist.name);
             compilareHtmlTracklist(trackData.data); //si deve entrare nel oggeto con .data
             //inserire secondo contenuto
+            let x = trackData.data[0].artist.name;
+            let y = x.replace(/ /g, '-');
+            
+            let thirdUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${y}`; //terzo URL per Fetch trackData.data[0].artist.name;
+            console.log(thirdUrl);
+            return fetch(thirdUrl)
         }).then(response3 => response3.json())
             .then(dato => {
-            console.log(dato.data);
+            console.log(dato);
+            discografia(dato.data);
         })
         .catch(error => console.log("Error " + error))
 }
@@ -210,15 +217,6 @@ function compilareHtmlTracklist(trackData) {
 
 
 
-
-
-
-
-compilareHtmlTracklist(trackData);
-
-
-
-
 // function compilareHtmlTracklist(trackData) {
 //     let parentUl = document.getElementById('parentUl');
 //     parentUl.innerHTML = "";
@@ -286,28 +284,29 @@ compilareHtmlTracklist(trackData);
 compilareHtmlTracklist();
 
 
-function mettoAlbum1(data) {
-    const contenitore = document.querySelector(".longCard2");
-    let div = document.createElement("div");
+function discografia(data) {
+    const contenitore = document.querySelector(".longCard");
+    
+
+    for (let i = 0; i < data.length; i++) {
+        if(i == 5){
+            break;
+        }
+        let div = document.createElement("div");
     div.classList.add("card");
-    div.style.width = "22%";
+    div.style.width = "18%";
     div.innerHTML = `
-                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <a href="#" class=""><img src="${data[i].album.cover_medium}" class="card-img-top " alt="..."></a> 
                 <button class="playHoverLongCard position-absolute">
                 <i class="bi bi-play-fill"></i>
             </button>       
                 <div class="card-body">
-                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
-                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data[i].album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data[i].artist.name}</a></p>
                   
                 </div>        
                 `
     contenitore.appendChild(div);
-    const carte = document.querySelectorAll(".longCard2 > .card");
-    carte[indiceAlbum].children[0].addEventListener("click", () => {
-       
-    })
-    carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
-        
-    })
+
+    }
 }
