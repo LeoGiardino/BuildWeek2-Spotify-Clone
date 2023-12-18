@@ -2,7 +2,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 .leftBar {
   width: 20% !important;
-  background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  background-color: rgb(25, 25, 25);
 }
 
 .innerLeft {
@@ -11,7 +11,7 @@
 }
 
 .menu {
-  background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  background-color: rgb(25, 25, 25);
 }
 
 .riga {
@@ -76,7 +76,7 @@
 }
 
 .commenti2 {
-  background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  background-color: rgb(25, 25, 25);
 }
 
 @media (max-width: 880px) {
@@ -98,7 +98,7 @@
 .colonnaDestra {
   height: 88vh;
   width: 10%;
-  background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  background-color: rgb(25, 25, 25);
   color: #636363;
 }
 .colonnaDestra .attività {
@@ -860,10 +860,17 @@ body {
   cursor: pointer;
   background-color: #282828;
 }
-.centroLeo .mostraAltro p, .centroLeo .mostraAltro h4, .centroLeo .mostraMeno p, .centroLeo .mostraMeno h4 {
+.centroLeo .mostraAltro p, .centroLeo .mostraAltro h4 {
   cursor: pointer;
 }
-.centroLeo .mostraAltro p:hover, .centroLeo .mostraAltro h4:hover, .centroLeo .mostraMeno p:hover, .centroLeo .mostraMeno h4:hover {
+.centroLeo .mostraAltro p:hover, .centroLeo .mostraAltro h4:hover {
+  text-decoration: underline;
+}
+.centroLeo .mostraMeno p {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.centroLeo .mostraMeno p:hover {
   text-decoration: underline;
 }
 
