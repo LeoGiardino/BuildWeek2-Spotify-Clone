@@ -416,7 +416,8 @@ function mettoAlbum1(data) {
                 <i class="bi bi-play-fill"></i>
             </button>       
                 <div class="card-body">
-                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">
+                    ${data.album.title}</a></p>
                     <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
                   
                 </div>        
@@ -580,7 +581,7 @@ function mettoAlbum2(data) {
                     <i class="bi bi-play-fill"></i>
                 </button>       
         <div class="card-body">
-            <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+            <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
             <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
             
         </div>        
