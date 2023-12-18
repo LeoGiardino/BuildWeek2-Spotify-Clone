@@ -268,15 +268,14 @@ function prendoAlbum1() {
         }
         giàMesso = false;
     }
-    while (indiceRigaAlbum == 1 && !giàMesso) {
+    if (indiceAlbum == 4 && !giàMesso) {
         posizioneCasuale = Math.floor(Math.random() * tracceAlbum1.length);
-        try {
+    
             if (tracceAlbum1[posizioneCasuale].artist && tracceAlbum1[posizioneCasuale].album) {
-                mettoCanzonciona(tracceAlbum1.splice(posizioneCasuale, 1)[0]);
-                giàMesso = true;
-            }
-        } catch (error) {
-        }
+                mettoCanzonciona(tracceAlbum1[posizioneCasuale]);
+                giàMesso = true;}
+            
+
     }
 }
 
@@ -412,8 +411,6 @@ fetch(urlSearch + `label:"${parola1}"`, {
         tracceAlbum2 = [...json.data];
         prendoAlbum2();
         creaAmici(json.data);
-
-
     })
     .catch(error => console.log(error))
 
@@ -441,16 +438,6 @@ function prendoAlbum2() {
             }
         }
         giàMesso = false;
-    }
-    while (indiceRigaAlbum == 1 && !giàMesso) {
-        posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
-        try {
-            if (tracceAlbum2[posizioneCasuale].artist && tracceAlbum2[posizioneCasuale].album) {
-                mettoCanzonciona(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
-                giàMesso = true;
-            }
-        } catch (error) {
-        }
     }
 }
 
