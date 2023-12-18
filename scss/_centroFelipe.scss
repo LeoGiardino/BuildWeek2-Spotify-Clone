@@ -10,11 +10,18 @@
 }
 
 .centroFelipe {
-        height: 100vh; //ALTEZZA PER PERMETTERE SCROLL
-        overflow-y: auto; //Overflow Y PER PERMETTERE SCROLL
-        background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+  flex: 1;
+  margin: 0 8px;
 
+  border-radius: 5px 5px 7px 7px / 7px 7px 5px 5px;
+
+  width: 62%!important;
+  height: 88vh; //ALTEZZA PER PERMETTERE SCROLL
+  overflow-y: auto; 
+  padding-bottom: 100px;//ALTEZZA PER PERMETTERE SCROLL
         padding-bottom: 130px;
+
+        background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
     .bannerimg{
         position: relative;
