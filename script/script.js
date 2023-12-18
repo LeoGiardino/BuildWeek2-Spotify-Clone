@@ -132,6 +132,7 @@ let arrayParole = [
 'Mirage',
 'Sunrise'
 ];
+
 document.addEventListener("DOMContentLoaded", () => {
     const leftArrow = document.querySelector(".lefty");
     const rightArrow = document.querySelector(".righty");
