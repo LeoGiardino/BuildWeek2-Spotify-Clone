@@ -3,123 +3,323 @@ let urlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
 let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 let idAlbum = "75621062";
 let idArtist = "412";
-console.log("object");
+let indiceRigaAlbum = 1;
+let indiceArtisti = 0;
+let artistiMessi = [];
+let primaChiamata = [];
+let arrayParole = [
+    'Melody',
+    'Harmony',
+    'Echoes',
+    'Wanderer',
+    'Enchant',
+    'Whisper',
+    'Mystic',
+    'Serenade',
+    'Starlight',
+    'Dreamer',
+    'Embrace',
+    'Ethereal',
+    'Celestial',
+    'Gentle',
+    'Aurora',
+    'Calm',
+    'Tranquil',
+    'Lullaby',
+    'Breeze',
+    'Infinite',
+    'Harbor',
+    'Tranquility',
+    'Reflection',
+    'Serene',
+    'Velvet',
+    'Heavenly',
+    'Grace',
+    'Cascade',
+    'Cherish',
+    'Luminous',
+    'Tender',
+    'Harbour',
+    'Glisten',
+    'Cradle',
+    'Whimsical',
+    'Calmness',
+    'Starlight',
+    'Sylvan',
+    'Sublime',
+    'Luminescent',
+    'Velvet',
+    'Halcyon',
+    'Pristine',
+    'Enrapture',
+    'Cerulean',
+    'Silhouette',
+    'Darkness',
+    'Fire',
+    'Sacrifice',
+    'Warrior',
+    'Blood',
+    'Eternal',
+    'Demon',
+    'Steel',
+    'Thunder',
+    'Victory',
+    'Shadow',
+    'Rage',
+    'Chaos',
+    'Sorrow',
+    'Crypt',
+    'Storm',
+    'Skull',
+    'Battle',
+    'Iron',
+    'Witch',
+    'Serpent',
+    'Grave',
+    'Angel',
+    'Reaper',
+    'Immortal',
+    'Doom',
+    'Nightmare',
+    'Blade',
+    'Raven',
+    'Kingdom',
+    'Mystic',
+    'Abyss',
+    'Torture',
+    'Tempest',
+    'Hate',
+    'Crimson',
+    'Throne',
+    'Casket',
+    'Fear',
+    'Twilight',
+    'Beast',
+    'Majesty',
+    'Labyrinth',
+    'Legacy',
+    'Necropolis',
+    'Whisper',
+    'Hellfire',
+    'Oracle'
+];
+document.addEventListener("DOMContentLoaded", () => {
+    const leftArrow = document.querySelector(".lefty");
+    const rightArrow = document.querySelector(".righty");
+    leftArrow.addEventListener("click", () => {
+        window.history.back().history.back();
+    })
+    rightArrow.addEventListener("click", () => {
+        window.history.forward();
+    })
+
+})
+
+let label = [
+    "Syco Music",
+    "Atlantic Records",
+    "Columbia Records",
+    "BMG",
+    "Interscope Records",
+    "Epic Records",
+    "Motown",
+    "Sub Pop",
+    "Arista Records",
+    "Roc Nation",
+    "Wind-Up Records",
+    "Geffen Records",
+    "Nuclear Blast",
+    "Fueled by Ramen",
+    "Metal Blade Records",
+    "Napalm Records",
+    "Season of Mist",
+    "Relapse Records",
+    "Earache Records",
+    "Peaceville Records",
+    "AFM Records",
+    "Unique Leader Records",
+    "Mighty Music",
+    "Debemur Morti Productions",
+    "Agonia Records",
+    "Eisenwald",
+    "Scarlet Records",
+    "Capitol Records",
+    "Elektra Records",
+    "Island Records",
+    "Imperial Records",
+    "Warner Bros. Records",
+    "Chrysalis Records",
+    "Blue Note Records",
+    "United Artists Records",
+    "Virgin Records",
+    "A&M Records",
+];
+let parola1 = label.splice(Math.floor(Math.random() * label.length), 1)[0];
 
 
-
-fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/366045987`, {
+fetch(urlSearch + `label:"${parola1}"`, {
     method: 'GET',
 })
     .then(response => response.json())
     .then(json => {
-        console.log("album", json);
-        prova(json);
+        console.log("label", `${parola1}`, json);
+        console.log(json);
+        primaChiamata = [...json.data];
+        prendoArtisti();
+    })
+    .catch(error => console.log(error))
+
+function prendoArtisti() {
+    let giàMesso = false;
+    let posizioneCasuale;
+    while (indiceArtisti < 4) {
+        posizioneCasuale = Math.floor(Math.random() * primaChiamata.length);
+        for (const ele of artistiMessi) {
+            try {
+                if (primaChiamata[posizioneCasuale].artist.id == ele) {
+                    giàMesso = true;
+                    break
+                }
+            } catch (error) {
+                giàMesso = true;
+            }
+        }
+        try {
+            if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
+                artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
+                mettoArtisti(primaChiamata.splice(posizioneCasuale, 1)[0]);
+                indiceArtisti++;
+            }
+
+        } catch (error) {
+
+        }
+
+        giàMesso = false;
+    }
+}
+
+
+function mettoArtisti(data) {
+    const contenitore = document.querySelector(".longCard");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.style.width = "22%";
+    div.innerHTML = `
+            <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
+            <div class="card-body pb-1">
+                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-text">Artist</p>
+                <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>`
+    contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".longCard > .card");
+    carte[indiceArtisti].addEventListener("click", () => {
+        onArtist(data.artist.id);
+    })
+}
+
+function onArtist(tracks) {
+    window.location.href = `artist-page-copy.html?id=${encodeURIComponent(tracks)}`;
+}
+
+let parola2 = arrayParole[Math.floor(Math.random() * arrayParole.length)];
+let indiceAlbum = 0;
+let albumMessi = [];
+let tracceAlbum1 = [];
+
+fetch(urlSearch + `${parola2}`, {
+    method: 'GET',
+})
+    .then(response => response.json())
+    .then(json => {
+        console.log(`${parola2}`, json);
+        tracceAlbum1 = [...json.data]
+        prendoAlbum1(json.data);
     })
     .catch(error => console.log(error))
 
 
-
-    let i =Math.floor(Math.random()*100);
-    console.log(i);
-    let h = 0;
-    for(let j=i; j<i+10;j++){
-        fetch(urlArtist + `${j}`, {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(json => {
-                if(h<5 && json.picture_medium !== "https://e-cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg"){
-                    longCards(json);
-                    h++;
+function prendoAlbum1() {
+    let giàMesso = false;
+    let posizioneCasuale;
+    while (indiceAlbum < 4) {
+        posizioneCasuale = Math.floor(Math.random() * tracceAlbum1.length);
+        for (const ele of albumMessi) {
+            try {
+                if (tracceAlbum1[posizioneCasuale].artist.id == ele) {
+                    giàMesso = true;
+                    break
                 }
-                
-                console.log("artist", j, json);
-            })
-            .catch(error => console.log(error))
-            console.log(j);
-
-
-            
+            } catch (error) {
+                giàMesso = true;
+            }
+        }
+        if (!giàMesso) {
+            try {
+                albumMessi.push(tracceAlbum1[posizioneCasuale].artist.id);
+                mettoAlbum1(tracceAlbum1.splice(posizioneCasuale, 1)[0]);
+                indiceAlbum++;
+            } catch (error) {
+            }
+        }
+        giàMesso = false;
     }
+    while (indiceRigaAlbum == 1 && !giàMesso) {
+        posizioneCasuale = Math.floor(Math.random() * tracceAlbum1.length);
+        try {
+            if (tracceAlbum1[posizioneCasuale].artist && tracceAlbum1[posizioneCasuale].album) {
+                mettoCanzonciona(tracceAlbum1.splice(posizioneCasuale, 1)[0]);
+                giàMesso = true;
+            }
+        } catch (error) {
+        }
+    }
+}
 
-
-    function longCards(data) { 
-
-        const contenitore = document.querySelector(".longCard");        
-
-        let div = document.createElement("div");
-        div.classList.add("card", "position-relative");
-        div.style.width = "18%";
-        div.innerHTML = 
-        `
-        <a href="#"><img src="${data.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
-        <div class="card-body">
-            <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.name}</a></p>
-            <p class="card-text">Artist</p>
-            <button class="playHoverLongCard position-absolute">
+function mettoAlbum1(data) {
+    const contenitore = document.querySelector(".longCard2");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.style.width = "22%";
+    div.innerHTML = `
+                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <button class="playHoverLongCard position-absolute">
                 <i class="bi bi-play-fill"></i>
-            </button>
-        </div>
+            </button>       
+                <div class="card-body">
+                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                  
+                </div>        
+                `
+    contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".longCard2 > .card");
+    carte[indiceAlbum].children[0].addEventListener("click", () => {
+       
+    })
+    carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
         
-        `
-        contenitore.appendChild(div);
-
-        const carte = document.querySelectorAll(".longCard > .card");
-
-        console.dir(carte[h]);
-        carte[h].children[0].addEventListener("click", () => {
-            onArtist(data.tracklist);
-        })
-
-        carte[h].children[1].children[0].addEventListener("click", () => {
-            onArtist(data.tracklist);
-        })
-    }
-
-    function onArtist (tracks) {
-        console.log(tracks);
-    }
+    })
+}
 
 
-
-
-
-
-
-function prova(json) {
+function mettoCanzonciona(data) {
     const titoloBC = document.querySelector(".card-title");
-    titoloBC.textContent = json.title;
-
+    titoloBC.textContent = data.title;
     const imgBC = document.querySelector(".imgBC");
-    imgBC.src = json.cover;
-
+    imgBC.src = data.album.cover;
     const text1 = document.querySelector(".card-text1");
-    let arr = [];
-
-    for (let i = 0; i < json.contributors.length; i++) {
-        let x = json.contributors[i].name;
-        arr.push(x);
-    }
-
-    const contributorsText = arr.join(', ');
-
-    text1.textContent = contributorsText;
-
-    console.log(arr);
-
+    text1.textContent = data.artist.name;
     const playPause = document.querySelector("#playPause");
-
     const muteButton = document.getElementById("muteButton");
-    const audio = new Audio(json.tracks.data[0].preview);
-
+    const audio = new Audio(data.preview);
     const volumeControl = document.getElementById("customRange1");
-
     const playBC = document.querySelector(".playBC");
-
     let isPlaying = false;
-
-
-    function music (){
+    function music() {
         if (!isPlaying) {
             audio.play();
             isPlaying = true;
@@ -132,22 +332,19 @@ function prova(json) {
             playPause.innerHTML = '<i class="bi bi-play-circle-fill"></i>';
         }
     }
-
     playBC.addEventListener("click", music);
-
-
     // Aggiunto l'evento "input" per il controllo del volume
     volumeControl.addEventListener("input", () => {
         // Ottieni il valore corrente del controllo del volume (è un valore tra 0 e 100)
         const volumeValue = volumeControl.value / 100;
 
-        if(volumeValue < 0.5){
-            if(volumeValue == 0){
+        if (volumeValue < 0.5) {
+            if (volumeValue == 0) {
                 muteButton.innerHTML = '<i class="bi bi-volume-mute-fill"></i>';
-            }else{
+            } else {
                 muteButton.innerHTML = '<i class="bi bi-volume-down-fill"></i>';
-            }       
-        }else if(volumeValue > 0.5){
+            }
+        } else if (volumeValue > 0.5) {
             muteButton.innerHTML = '<i class="bi bi-volume-up-fill"></i>';
         }
         // Normalizza il valore del volume da 0 a 1
@@ -190,36 +387,133 @@ function prova(json) {
 }
 
 
-// fetch(urlArtist + idArtist, {
-//     method: 'GET',
-// })
-//     .then(response => response.json())
-//     .then(json => {
-
-//         console.log("artist", json);
-//     })
-//     .catch(error => console.log(error))
 
 
-// fetch(" https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=1", {
-//     method: 'GET',
-// })
-//     .then(response => response.json())
-//     .then(json => {
+/* --------------- Terza Chiamata ------------------------------------*/
+parola1 = label.splice(Math.floor(Math.random() * label.length), 1)[0];
+let amici = [
+    ["Anna Cerasoli"],
+    ["Gregorio Vecchio"],
+    ["Monica Misciagna"],
+    ["Louis Djembou"],
+    ["Leo Giardino"],
+    ["Felipe Carrasco"]
+];
+let albumMessi2 = [];
+let tracceAlbum2 = [];
+let indiceAlbum2 = 0;
+fetch(urlSearch + `label:"${parola1}"`, {
+    method: 'GET',
+})
+    .then(response => response.json())
+    .then(json => {
+        console.log("label", `${parola1}`, json);
+        tracceAlbum2 = [...json.data];
+        prendoAlbum2();
+        creaAmici(json.data);
 
-//         console.log("trackList100", json);
-//     })
-//     .catch(error => console.log(error))
+
+    })
+    .catch(error => console.log(error))
+
+function prendoAlbum2() {
+    let giàMesso = false;
+    let posizioneCasuale;
+    while (indiceAlbum2 < 4) {
+        posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
+        for (const ele of albumMessi2) {
+            try {
+                if (tracceAlbum2[posizioneCasuale].album.title == ele) {
+                    giàMesso = true;
+                    break
+                }
+            } catch (error) {
+                giàMesso = true;
+            }
+        }
+        if (!giàMesso) {
+            try {
+                albumMessi2.push(tracceAlbum2[posizioneCasuale].album.title);
+                mettoAlbum2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
+                indiceAlbum2++;
+            } catch (error) {
+            }
+        }
+        giàMesso = false;
+    }
+    while (indiceRigaAlbum == 1 && !giàMesso) {
+        posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
+        try {
+            if (tracceAlbum2[posizioneCasuale].artist && tracceAlbum2[posizioneCasuale].album) {
+                mettoCanzonciona(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
+                giàMesso = true;
+            }
+        } catch (error) {
+        }
+    }
+}
+
+
+
+function mettoAlbum2(data) {
+    const contenitore = document.querySelector(".longCard3");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.style.width = "22%";
+    div.innerHTML = `
+        <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+        <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>       
+        <div class="card-body">
+            <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+            <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+            
+        </div>        
+        `
+    contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".longCard3 > .card");
+    carte[indiceAlbum2].children[0].addEventListener("click", () => {
+        onArtist(data.album.id);
+    })
+    carte[indiceAlbum2].children[1].children[0].addEventListener("click", () => {
+        onArtist(data.album.id);
+    })
+}
 
 
 
 
-// fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=viola", {
-//     method: 'GET',
-// })
-//     .then(response => response.json())
-//     .then(json => {
 
-//         console.log("search", json);
-//     })
-//     .catch(error => console.log(error))
+function creaAmici(tracce) {
+    console.log("dono dentro creaAmici");
+    let contenitoreAmici = document.querySelector(".amici");
+    console.log(contenitoreAmici);
+    let indiceCanzoneCasuale;
+    for (let i = 0; i < 6; i++) {
+        indiceCanzoneCasuale = Math.floor(Math.random() * tracce.length);
+        contenitoreAmici.innerHTML += ` <div class="d-flex amico">
+            <a href="" class="imgAmico">
+                <img src="https://cdn-static.dagospia.com/img/patch/09-2017/accoppiamento-canguri-936209.jpg" alt=""
+                    class="rounded-circle" style="width:2rem">
+            </a>
+            <div>
+                <ul>
+                    <li><a href="#" class="nomeAmico">${amici.splice(Math.floor(Math.random() * amici.length), 1)[0]}</a></li>
+                    <li><a href="#" class="tracciaAmico">${tracce[indiceCanzoneCasuale].title_short}</a><i class="bi bi-dot"></i><a
+                            href="">${tracce[indiceCanzoneCasuale].artist.name}</a></li>
+                    <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                            class="album amico">${tracce[indiceCanzoneCasuale].album.title}</a></li>
+                </ul>
+            </div>
+            <p class="ms-auto">
+                4 ore
+            </p>`
+    }
+
+
+}
+
+
+
+

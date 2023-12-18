@@ -417,16 +417,17 @@ input[type=range]:focus::-moz-range-thumb {
 }
 /* ------ CENTRO FELIPE ------ */
 .centroFelipe {
-  height: 95vh;
+  height: 100vh;
   overflow-y: auto;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
-  height: 95vh;
-  overflow: auto;
+  padding-bottom: 130px;
+  /* --- MODIFICHE LEO ---*/
 }
 .centroFelipe .bannerimg {
   position: relative;
-  height: 300px;
+  height: 370px;
   object-fit: cover;
+  object-position: center 30%;
   filter: brightness(50%);
   margin: 0;
   padding: 0;
@@ -448,6 +449,74 @@ input[type=range]:focus::-moz-range-thumb {
 }
 .centroFelipe .text-lightgray {
   color: #c0c0c0;
+}
+.centroFelipe .fixed-width {
+  width: 210px !important;
+}
+.centroFelipe .truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Assicura che il testo non superi la larghezza massima della colonna */
+}
+.centroFelipe .ascolti, .centroFelipe .durata {
+  color: #c0c0c0;
+  font-size: 0.9em;
+}
+@media (max-width: 1278px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .destraInt {
+    display: none;
+  }
+}
+@media (min-width: 1346px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .infoList {
+    width: 66.66% !important;
+  }
+}
+@media (max-width: 880px) {
+  .centroFelipe {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroFelipe .colAscolti {
+    display: none !important;
+  }
+}
+.centroFelipe .freccette {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  background-color: #131313;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9B9B9B;
+}
+.centroFelipe .freccette:hover {
+  cursor: pointer;
+}
+.centroFelipe ul {
+  padding: 0.2rem 0.5rem 0.3rem;
+  background-color: #242323;
+  list-style-type: none;
+  border-radius: 25px;
+}
+.centroFelipe ul .fotoProfilo img {
+  width: 1.5rem;
+}
+.centroFelipe ul .nomeProfilo {
+  margin-left: 10px;
 }
 
 /*-----CENTRO LOUIS-----*/
@@ -502,7 +571,13 @@ body {
 
 /* --- CENTRO --- */
 .centroLeo {
+<<<<<<< HEAD
   height: 90vh;
+=======
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 130px;
+>>>>>>> 988fafe574652b911a41138a057356d21cce0ae2
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .centroLeo .freccette {
@@ -603,7 +678,7 @@ body {
   border: none;
 }
 .centroLeo .cards .body {
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   background-color: rgb(48, 48, 48);
@@ -685,18 +760,19 @@ body {
 
 /* Stile della scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* Larghezza della scrollbar */
+  width: 4px; /* Larghezza della scrollbar */
 }
 
-/* Stile del pollice (la parte mobile) della scrollbar */
 ::-webkit-scrollbar-thumb {
   background-color: #4CAF50; /* Colore del pollice */
   border-radius: 6px; /* Bordo arrotondato del pollice */
+  height: 5px; /* Altezza del pollice */
 }
 
 /* Stile della traccia (la parte fissa) della scrollbar */
 ::-webkit-scrollbar-track {
   background-color: transparent; /* Colore della traccia */
+  height: 5px; /* Altezza della traccia */
 }
 
 /* Cambia lo stile della scrollbar quando è attiva (quando l'utente la sta trascinando) */

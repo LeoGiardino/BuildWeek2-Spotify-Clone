@@ -4,6 +4,49 @@ const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 /* we need to pass an ID to make this beaty work */
 let artistid = "465";
 
+// Ottieni i parametri di query dalla URL
+const urlParams = new URLSearchParams(window.location.search);
+
+    // Controlla se il parametro 'dato' è presente
+    if (urlParams.has('id')) {
+      // Recupera il valore del parametro 'dato'
+      const num = urlParams.get('id');
+  
+      artistid = num;
+    }
+
+console.log(artistid);
+
+const leftArrow = document.querySelector(".lefty");
+const rightArrow = document.querySelector(".righty");
+
+leftArrow.addEventListener("click", () => {
+    window.history.back();
+})
+
+rightArrow.addEventListener("click", () => {
+    window.history.forward();
+})
+
+const x = document.querySelector(".bi-x-lg");
+const centroFelipe = document.querySelector(".centroFelipe");
+const amici = document.querySelector(".amici");
+
+
+x.addEventListener("click", () => {
+    x.closest(".colonnaDestra").style.display = "none";
+    centroFelipe.classList.add("col-9");
+
+})
+
+amici.addEventListener("click", () => {
+    x.closest(".colonnaDestra").style.display = "block";
+    centroFelipe.classList.remove("col-9");
+})
+
+
+
+
 function artistFetch(artistid) {
 
     fetch(ARTIST_URL + artistid, { method: "GET" }) //Primo fetch
@@ -40,6 +83,8 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
     let artistName = document.getElementById("artistName")
     artistName.textContent = artistData.name;
 
+    console.log(artistData);
+
     let artistBanner = document.getElementById("bannerArtist");
     artistBanner.src = artistData.picture_xl;
 
@@ -67,6 +112,9 @@ function compilareHtmlTracklist(trackData) {
     let rowCorrente = null;
 
     for (let i = 0; i < trackData.length; i++) {
+        if(i == 5){
+            break;
+        }
         const row = document.createElement('div');
         row.classList.add('row', 'mb-3');
 
