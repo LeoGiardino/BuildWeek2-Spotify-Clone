@@ -481,10 +481,6 @@ function mettoAlbum2(data) {
     })
 }
 
-
-
-
-
 function creaAmici(tracce) {
     console.log("dono dentro creaAmici");
     let contenitoreAmici = document.querySelector(".amici");
