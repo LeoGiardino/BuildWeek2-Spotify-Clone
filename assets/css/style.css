@@ -2,6 +2,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 .leftBar {
   height: 90vh;
+  width: 20% !important;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 
@@ -23,7 +24,7 @@
 }
 
 .commenti {
-  height: 59vh;
+  height: 57vh;
 }
 
 .menu a:hover {
@@ -80,7 +81,8 @@
 }
 
 .colonnaDestra {
-  height: 90vh;
+  height: 88vh;
+  width: 10%;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
   color: #636363;
 }
@@ -563,7 +565,8 @@ body {
 /* --- CENTRO --- */
 .centroLeo {
   border-radius: 5px 5px 7px 7px/7px 7px 5px 5px;
-  height: 90vh;
+  width: 62% !important;
+  height: 88vh;
   overflow-y: auto;
   padding-bottom: 100px;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
@@ -676,18 +679,18 @@ body {
 .centroLeo .para {
   font-size: 0.7em;
 }
-.centroLeo .longCard .card {
+.centroLeo .longCard .card, .centroLeo .rigaNascosta .card {
   background-color: rgb(29, 29, 29);
   color: snow;
 }
-.centroLeo .longCard .card img {
+.centroLeo .longCard .card img, .centroLeo .rigaNascosta .card img {
   padding: 10px;
   border-radius: 14px;
 }
-.centroLeo .longCard .card .card-body p:nth-child(1) {
+.centroLeo .longCard .card .card-body p:nth-child(1), .centroLeo .rigaNascosta .card .card-body p:nth-child(1) {
   font-weight: bold;
 }
-.centroLeo .longCard .card .card-body p:nth-child(2) {
+.centroLeo .longCard .card .card-body p:nth-child(2), .centroLeo .rigaNascosta .card .card-body p:nth-child(2) {
   font-size: 0.8em;
   color: #9B9B9B;
 }
@@ -745,10 +748,10 @@ body {
   cursor: pointer;
   background-color: #282828;
 }
-.centroLeo .mostraAltro p, .centroLeo .mostraAltro h4 {
+.centroLeo .mostraAltro p, .centroLeo .mostraAltro h4, .centroLeo .mostraMeno p, .centroLeo .mostraMeno h4 {
   cursor: pointer;
 }
-.centroLeo .mostraAltro p:hover, .centroLeo .mostraAltro h4:hover {
+.centroLeo .mostraAltro p:hover, .centroLeo .mostraAltro h4:hover, .centroLeo .mostraMeno p:hover, .centroLeo .mostraMeno h4:hover {
   text-decoration: underline;
 }
 
