@@ -1,11 +1,33 @@
 $customGrey: #9B9B9B;
+
+.leftBar {
+    height: 90vh;
+    background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+}
+
+.innerLeft {
+    background-color: black;
+    height: 100vh;
+}
+
+.menu{
+    background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
+   
+}
+
+.riga {
+    background-color: black;
+}
+
 .leftBar a,.menu a p,hr{
     color: $customGrey;
+
     
 };
 .commenti{
-    height: 50vh; //ALTEZZA PER PERMETTERE SCROLL
-   border:#9B9B9B;
+    height: 59vh; //ALTEZZA PER PERMETTERE SCROLL
+
+
 }
 .menu a:hover{
     color: white;
@@ -23,6 +45,9 @@ $customGrey: #9B9B9B;
     li a {
         line-height: 1.2;
         font-size: 0.7em;
+    }
+    li > a > i {
+        font-size: 1.3em;
     }
 }
 
@@ -49,4 +74,8 @@ $customGrey: #9B9B9B;
 
 .SizeBtn{
     font-size: 1.3rem;
+}
+
+.commenti2 {
+    background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
