@@ -4,133 +4,135 @@ let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 let idAlbum = "75621062";
 let idArtist = "412";
 let indiceRigaAlbum = 1;
+let indiceRigaNascosta =1;
 let indiceArtisti = 0;
+
 let artistiMessi = [];
 let primaChiamata = [];
 let arrayParole = [
     'Melody',
-'Harmony',
-'Echoes',
-'Wanderer',
-'Enchant',
-'Serenade',
-'Starlight',
-'Dreamer',
-'Embrace',
-'Ethereal',
-'Celestial',
-'Gentle',
-'Aurora',
-'Calm',
-'Tranquil',
-'Lullaby',
-'Breeze',
-'Infinite',
-'Harbor',
-'Tranquility',
-'Reflection',
-'Serene',
-'Velvet',
-'Heavenly',
-'Grace',
-'Cascade',
-'Cherish',
-'Luminous',
-'Tender',
-'Harbour',
-'Glisten',
-'Cradle',
-'Whimsical',
-'Calmness',
-'Starlight',
-'Sylvan',
-'Sublime',
-'Luminescent',
-'Velvet',
-'Halcyon',
-'Pristine',
-'Enrapture',
-'Cerulean',
-'Silhouette',
-'Mystic',
-'Abyss',
-'Tempest',
-'Majesty',
-'Legacy',
-'Oracle',
-'Radiant',
-'Epic',
-'Vivid',
-'Lively',
-'Celebrate',
-'Spark',
-'Rhythm',
-'Vibrant',
-'Energetic',
-'Pulse',
-'Sway',
-'Uplift',
-'Radiate',
-'Shimmer',
-'Spiral',
-'Pinnacle',
-'Venture',
-'Jubilant',
-'Expanse',
-'Verve',
-'Glow',
-'Vortex',
-'Stellar',
-'Reverie',
-'Harbor',
-'Crescent',
-'Serenity',
-'Joyful',
-'Spirited',
-'Vivid',
-'Radiant',
-'Blissful',
-'Ecstasy',
-'Lively',
-'Upbeat',
-'Radiate',
-'Vibrant',
-'Sparkle',
-'Ecliptic',
-'Solar',
-'Mirage',
-'Sunrise',
-'Pinnacle',
-'Celebrate',
-'Sway',
-'Spark',
-'Vivid',
-'Uplift',
-'Jubilant',
-'Expanse',
-'Verve',
-'Glow',
-'Vortex',
-'Stellar',
-'Reverie',
-'Harbor',
-'Crescent',
-'Serenity',
-'Joyful',
-'Spirited',
-'Vivid',
-'Radiant',
-'Blissful',
-'Ecstasy',
-'Lively',
-'Upbeat',
-'Radiate',
-'Vibrant',
-'Sparkle',
-'Ecliptic',
-'Solar',
-'Mirage',
-'Sunrise'
+    'Harmony',
+    'Echoes',
+    'Wanderer',
+    'Enchant',
+    'Serenade',
+    'Starlight',
+    'Dreamer',
+    'Embrace',
+    'Ethereal',
+    'Celestial',
+    'Gentle',
+    'Aurora',
+    'Calm',
+    'Tranquil',
+    'Lullaby',
+    'Breeze',
+    'Infinite',
+    'Harbor',
+    'Tranquility',
+    'Reflection',
+    'Serene',
+    'Velvet',
+    'Heavenly',
+    'Grace',
+    'Cascade',
+    'Cherish',
+    'Luminous',
+    'Tender',
+    'Harbour',
+    'Glisten',
+    'Cradle',
+    'Whimsical',
+    'Calmness',
+    'Starlight',
+    'Sylvan',
+    'Sublime',
+    'Luminescent',
+    'Velvet',
+    'Halcyon',
+    'Pristine',
+    'Enrapture',
+    'Cerulean',
+    'Silhouette',
+    'Mystic',
+    'Abyss',
+    'Tempest',
+    'Majesty',
+    'Legacy',
+    'Oracle',
+    'Radiant',
+    'Epic',
+    'Vivid',
+    'Lively',
+    'Celebrate',
+    'Spark',
+    'Rhythm',
+    'Vibrant',
+    'Energetic',
+    'Pulse',
+    'Sway',
+    'Uplift',
+    'Radiate',
+    'Shimmer',
+    'Spiral',
+    'Pinnacle',
+    'Venture',
+    'Jubilant',
+    'Expanse',
+    'Verve',
+    'Glow',
+    'Vortex',
+    'Stellar',
+    'Reverie',
+    'Harbor',
+    'Crescent',
+    'Serenity',
+    'Joyful',
+    'Spirited',
+    'Vivid',
+    'Radiant',
+    'Blissful',
+    'Ecstasy',
+    'Lively',
+    'Upbeat',
+    'Radiate',
+    'Vibrant',
+    'Sparkle',
+    'Ecliptic',
+    'Solar',
+    'Mirage',
+    'Sunrise',
+    'Pinnacle',
+    'Celebrate',
+    'Sway',
+    'Spark',
+    'Vivid',
+    'Uplift',
+    'Jubilant',
+    'Expanse',
+    'Verve',
+    'Glow',
+    'Vortex',
+    'Stellar',
+    'Reverie',
+    'Harbor',
+    'Crescent',
+    'Serenity',
+    'Joyful',
+    'Spirited',
+    'Vivid',
+    'Radiant',
+    'Blissful',
+    'Ecstasy',
+    'Lively',
+    'Upbeat',
+    'Radiate',
+    'Vibrant',
+    'Sparkle',
+    'Ecliptic',
+    'Solar',
+    'Mirage',
+    'Sunrise'
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -143,8 +145,20 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.forward();
     })
 
+
+    //----------------------Gregorio che aggiunge cose ----------------------------------------
+    
+    let mostraAltro = document.querySelectorAll(".mostraAltro");
+    for(let i =0;i<mostraAltro.length;i++){
+        mostraAltro[i].addEventListener("click",()=>{
+            mostraRigaNascosta(i);
+        })
+    }
+
 })
 
+
+//----------------------------------- Prima chiamata --------------------------------------------------------------------
 let label = [
     "Syco Music",
     "Atlantic Records",
@@ -214,17 +228,12 @@ function prendoArtisti() {
                 giàMesso = true;
             }
         }
-        try {
-            if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
-                artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
-                mettoArtisti(primaChiamata.splice(posizioneCasuale, 1)[0]);
-                indiceArtisti++;
-            }
-
-        } catch (error) {
-
+        if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
+            artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
+            mettoArtistiNascosti(primaChiamata[posizioneCasuale]);
+            mettoArtisti(primaChiamata.splice(posizioneCasuale, 1)[0]);
+            indiceArtisti++;
         }
-
         giàMesso = false;
     }
 }
@@ -251,10 +260,35 @@ function mettoArtisti(data) {
     })
 }
 
+function mettoArtistiNascosti(data) {
+    console.log("Sono dentro mettoArtistiNascosti");
+    const contenitore = document.querySelectorAll(`.carteNascoste`)[0]
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.style.width = "22%";
+    div.innerHTML = `
+            <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
+            <div class="card-body pb-1">
+                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-text">Artist</p>
+                <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>`
+    contenitore.appendChild(div);
+   const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length-1].addEventListener("click", () => {
+        console.log("cisao");
+        onArtist(data.artist.id);
+    }) 
+}
+
 function onArtist(tracks) {
     window.location.href = `artist-page-copy.html?id=${encodeURIComponent(tracks)}`;
 }
 
+
+//----------------------------------------- Seconda Chiamata -------------------------------------------
 let parola2 = arrayParole[Math.floor(Math.random() * arrayParole.length)];
 let indiceAlbum = 0;
 let albumMessi = [];
@@ -299,11 +333,12 @@ function prendoAlbum1() {
     }
     if (indiceAlbum == 4 && !giàMesso) {
         posizioneCasuale = Math.floor(Math.random() * tracceAlbum1.length);
-    
-            if (tracceAlbum1[posizioneCasuale].artist && tracceAlbum1[posizioneCasuale].album) {
-                mettoCanzonciona(tracceAlbum1[posizioneCasuale]);
-                giàMesso = true;}
-            
+
+        if (tracceAlbum1[posizioneCasuale].artist && tracceAlbum1[posizioneCasuale].album) {
+            mettoCanzonciona(tracceAlbum1[posizioneCasuale]);
+            giàMesso = true;
+        }
+
 
     }
 }
@@ -327,10 +362,10 @@ function mettoAlbum1(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard2 > .card");
     carte[indiceAlbum].children[0].addEventListener("click", () => {
-       
+
     })
     carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
-        
+
     })
 }
 
@@ -530,5 +565,9 @@ function creaAmici(tracce) {
 }
 
 
-
+function mostraRigaNascosta(i) {
+    let righeNascoste = document.querySelectorAll(".rigaNascosta")
+    document.querySelector(".finestrona").classList.add("d-none")
+    righeNascoste[i].classList.remove('d-none');
+}
 
