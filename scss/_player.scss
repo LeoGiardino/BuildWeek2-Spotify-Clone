@@ -94,7 +94,7 @@ $customIconSize: 1.3rem;
   }
   .round-time-bar div {
     height: 5px;
-    width: 70%;
+    width: 105%;
     animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
       linear;
     transform-origin: right center;
