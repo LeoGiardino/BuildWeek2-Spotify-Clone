@@ -607,13 +607,10 @@ body {
 
 /* --- CENTRO --- */
 .centroLeo {
-<<<<<<< HEAD
   height: 90vh;
-=======
   height: 100vh;
   overflow-y: auto;
   padding-bottom: 130px;
->>>>>>> 988fafe574652b911a41138a057356d21cce0ae2
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .centroLeo .freccette {

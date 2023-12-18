@@ -62,13 +62,18 @@ function artistFetch(artistid) {
             compilareHtmlArtist(artistData);
             //inserire primo contenuto
             let tracklistUrl = artistData.tracklist; //secondo URL per Fetch
+            console.log(artistData.name);
             return fetch(tracklistUrl)
+            
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
             console.log("Tracklist: ", trackData);
             compilareHtmlTracklist(trackData.data); //si deve entrare nel oggeto con .data
             //inserire secondo contenuto
+        }).then(response3 => response3.json())
+            .then(dato => {
+            console.log(dato.data);
         })
         .catch(error => console.log("Error " + error))
 }
@@ -279,3 +284,30 @@ compilareHtmlTracklist(trackData);
 
 
 compilareHtmlTracklist();
+
+
+function mettoAlbum1(data) {
+    const contenitore = document.querySelector(".longCard2");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.style.width = "22%";
+    div.innerHTML = `
+                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <button class="playHoverLongCard position-absolute">
+                <i class="bi bi-play-fill"></i>
+            </button>       
+                <div class="card-body">
+                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                  
+                </div>        
+                `
+    contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".longCard2 > .card");
+    carte[indiceAlbum].children[0].addEventListener("click", () => {
+       
+    })
+    carte[indiceAlbum].children[1].children[0].addEventListener("click", () => {
+        
+    })
+}
