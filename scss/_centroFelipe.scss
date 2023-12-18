@@ -35,8 +35,8 @@
     
 
    .brandimg{
-        width: 45px;
-        height: 45px;
+        width: 75px;
+        height: 75px;
    }
 
    .list-group-item {
@@ -51,10 +51,6 @@
 
 
     /* --- MODIFICHE LEO ---*/
-
-    .fixed-width{
-      width: 210px!important;
-  }
 
     .truncate-text {
         overflow: hidden;
@@ -126,4 +122,53 @@
             margin-left: 10px;
         }
     }
+
+    .piccoloFont {
+      font-size: 0.8em;
+      color: #c0c0c0;
+    }
+
+    .indice {
+      color: #c0c0c0;
+    }
+
+    .cuore {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.3rem;
+      height: 1.3rem;
+      right: 0rem;
+      bottom: 0.3rem;
+      border: 1px solid black;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: $customGreen;
+      position: absolute;
+     
+      i {
+          font-size: 0.8rem;
+      }
+  }
+
+
+  .btnDisco{
+    button{
+      border: none;
+      border-radius: 20px;
+      margin-right: 5px;
+      font-size: 0.8em;
+      padding: 5px 10px;
+    }
+
+    button:nth-child(2){
+      background-color: rgb(29, 29, 29);
+      color: white;
+    }
+
+    button:nth-child(3){
+      background-color: rgb(29, 29, 29);
+      color: white;
+    }
+  }
 }
