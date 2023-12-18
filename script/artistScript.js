@@ -301,7 +301,7 @@ function discografia(data) {
                 <i class="bi bi-play-fill"></i>
             </button>       
                 <div class="card-body">
-                    <p class="card-title "><a href="#" class="text-decoration-none text-white">${data[i].album.title}</a></p>
+                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data[i].album.title}</a></p>
                     <p class="card-text"><a href="#" class="text-decoration-none text-white">${data[i].artist.name}</a></p>
                   
                 </div>        

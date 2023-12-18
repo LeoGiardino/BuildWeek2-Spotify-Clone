@@ -28,7 +28,7 @@
 
     ul {
         list-style: none;
-        padding-left: 0.8rem;
+        padding-left: 0;
         margin-bottom: 0.5rem;
         text-align: left;
         li{
@@ -49,3 +49,13 @@
 
     }
 }
+
+@media (max-width: 1151px) {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    .colonnaDestra{
+        width: 173.16px!important;
+        
+    }
+  
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }

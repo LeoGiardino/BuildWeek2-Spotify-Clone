@@ -543,13 +543,13 @@ function creaAmici(tracce) {
         contenitoreAmici.innerHTML += ` <div class="d-flex amico">
             <a href="" class="imgAmico">
                 <img src="https://cdn-static.dagospia.com/img/patch/09-2017/accoppiamento-canguri-936209.jpg" alt=""
-                    class="rounded-circle" style="width:2rem">
+                    class="rounded-circle d-none d-lg-block" style="width:2.4em ">
             </a>
             <div class="container-fluid pe-0">
                 <ul>
                     <li class="d-flex ">
                     <a href="#" class="nomeAmico">${amici.splice(Math.floor(Math.random() * amici.length), 1)[0]}</a>
-                    <span class="ps-2 ms-auto d-none d-lg-block">
+                    <span class="ms-auto d-none d-lg-block truncate-text">
                 4 ore
             </span></li>
                     <li><a href="#" class="tracciaAmico">${tracce[indiceCanzoneCasuale].title_short}</a><i class="bi bi-dot"></i><a
