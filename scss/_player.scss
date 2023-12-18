@@ -3,84 +3,83 @@ $customGreen: #1ED760;
 $customGreenLight: lighten(#1ED760, 10%);
 $playerBg: #181818;
 $customGrey: #9B9B9B;
+$customIconSize: 1.3rem;
 
+//Computer 
 .player {
     background-color: $playerBg;
     position: sticky;
     bottom: 0;
     z-index: 999;
+    height: 8%;
+    box-sizing: content-box;
 }
-.iconsSx {
-    .bi {
-        font-size: 1.8rem;
-        color: $customGrey;
-        &:hover {
-            color: $customGreen;
-        }
-    }
-}
+
 .playerImg {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
+    padding-bottom: 0.5rem;
 }
 
 //SX - PlayerNowText
 .playerNowText {
-    line-height: 0.5;
+    line-height: 0.8;
+    .playerNowSong{
+      padding-bottom: 0.7rem;
+    }
     .playerNowArtist {
         color: $customGrey;
+        padding-bottom: 0.8rem;
+        &:hover {
+          color: $customGreen;
+        }
     }
 }
-//da vedere
-.playerNowText>a:hover{
-    color: $customGreen;
-}
 
-.playerNowSong:hover, .playerNowArtist:hover {
-    color: $customGreen;
+//Div cuoricino
+.cuoricino {
+  position: relative;
 }
-
 .bi-heart {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
   color: $customGrey;
-}
-.bi-heart:hover {
+  &:hover {
     color: $customGreen;
+  }
 }
 
 //CT - PlayerIcons
 .playerIcons a {
-    margin: 10px;
+    margin: 8px;
 }
 
 .playerIcons {
-
     .bi {
-        font-size: 1.8rem;
+        font-size: $customIconSize;
         color: $customGrey;
         &:hover {
             color: $customGreen;
         }
     }
-
-    .bi-shuffle,
-        .bi-repeat {
+    .bi-shuffle, .bi-repeat {
         color: $customGreen;
     }
 }
 
 //Player che scorre
 .round-time-bar {
-    margin: 1.2rem auto;
+    margin: 0.5rem auto;
     overflow: hidden;
-    height: 10px;
-    width: 500px;
+    height: 5px;
+    width: 350px;
     background: linear-gradient(to bottom, $customGreen, $customGreenLight);
-    border-radius: 10px;
+    border-radius: 5px;
   }
   .round-time-bar div {
-    height: 10px;
-    width: 500px;
-
+    height: 5px;
+    width: 350px;
     animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
       linear;
     transform-origin: right center;
@@ -103,11 +102,20 @@ to {
 }
 
 
-//SX - Icone Sinistra
-.iconsSx a {
+//DX - Icone Destra
+.iconsDx {
+  padding-bottom: 0.1rem;
+  a {
     margin: 3px;
+  }
+  .bi {
+      font-size: $customIconSize;
+      color: $customGrey;
+      &:hover {
+          color: $customGreen;
+      }
+  }
 }
-
 
 //INPUT VOLUME PERSONALIZZATO
 /** Baseline, reset styles **/
@@ -116,7 +124,8 @@ input[type="range"] {
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 5rem;
+    width: 3rem;
+    min-width: 5rem;
   }
 
   /* Removes default focus */
@@ -129,7 +138,7 @@ input[type="range"] {
   input[type="range"]::-webkit-slider-runnable-track {
     background-color: #9b9b9b;
     border-radius: 0.5rem;
-    height: 0.6rem;
+    height: 0.3rem;
   }
 
   /* slider thumb */
@@ -139,12 +148,12 @@ input[type="range"] {
     margin-top: -3.2px; /* Centers thumb on the track */
     background-color: #1ed760;
     border-radius: 0.5rem;
-    height: 1rem;
-    width: 1rem;
+    height: 0.8rem;
+    width: 0.8rem;
   }
 
   input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid #1ed760;
+    outline: 1px solid #1ed760;
     outline-offset: 0.125rem;
   }
 
@@ -161,11 +170,203 @@ input[type="range"] {
     background-color: #1ed760;
     border: none; /*Removes extra border that FF applies*/
     border-radius: 0.5rem;
-    height: 1rem;
-    width: 1rem;
+    height: 0.8rem;
+    width: 0.8rem;
   }
 
   input[type="range"]:focus::-moz-range-thumb{
-    outline: 3px solid #1ed760;
+    outline: 0.5px solid #1ed760;
     outline-offset: 0.125rem;
   }
+
+
+  // ------------------------------------------ //
+
+//Mobile
+@media (max-width: 575.98px) {
+  .player {
+    background-color: $playerBg;
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    height: 8%;
+    box-sizing: content-box;
+}
+
+.playerImg {
+    width: 4rem;
+    height: 4rem;
+    padding-bottom: 0.5rem;
+}
+
+//SX - PlayerNowText
+.playerNowText {
+  font-size: 0.8rem;
+    line-height: 0.8;
+    .playerNowSong{
+      padding-bottom: 0.7rem;
+    }
+    .playerNowArtist {
+        color: $customGrey;
+        padding-bottom: 0.8rem;
+        &:hover {
+          color: $customGreen;
+        }
+    }
+}
+
+//Div cuoricino
+.cuoricino {
+  position: relative;
+}
+.bi-heart {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  color: $customGrey;
+  &:hover {
+    color: $customGreen;
+  }
+}
+
+//CT - PlayerIcons
+.playerIcons a {
+    margin: 8px;
+}
+
+.playerIcons {
+  position: absolute;
+  background-color: yellow;
+  top: 0;
+    .bi {
+        font-size: $customIconSize;
+        color: $customGrey;
+        &:hover {
+            color: $customGreen;
+        }
+    }
+    .bi-shuffle, .bi-repeat {
+        color: $customGreen;
+    }
+}
+
+//Player che scorre
+.round-time-bar {
+    margin: 0.5rem auto;
+    overflow: hidden;
+    height: 5px;
+    width: 350px;
+    background: linear-gradient(to bottom, $customGreen, $customGreenLight);
+    border-radius: 5px;
+  }
+  .round-time-bar div {
+    height: 5px;
+    width: 350px;
+    animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
+      linear;
+    transform-origin: right center;
+    background-color: $customGrey;
+  }
+
+  .round-time-bar[data-style="smooth"] div {
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+  }
+
+.round-time-bar[data-style="fixed"] div {
+width: calc(var(--duration) * 5%);
+}
+
+@keyframes roundtime {
+to {
+    /* More performant than width */
+    transform: scaleX(0);
+}
+}
+
+
+//DX - Icone Destra
+.iconsDx {
+
+  padding-bottom: 0.1rem;
+  a {
+    margin: 3px;
+  }
+  .bi {
+      font-size: $customIconSize;
+      color: $customGrey;
+      &:hover {
+          color: $customGreen;
+      }
+  }
+  display: none;
+}
+
+//INPUT VOLUME PERSONALIZZATO
+/** Baseline, reset styles **/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 3rem;
+    min-width: 5rem;
+  }
+
+  /* Removes default focus */
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  /** Chrome, Safari, Opera and Edge Chromium styles **/
+  /* slider track */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #9b9b9b;
+    border-radius: 0.5rem;
+    height: 0.3rem;
+  }
+
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -3.2px; /* Centers thumb on the track */
+    background-color: #1ed760;
+    border-radius: 0.5rem;
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 1px solid #1ed760;
+    outline-offset: 0.125rem;
+  }
+
+  /** Firefox styles **/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    background-color: #9b9b9b;
+    border-radius: 0.5rem;
+    height: 0.6rem;
+  }
+
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: #1ed760;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0.5rem;
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  input[type="range"]:focus::-moz-range-thumb{
+    outline: 0.5px solid #1ed760;
+    outline-offset: 0.125rem;
+  }
+
+
+}
+  
+
+// Small devices (landscape phones, less than 768px)
+// @media (max-width: 767.98px) { ... }
