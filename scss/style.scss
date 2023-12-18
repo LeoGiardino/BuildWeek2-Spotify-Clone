@@ -245,6 +245,15 @@ body{
         cursor: pointer;
         background-color: #282828;
     }
+
+    .mostraAltro{
+        p,h4{
+            cursor: pointer;
+        }
+        p:hover, h4:hover{
+            text-decoration: underline;
+        }
+    }
 }
 
 
