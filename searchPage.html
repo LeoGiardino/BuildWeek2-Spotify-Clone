@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Spotify - Search page </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  
+</head>
+
+<body>
+    <div class="cont">
+        <div class="row g-0">
+
+            <!-- LEFT COLUMN-->
+
+            <div class="col-3 bg-black">
+                <div class="p-3 leftBar">
+                    <div class="row menu h6 ">
+                        <ul class="firstUl list-unstyled d-flex flex-column ">
+                            <li><a href="#" class="text-decoration-none btn  "><i
+                                        class="bi bi-three-dots me-2 SizeBtn"></i></a></li>
+                            <li ><a href="#" class="text-decoration-none btn"><i
+                                        class="bi bi-house-door-fill me-2 SizeBtn"></i> Home</a></li>
+                            <li ><a href="#" class="text-decoration-none btn"><i class="bi bi-search me-2 SizeBtn "></i>
+                                    Cerca</a></li>
+                            <li ><a href="#" class="text-decoration-none btn"><i
+                                        class="bi bi-music-note-list me-2 SizeBtn"></i> La tua libreria</a></li>
+                        </ul>
+                        <ul class="secondUl list-unstyled d-flex flex-column ">
+                            <li ><a href="#" class="text-decoration-none btn"><i
+                                        class="bi bi-plus-square-fill me-2 SizeBtn"></i> Crea playlist</a></li>
+                            <li ><a href="#" class="text-decoration-none btn "><i
+                                        class="bi bi-suit-heart-fill me-2 btnHeart"></i> Brani che ti piacciono</a></li>
+                            <li ><a href="#" class="text-decoration-none btn "><i
+                                        class="bi bi-bookmark-fill me-2 btnBookmark"></i> I tuoi episodi</a></li>
+                        </ul>
+
+                    </div>
+                    <hr>
+                    <div class="row bg-black commenti pt-1 overflow-auto" style="overflow-y: hidden;"> <!-- -->
+                     
+                        <a href="#" class="text-decoration-none  ">
+                            <p> umberto 6 il top 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>gregorio ti amooooo 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>leo ha problemi di rabbia 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>anna pure ma lo nasconde 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>il nostro spotify è il + fiko 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+                        <a href="#" class="text-decoration-none ">
+                            <p>Questa playlist è la mia compagnia perfetta durante le notti d'estate. 🌙🎶</p>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER COLUMN SEARCH PAGE -->
+
+
+            <div class="col-7 searchPage overflow-auto"> 
+                <div class="p-3 container">
+                    <div class="d-flex mb-3 ">
+                        <div class="freccette me-3 lefty">
+                            <i class="bi bi-chevron-left rounded-circle"></i>
+                        </div>
+                        <div class="freccette righty">
+                            <i class="bi bi-chevron-right rounded-circle"></i>
+                        </div>
+                        <div class="input-group mb-3 w-50 ms-3 ">
+                            <button class="btn btn-outline-secondary rounded-start-pill searchInp border border-white btnInput" type="button" id="button-addon1"><i class="bi bi-search"></i></button>
+                            <input type="text" class="form-control rounded-end-pill searchInp text-white" placeholder="Cosa vuoi ascoltare?" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                          </div>
+                        <div class="ms-auto">
+                            <ul class="d-flex me-auto mb-2 mb-lg-0">
+                                <li class="nav-item fotoProfilo">
+                                    <img class="rounded-circle" src="assets/imgs/main/image-17.jpg" alt="">
+                                </li>
+                                <li class="nav-item dropdown-center nomeProfilo">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Leo Giardino
+                                    </a>
+                                    <ul class="dropdown-menu mt-2" >
+                                        <li><a class="dropdown-item text-white dropMenu" href="#">Il mio profilo</a></li>
+                                        <li><a class="dropdown-item text-white dropMenu" href="#">Impostazioni</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider text-white">
+                                        </li>
+                                        <li><a class="dropdown-item text-white dropMenu" href="#">Log Out</a></li>
+                                    </ul> 
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+<div class="container filtriRicerca">
+
+   <span class="badge rounded-pill text-bg-dark p-2" id="tutto">Tutto</span>
+   <span class="badge rounded-pill text-bg-dark p-2" id="brani">Brani</span>
+   <span class="badge rounded-pill text-bg-dark p-2" id="artisti">Artisti</span>
+    <span class="badge rounded-pill text-bg-dark p-2" id="playlist">Playlist</span>
+  <span class="badge rounded-pill text-bg-dark p-2" id="profili">Profili</span>
+     <span class="badge rounded-pill text-bg-dark p-2" id="podcast">Podcast e show</span>
+
+</div>
+                <h3>Sfoglia tutto</h3>
+
+                    <div class=" container row ">
+
+                        <div class="col-3 card mb-3 border border-0  divCard  overflow-hidden ">
+                            <div class="card-body arancio  rounded-1 squareCard overflow-hidden">
+                              <h5 class="card-title ">Podcast</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-2.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0  divCard  overflow-hidden ">
+                            <div class="card-body blu  rounded-1 squareCard overflow-hidden">
+                              <h5 class="card-title ">Create per te</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-42.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0  divCard  overflow-hidden ">
+                            <div class="card-body fucsia  rounded-1 squareCard overflow-hidden ">
+                              <h5 class="card-title ">Nuove uscite</h5>
+                             <img class= "RotateImg rounded-1  ml-auto"src="assets/imgs/search/image-26.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body verde  rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title ">Pop</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-47.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body arancio1  rounded-1 squareCard  overflow-hidden  ">
+                              <h5 class="card-title ">Hip hop</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-49.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body arancio  rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title ">Dance/ Elettronica</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-3.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body fucsia1 rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title ">Latina</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-5.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body viola  rounded-1 squareCard  overflow-hidden  ">
+                              <h5 class="card-title">Classifiche</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-14.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body verde  rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title">Il 2023 in musica</h5>
+                             <img class= "RotateImg rounded-1 ml-auto"src="assets/imgs/search/image-35.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body blu  rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title">Il 2023 in podcast</h5>
+                             <img class= "RotateImg rounded-1  col-12 ml-auto"src="assets/imgs/search/image-15.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden divCard">
+                            <div class="card-body arancio1  rounded-1 squareCard  overflow-hidden  ">
+                              <h5 class="card-title">Merch</h5>
+                             <img class= "RotateImg rounded-1 ml-auto "src="assets/imgs/search/image-50.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                          <div class="col-3 card mb-3 border border-0 overflow-hidden d-flex divCard ">
+                            <div class="card-body fucsia  rounded-1 squareCard  overflow-hidden ">
+                              <h5 class="card-title ">Nuove uscite</h5>
+                             <img class= "RotateImg rounded-1 ml-auto "src="assets/imgs/search/image-39.jpg" alt="img sezione">
+                            </div>
+                          </div>
+                        
+
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT COLUMN-->
+
+
+            <div class="colonnaDestra col-2 px-2">
+                <div class="attività d-flex justify-content-around w-100 mt-3 px-2 mb-5">
+                    <p class="h6 me-auto">Attività amici</p>
+                    <div>
+                        <a href="#"><i class="bi bi-person-plus"></i></a>
+                        <a href="#"><i class="bi bi-x-lg"></i></a>
+                    </div>
+
+
+                </div>
+
+                <div class="container amici p-0 pe-2">
+
+                   <!--  <div class="d-flex amico">
+                        <a href="" class="imgAmico">
+                            <img src="https://i.pinimg.com/736x/7a/e2/79/7ae27988fa9e96c7fd7b4c4e09864d80.jpg" alt=""
+                                class="rounded-circle" style="width:2rem">
+                        </a>
+                        <div>
+                            <ul>
+                                <li><a href="" class="nomeAmico">ShiroKen</a></li>
+                                <li><a href="" class="tracciaAmico">M boccn n'ata vot</a><i class="bi bi-dot"></i><a
+                                        href="">Prossò</a></li>
+                                <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                        class="album amico">KenShiro in Napoletano</a></li>
+                            </ul>
+
+                        </div>
+                        <p class="ms-auto">
+                            4 ore
+                        </p>
+
+
+
+                    </div>
+
+                    <div class="d-flex amico">
+                        <a href="" class="imgAmico">
+                            <img src="https://i.pinimg.com/736x/7a/e2/79/7ae27988fa9e96c7fd7b4c4e09864d80.jpg" alt=""
+                                class="rounded-circle" style="width:2rem">
+                        </a>
+                        <div>
+                            <ul>
+                                <li><a href="" class="nomeAmico">Mike Bongiorno</a></li>
+                                <li><a href="" class="tracciaAmico">Gelato al cioccolato</a><i class="bi bi-dot"></i><a
+                                        href="">Pupo</a></li>
+                                <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                        class="album amico">L'album?</a></li>
+                            </ul>
+                        </div>
+                        <p class="ms-auto">
+                            4 ore
+                        </p>
+
+                    </div>
+
+                    <div class="d-flex amico">
+                        <a href="" class="imgAmico">
+                            <img src="https://i.pinimg.com/736x/7a/e2/79/7ae27988fa9e96c7fd7b4c4e09864d80.jpg" alt=""
+                                class="rounded-circle" style="width:2rem">
+                        </a>
+                        <div>
+                            <ul>
+                                <li><a href="" class="nomeAmico">Mike Bongiorno</a></li>
+                                <li><a href="" class="tracciaAmico">Gelato al cioccolato</a><i class="bi bi-dot"></i><a
+                                        href="">Pupo</a></li>
+                                <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                        class="album amico">L'album?</a></li>
+                            </ul>
+                        </div>
+                        <p class="ms-auto">
+                            4 ore
+                        </p>
+                    </div>
+
+                    <div class="d-flex amico">
+                        <a href="" class="imgAmico">
+                            <img src="https://i.pinimg.com/736x/7a/e2/79/7ae27988fa9e96c7fd7b4c4e09864d80.jpg" alt=""
+                                class="rounded-circle" style="width:2rem">
+                        </a>
+                        <div>
+                            <ul>
+                                <li><a href="" class="nomeAmico">Mike Bongiorno</a></li>
+                                <li><a href="" class="tracciaAmico">Gelato al cioccolato</a><i class="bi bi-dot"></i><a
+                                        href="">Pupo</a></li>
+                                <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                        class="album amico">L'album?</a></li>
+                            </ul>
+                        </div>
+                        <p class="ms-auto">
+                            4 ore
+                        </p>
+                    </div>
+
+                    <div class="d-flex amico">
+                        <a href="" class="imgAmico">
+                            <img src="https://i.pinimg.com/736x/7a/e2/79/7ae27988fa9e96c7fd7b4c4e09864d80.jpg" alt=""
+                                class="rounded-circle" style="width:2rem">
+                        </a>
+                        <div>
+                            <ul>
+                                <li><a href="" class="nomeAmico">Mike Bongiorno</a></li>
+                                <li><a href="" class="tracciaAmico">Gelato al cioccolato</a><i class="bi bi-dot"></i><a
+                                        href="">Pupo</a></li>
+                                <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                        class="album amico">L'album?</a></li>
+                            </ul>
+                        </div>
+                        <p class="ms-auto">
+                            4 ore
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- PLAYER -->
+
+
+    <!-- PLAYER -->
+
+    <div class="player d-flex py-2 px-2">
+        <div class="container-fluid">
+            <div class="playerRow row">
+                <!-- COL SX, img, nome Artista e nome Canzone in riprod -->
+                <div class="col-lg-3 d-flex">
+                    <div class="playerImg d-flex align-content-center justify-content-center">
+                        <img class="playerImg"
+                            src="https://m.media-amazon.com/images/I/71S1upa9iCL._UF1000,1000_QL80_.jpg" alt="">
+                    </div>
+                    <div class="playerNowText ms-3 text-white d-flex flex-column justify-content-center">
+                        <a class="playerNowSong text-decoration-none text-white fw-bold" href="#" >Another Brick In The Wall </a>
+                        <a class="playerNowArtist text-decoration-none" href="#">Pink Floyd</a>
+                    </div>
+                        <a class="d-flex align-items-center cuoricino" href="">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                </div>
+
+                <!--  COL CENTER, comandi e progress bar -->
+                <div class="col-lg-6 text-center">
+                    <div class="playerIcons mt-1">
+                        <a href="#"><i class="bi bi-shuffle"></i></a>
+                        <a href="#"><i class="bi bi-skip-backward-fill"></i></a>
+                        <a href="#" id="playPause"><i class="bi bi-play-circle-fill"></i></a>
+                        <a href="#"><i class="bi bi-skip-forward-fill"></i></a>
+                        <a href="#"><i class="bi bi-repeat"></i></a>
+                    </div>
+                    <div class="round-time-bar" style="--duration: 100; z-index: 2000;" data-style="smooth">
+                        <div></div>
+                    </div>
+                </div>
+                <!--  COL DX, iconcine varie e volume -->
+                <div class="iconsDx col-lg-3 d-flex justify-content-end align-items-center pe-4">
+                    <a href=""><i class="bi bi-mic"></i></a>
+                    <a href=""><i class="bi bi-view-list"></i></a>
+                    <a href=""><i class="bi bi-music-player"></i></a>
+                    <a href="#" id="muteButton"><i class="bi bi-volume-up-fill"></i></a>
+                    <input type="range"  class=" volume form-range w-25 me-2" id="customRange1">
+                    <a href=""><i class="bi bi-arrows-angle-expand fs-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINE PLAYER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

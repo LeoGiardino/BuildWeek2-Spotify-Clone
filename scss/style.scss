@@ -170,7 +170,7 @@ body{
     }
 
 
-    .longCard {
+    .longCard, .rigaNascosta {
 
         .card {
             background-color: rgb(29, 29, 29);
@@ -248,7 +248,7 @@ body{
         background-color: #282828;
     }
 
-    .mostraAltro{
+    .mostraAltro, .mostraMeno{
         p,h4{
             cursor: pointer;
         }
