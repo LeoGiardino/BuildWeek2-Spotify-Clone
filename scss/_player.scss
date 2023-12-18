@@ -21,11 +21,26 @@ $customIconSize: 1.3rem;
     padding-bottom: 0.5rem;
 }
 
+.truncate-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Assicura che il testo non superi la larghezza massima della colonna */
+}
+
+.titoletto {
+  line-height: initial;
+}
+
 //SX - PlayerNowText
 .playerNowText {
     line-height: 0.8;
     .playerNowSong{
       padding-bottom: 0.7rem;
+    }
+
+    a {
+      font-size: 0.6em;
     }
     .playerNowArtist {
         color: $customGrey;
@@ -73,13 +88,13 @@ $customIconSize: 1.3rem;
     margin: 0.5rem auto;
     overflow: hidden;
     height: 5px;
-    width: 350px;
+    width: 70%;
     background: linear-gradient(to bottom, $customGreen, $customGreenLight);
     border-radius: 5px;
   }
   .round-time-bar div {
     height: 5px;
-    width: 350px;
+    width: 70%;
     animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
       linear;
     transform-origin: right center;
@@ -183,189 +198,189 @@ input[type="range"] {
   // ------------------------------------------ //
 
 //Mobile
-@media (max-width: 575.98px) {
-  .player {
-    background-color: $playerBg;
-    position: sticky;
-    bottom: 0;
-    z-index: 999;
-    height: 8%;
-    box-sizing: content-box;
-}
+// @media (max-width: 575.98px) {
+//   .player {
+//     background-color: $playerBg;
+//     position: sticky;
+//     bottom: 0;
+//     z-index: 999;
+//     height: 8%;
+//     box-sizing: content-box;
+// }
 
-.playerImg {
-    width: 4rem;
-    height: 4rem;
-    padding-bottom: 0.5rem;
-}
+// .playerImg {
+//     width: 4rem;
+//     height: 4rem;
+//     padding-bottom: 0.5rem;
+// }
 
-//SX - PlayerNowText
-.playerNowText {
-  font-size: 0.8rem;
-    line-height: 0.8;
-    .playerNowSong{
-      padding-bottom: 0.7rem;
-    }
-    .playerNowArtist {
-        color: $customGrey;
-        padding-bottom: 0.8rem;
-        &:hover {
-          color: $customGreen;
-        }
-    }
-}
+// //SX - PlayerNowText
+// .playerNowText {
+//   font-size: 0.8rem;
+//     line-height: 0.8;
+//     .playerNowSong{
+//       padding-bottom: 0.7rem;
+//     }
+//     .playerNowArtist {
+//         color: $customGrey;
+//         padding-bottom: 0.8rem;
+//         &:hover {
+//           color: $customGreen;
+//         }
+//     }
+// }
 
-//Div cuoricino
-.cuoricino {
-  position: relative;
-}
-.bi-heart {
-  display: none;
-  position: absolute;
-  top: 1rem;
-  left: 1.5rem;
-  color: $customGrey;
-  &:hover {
-    color: $customGreen;
-  }
-}
+// //Div cuoricino
+// .cuoricino {
+//   position: relative;
+// }
+// .bi-heart {
+//   display: none;
+//   position: absolute;
+//   top: 1rem;
+//   left: 1.5rem;
+//   color: $customGrey;
+//   &:hover {
+//     color: $customGreen;
+//   }
+// }
 
-//CT - PlayerIcons
-.playerIcons a {
-    margin: 8px;
-}
+// //CT - PlayerIcons
+// .playerIcons a {
+//     margin: 8px;
+// }
 
-.playerIcons {
-  position: absolute;
-  background-color: yellow;
-  top: 0;
-    .bi {
-        font-size: $customIconSize;
-        color: $customGrey;
-        &:hover {
-            color: $customGreen;
-        }
-    }
-    .bi-shuffle, .bi-repeat {
-        color: $customGreen;
-    }
-}
+// .playerIcons {
+//   position: absolute;
+//   //background-color: yellow;
+//   top: 0;
+//     .bi {
+//         font-size: $customIconSize;
+//         color: $customGrey;
+//         &:hover {
+//             color: $customGreen;
+//         }
+//     }
+//     .bi-shuffle, .bi-repeat {
+//         color: $customGreen;
+//     }
+// }
 
-//Player che scorre
-.round-time-bar {
-    margin: 0.5rem auto;
-    overflow: hidden;
-    height: 5px;
-    width: 350px;
-    background: linear-gradient(to bottom, $customGreen, $customGreenLight);
-    border-radius: 5px;
-  }
-  .round-time-bar div {
-    height: 5px;
-    width: 350px;
-    animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
-      linear;
-    transform-origin: right center;
-    background-color: $customGrey;
-  }
+// //Player che scorre
+// .round-time-bar {
+//     margin: 0.5rem auto;
+//     overflow: hidden;
+//     height: 5px;
+//     width: 350px;
+//     background: linear-gradient(to bottom, $customGreen, $customGreenLight);
+//     border-radius: 5px;
+//   }
+//   .round-time-bar div {
+//     height: 5px;
+//     width: 350px;
+//     animation: roundtime calc(var(--duration) 1s) steps(var(--duration))
+//       linear;
+//     transform-origin: right center;
+//     background-color: $customGrey;
+//   }
 
-  .round-time-bar[data-style="smooth"] div {
-    animation: roundtime calc(var(--duration) * 1s) linear forwards;
-  }
+//   .round-time-bar[data-style="smooth"] div {
+//     animation: roundtime calc(var(--duration) * 1s) linear forwards;
+//   }
 
-.round-time-bar[data-style="fixed"] div {
-width: calc(var(--duration) * 5%);
-}
+// .round-time-bar[data-style="fixed"] div {
+// width: calc(var(--duration) * 5%);
+// }
 
-@keyframes roundtime {
-to {
-    /* More performant than width */
-    transform: scaleX(0);
-}
-}
-
-
-//DX - Icone Destra
-.iconsDx {
-
-  padding-bottom: 0.1rem;
-  a {
-    margin: 3px;
-  }
-  .bi {
-      font-size: $customIconSize;
-      color: $customGrey;
-      &:hover {
-          color: $customGreen;
-      }
-  }
-  display: none;
-}
-
-//INPUT VOLUME PERSONALIZZATO
-/** Baseline, reset styles **/
-input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 3rem;
-    min-width: 5rem;
-  }
-
-  /* Removes default focus */
-  input[type="range"]:focus {
-    outline: none;
-  }
-
-  /** Chrome, Safari, Opera and Edge Chromium styles **/
-  /* slider track */
-  input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #9b9b9b;
-    border-radius: 0.5rem;
-    height: 0.3rem;
-  }
-
-  /* slider thumb */
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    margin-top: -3.2px; /* Centers thumb on the track */
-    background-color: #1ed760;
-    border-radius: 0.5rem;
-    height: 0.8rem;
-    width: 0.8rem;
-  }
-
-  input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 1px solid #1ed760;
-    outline-offset: 0.125rem;
-  }
-
-  /** Firefox styles **/
-  /* slider track */
-  input[type="range"]::-moz-range-track {
-    background-color: #9b9b9b;
-    border-radius: 0.5rem;
-    height: 0.6rem;
-  }
-
-  /* slider thumb */
-  input[type="range"]::-moz-range-thumb {
-    background-color: #1ed760;
-    border: none; /*Removes extra border that FF applies*/
-    border-radius: 0.5rem;
-    height: 0.8rem;
-    width: 0.8rem;
-  }
-
-  input[type="range"]:focus::-moz-range-thumb{
-    outline: 0.5px solid #1ed760;
-    outline-offset: 0.125rem;
-  }
+// @keyframes roundtime {
+// to {
+//     /* More performant than width */
+//     transform: scaleX(0);
+// }
+// }
 
 
-}
+// //DX - Icone Destra
+// .iconsDx {
+
+//   padding-bottom: 0.1rem;
+//   a {
+//     margin: 3px;
+//   }
+//   .bi {
+//       font-size: $customIconSize;
+//       color: $customGrey;
+//       &:hover {
+//           color: $customGreen;
+//       }
+//   }
+//   display: none;
+// }
+
+// //INPUT VOLUME PERSONALIZZATO
+// /** Baseline, reset styles **/
+// input[type="range"] {
+//     -webkit-appearance: none;
+//     appearance: none;
+//     background: transparent;
+//     cursor: pointer;
+//     width: 3rem;
+//     min-width: 5rem;
+//   }
+
+//   /* Removes default focus */
+//   input[type="range"]:focus {
+//     outline: none;
+//   }
+
+//   /** Chrome, Safari, Opera and Edge Chromium styles **/
+//   /* slider track */
+//   input[type="range"]::-webkit-slider-runnable-track {
+//     background-color: #9b9b9b;
+//     border-radius: 0.5rem;
+//     height: 0.3rem;
+//   }
+
+//   /* slider thumb */
+//   input[type="range"]::-webkit-slider-thumb {
+//     -webkit-appearance: none; /* Override default look */
+//     appearance: none;
+//     margin-top: -3.2px; /* Centers thumb on the track */
+//     background-color: #1ed760;
+//     border-radius: 0.5rem;
+//     height: 0.8rem;
+//     width: 0.8rem;
+//   }
+
+//   input[type="range"]:focus::-webkit-slider-thumb {
+//     outline: 1px solid #1ed760;
+//     outline-offset: 0.125rem;
+//   }
+
+//   /** Firefox styles **/
+//   /* slider track */
+//   input[type="range"]::-moz-range-track {
+//     background-color: #9b9b9b;
+//     border-radius: 0.5rem;
+//     height: 0.6rem;
+//   }
+
+//   /* slider thumb */
+//   input[type="range"]::-moz-range-thumb {
+//     background-color: #1ed760;
+//     border: none; /*Removes extra border that FF applies*/
+//     border-radius: 0.5rem;
+//     height: 0.8rem;
+//     width: 0.8rem;
+//   }
+
+//   input[type="range"]:focus::-moz-range-thumb{
+//     outline: 0.5px solid #1ed760;
+//     outline-offset: 0.125rem;
+//   }
+
+
+// }
   
 
 // Small devices (landscape phones, less than 768px)

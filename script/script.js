@@ -523,18 +523,20 @@ function creaAmici(tracce) {
                 <img src="https://cdn-static.dagospia.com/img/patch/09-2017/accoppiamento-canguri-936209.jpg" alt=""
                     class="rounded-circle" style="width:2rem">
             </a>
-            <div>
+            <div class="container-fluid pe-0">
                 <ul>
-                    <li><a href="#" class="nomeAmico">${amici.splice(Math.floor(Math.random() * amici.length), 1)[0]}</a></li>
+                    <li class="d-flex ">
+                    <a href="#" class="nomeAmico">${amici.splice(Math.floor(Math.random() * amici.length), 1)[0]}</a>
+                    <span class="ps-2 ms-auto d-none d-lg-block">
+                4 ore
+            </span></li>
                     <li><a href="#" class="tracciaAmico">${tracce[indiceCanzoneCasuale].title_short}</a><i class="bi bi-dot"></i><a
                             href="">${tracce[indiceCanzoneCasuale].artist.name}</a></li>
                     <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
                             class="album amico">${tracce[indiceCanzoneCasuale].album.title}</a></li>
                 </ul>
             </div>
-            <p class="ms-auto">
-                4 ore
-            </p>`
+            `
     }
 
 
