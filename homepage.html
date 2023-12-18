@@ -24,17 +24,21 @@
                     <div class="menu h6 border-1 border-danger rounded-3">
                         <div class="col-12 px-0">
                             <ul class="firstUl list-unstyled d-flex flex-column ">
-                                <li><a href="#" class="text-decoration-none btn  "><i
-                                            class="bi bi-three-dots me-2 SizeBtn"></i></a></li>
-                                <li><a href="#" class="text-decoration-none btn"><i
-                                            class="bi bi-house-door-fill me-2 SizeBtn"></i> Home</a></li>
-                                <li><a href="#" class="text-decoration-none btn"><i
-                                            class="bi bi-search me-2 SizeBtn "></i>
-                                        Cerca</a></li>
-                                <li><a href="#" class="text-decoration-none btn"><i
-                                            class="bi bi-music-note-list me-2 SizeBtn"></i> La tua libreria</a></li>
+                                <!-- <li>
+                                <a href="#" class="text-decoration-none btn  "><i
+                                            class="bi bi-three-dots me-2 SizeBtn"></i></a></li> -->
+                                <li>
+                                <a href="#" class="text-decoration-none btn d-flex align-items-center"><i
+                                            class="bi bi-house-door-fill SizeBtn d-flex justify-content-center"></i><span class="scritta ps-3">Home</span></a></li>
+                                <li>
+                                <a href="#" class="text-decoration-none btn d-flex align-items-center"><i
+                                            class="bi bi-search SizeBtn
+                                            d-flex justify-content-center "></i>
+                                        <span class="scritta ps-3">Cerca</span></a></li>
+                                <!-- <li><a href="#" class="text-decoration-none btn"><i
+                                            class="bi bi-music-note-list me-2 SizeBtn"></i> La tua libreria</a></li> -->
                             </ul>
-                            <ul class="secondUl list-unstyled d-flex flex-column ">
+                            <!-- <ul class="secondUl list-unstyled d-flex flex-column ">
                                 <li><a href="#" class="text-decoration-none btn"><i
                                             class="bi bi-plus-square-fill me-2 SizeBtn"></i> Crea playlist</a></li>
                                 <li><a href="#" class="text-decoration-none btn "><i
@@ -42,7 +46,7 @@
                                 </li>
                                 <li><a href="#" class="text-decoration-none btn "><i
                                             class="bi bi-bookmark-fill me-2 btnBookmark"></i> I tuoi episodi</a></li>
-                            </ul>
+                            </ul> -->
 
                         </div>
 
@@ -106,8 +110,34 @@
             <!-- CENTER COLUMN leo -->
 
 
-            <div class="col-md-7 col-9 centroLeo overflow-auto">
-                <div class="p-3 container">
+            <div class="centroLeo overflow-auto">
+
+                <!-- Finestre Nascoste-->
+                <div class="p-3 container rigaNascosta  d-none">
+                    <div class="d-flex mt-2 mb-4 mostraMeno align-self-start">
+                        <h4 class="pe-auto">Artisti che ti piacciono</h4>
+                        <p class="ms-auto para">Indietro</p>
+                    </div>
+                    <div class="carteNascoste d-flex flex-wrap justify-content-between">
+
+                    </div>
+
+
+                </div>
+                <div class="p-3 container rigaNascosta d-flex flex-wrap justify-content-between d-none">
+                    <div class="carteNascoste d-flex flex-wrap justify-content-between">
+                        
+                    </div>
+                </div>
+                <div class="p-3 container rigaNascosta d-flex flex-wrap justify-content-between d-none">
+                    <div class="carteNascoste d-flex flex-wrap justify-content-between">
+                        
+                    </div>
+                </div>
+
+
+
+                <div class="p-3 container finestrona">
                     <div class="d-flex mb-3">
                         <div class="freccette me-3 lefty">
                             <i class="bi bi-chevron-left rounded-circle"></i>
@@ -192,7 +222,7 @@
 
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Buttarsi sotto 'n treno</p>
+                                    <p class="truncate-text">Buttarsi sotto 'n treno</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>
@@ -219,7 +249,7 @@
 
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Scasso tutto</p>
+                                    <p class="truncate-text">Scasso tutto</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>
@@ -245,7 +275,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Canzoni Pop</p>
+                                    <p class="truncate-text">Canzoni Pop</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>
@@ -273,7 +303,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Nanna</p>
+                                    <p class="truncate-text">Nanna</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>
@@ -288,7 +318,7 @@
                                         class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Viaggi</p>
+                                    <p class="truncate-text">Viaggi</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>
@@ -314,7 +344,7 @@
                                     </div>
                                 </div>
                                 <div class="col-9 body rounded-end-1">
-                                    <p>Canzoni pe' scopà</p>
+                                    <p class="truncate-text">Canzoni pe' scopà</p>
                                 </div>
                                 <button class="playHover position-absolute">
                                     <i class="bi bi-play-fill"></i>

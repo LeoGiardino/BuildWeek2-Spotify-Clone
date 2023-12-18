@@ -1,7 +1,6 @@
 $customGrey: #9B9B9B;
 
 .leftBar {
-    height: 90vh;
     width: 20%!important;
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
@@ -26,7 +25,7 @@ $customGrey: #9B9B9B;
     
 };
 .commenti{
-    height: 57vh; //ALTEZZA PER PERMETTERE SCROLL
+    height: 77vh; //ALTEZZA PER PERMETTERE SCROLL
 
 
 }
@@ -80,3 +79,23 @@ $customGrey: #9B9B9B;
 .commenti2 {
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
+
+
+@media (max-width: 880px) {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    .leftBar{
+        width: 64.55px!important;
+        .scritta {
+            display: none;
+        }
+
+        .bi-house-door-fill {
+            margin: 0 auto;
+        }
+        .bi-search {
+            margin: 0 auto;
+        }
+    }
+  
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
