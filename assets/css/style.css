@@ -441,17 +441,14 @@ input[type=range]:focus::-moz-range-thumb {
   padding-top: 10px;
 }
 .centroFelipe .brandimg {
-  width: 45px;
-  height: 45px;
+  width: 75px;
+  height: 75px;
 }
 .centroFelipe .list-group-item {
   border: none;
 }
 .centroFelipe .text-lightgray {
   color: #c0c0c0;
-}
-.centroFelipe .fixed-width {
-  width: 210px !important;
 }
 .centroFelipe .truncate-text {
   overflow: hidden;
@@ -517,6 +514,45 @@ input[type=range]:focus::-moz-range-thumb {
 }
 .centroFelipe ul .nomeProfilo {
   margin-left: 10px;
+}
+.centroFelipe .piccoloFont {
+  font-size: 0.8em;
+  color: #c0c0c0;
+}
+.centroFelipe .indice {
+  color: #c0c0c0;
+}
+.centroFelipe .cuore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  right: 0rem;
+  bottom: 0.3rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  position: absolute;
+}
+.centroFelipe .cuore i {
+  font-size: 0.8rem;
+}
+.centroFelipe .btnDisco button {
+  border: none;
+  border-radius: 20px;
+  margin-right: 5px;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+.centroFelipe .btnDisco button:nth-child(2) {
+  background-color: rgb(29, 29, 29);
+  color: white;
+}
+.centroFelipe .btnDisco button:nth-child(3) {
+  background-color: rgb(29, 29, 29);
+  color: white;
 }
 
 /*-----CENTRO LOUIS-----*/
