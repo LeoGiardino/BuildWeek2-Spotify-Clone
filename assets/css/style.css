@@ -545,13 +545,6 @@ input[type=range]:focus::-moz-range-thumb {
   float: left;
 }
 
-.centroAnna {
-  margin: 0 5px;
-  height: 88vh;
-  overflow-y: auto;
-  padding-bottom: 100px;
-  padding-bottom: 130px;
-}
 .centroAnna .rigaAlbum {
   color: #9B9B9B;
   font-size: 0.9rem;
@@ -1168,6 +1161,9 @@ body {
 .centroLeo::-webkit-scrollbar-thumb,
 .centroFelipe::-webkit-scrollbar-thumb,
 .commenti::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Colore del pollice */
+  border-radius: 6px; /* Bordo arrotondato del pollice */
+  height: 5px; /* Altezza del pollice */
   background-color: transparent;
   /* Colore del pollice */
   border-radius: 6px;

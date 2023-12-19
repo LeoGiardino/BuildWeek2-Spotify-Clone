@@ -2,22 +2,36 @@ let urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 let idAlbum = "75621062";
 let idAlbumProva = "12207660"
 
-fetch(urlAlbum + idAlbum, {
-    method: 'GET',
-})
-.then(response => response.json())
-.then(jsonAlbum => {
-    console.log("album", jsonAlbum);
-    albumPage(jsonAlbum)
-})
+let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+let pezzoUrl = "top?limit=1000"
+let artistId;
 
+fetch(urlAlbum + idAlbum, { method: 'GET' })
+    .then(response => {
+        if(response.ok) {
+            return response.json()
+        } else {
+            console.error('response error', response);
+            throw new Error('Bad request');
+        }
+    })
+    .then(jsonAlbum => { //Primo Fetch, crea la pagina con dati album corrente
+        console.log("album", jsonAlbum);
+        albumPage(jsonAlbum)    //Funzione album corrente
+        artistId = jsonAlbum.artist.id
+        return fetch(urlSearch + artistId)
+    }) 
+    .then(response2 => response2.json()) //Secondo fetch, album correlati
+    .then(correlati => {
+        console.log(correlati);
+    })
 
 function albumPage(album) {
 
     //Sezione principale Album 
     document.querySelector(".copertinaAlbumLarge").src = album.artist.picture_xl
     document.querySelector(".copertinaAlbumSmall").src = album.cover_medium
-    let albumTitle = document.querySelector(".albumInfo .albumName")
+    let albumTitle = document.querySelector(".albumName")
     albumTitle.innerText = album.title
     let artistAlbumName = document.querySelector(".artistAlbumName")
     artistAlbumName.innerText = album.artist.name
@@ -38,7 +52,7 @@ function albumPage(album) {
             row.indiceOriginale = t + 1; 
             row.innerHTML =
             `
-                <div class="col-1 indice">${t + 1}</div>
+                <div class="col-1 indice text-center">${t + 1}</div>
                 <div class="col-5 d-flex flex-column">
                     ${album.tracks.data[t].title}
                     <span class="featuringTracks"> ${album.artist.name} </span>
