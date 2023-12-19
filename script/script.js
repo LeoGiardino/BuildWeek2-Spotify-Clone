@@ -596,7 +596,7 @@ function prendoAlbum2() {
             }
         }
         if (!giàMesso) {
-            albumMessi.push(tracceAlbum2[posizioneCasuale].artist.id);
+            albumMessi2.push(tracceAlbum2[posizioneCasuale].artist.id);
             mettoAlbumNascosti2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);            
             indiceAlbum2++;
         }
