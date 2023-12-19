@@ -49,6 +49,20 @@ body {
 /* --- CENTRO --- */
 
 .centroLeo {
+
+    /*----- Aggiunte sceme per la canzonciona -----*/
+
+    #canzonciona{
+        cursor: default;
+        h1, .card-text1{
+            cursor: pointer;
+
+        }
+        h1:hover, .card-text1:hover{
+            text-decoration: underline;
+        }
+    }
+
     flex: 1;
     margin: 0 8px;
     padding-right: 0!important;
