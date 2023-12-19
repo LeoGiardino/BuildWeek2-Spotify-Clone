@@ -540,36 +540,43 @@ input[type=range]:focus::-moz-range-thumb {
   background-color: #282828;
 }
 
-/*-----CENTRO LOUIS-----*/
-body {
-  height: 100vh;
+.copertinaAlbumSmall {
+  width: 200px;
+  height: 200px;
+  float: left;
 }
 
-.centroLouis {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(253, 187, 45) 100%);
+.centroAnna {
+  margin: 0 5px;
+  height: 88vh;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  padding-bottom: 130px;
 }
-
-.dropdown button img {
-  width: 2em;
-  border-radius: 50%;
+.centroAnna .rigaAlbum {
+  color: #9B9B9B;
+  font-size: 0.9rem;
 }
-
-div.bg-transparent div.m-3 h1 {
-  font-size: 4em;
+.centroAnna .hrAlbum {
+  color: #9B9B9B;
 }
-
-div.bg-transparent div.m-3 p span img {
-  width: 1em;
-  border-radius: 50%;
+.centroAnna .bi {
+  color: #9B9B9B;
 }
-
-div.bg-transparent div.m-3 p span {
-  font-size: 0.9em;
-}
-
-div.bg-black div.d-flex i.bi-play-circle-fill {
+.centroAnna .bi:hover {
+  cursor: pointer;
   color: #1ED760;
+}
+.centroAnna .bi .bi-play-circle-fill {
+  color: #1ED760;
+}
+.centroAnna .featuringTracks {
+  font-size: 0.75rem;
+  color: #9B9B9B;
+}
+.centroAnna .indice:hover {
+  color: #1ED760;
+  cursor: pointer;
 }
 
 /*-----CENTRO PAGINA SEARCH-----*/

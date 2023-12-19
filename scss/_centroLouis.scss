@@ -1,38 +1,50 @@
-/*-----CENTRO LOUIS-----*/
+//Album Page
 
-body {
-  height: 100vh;
+$customGreen: #1ED760;
+$customGreenLight: lighten(#1ED760, 10%);
+$playerBg: #181818;
+$customGrey: #9B9B9B;
+$customIconSize: 1.3rem;
+
+.copertinaAlbumSmall {
+  width: 200px;
+  height: 200px;
+  float: left;
 }
 
-
-.centroLouis {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(253, 187, 45, 1) 100%
-  );
+.centroAnna {
+  margin: 0 5px;
+  // width: 62%!important;
+  height: 88vh; //ALTEZZA PER PERMETTERE SCROLL
+  overflow-y: auto; 
+  padding-bottom: 100px;//ALTEZZA PER PERMETTERE SCROLL
+        padding-bottom: 130px;
+  .rigaAlbum {
+    color: $customGrey;
+    font-size: 0.9rem;
+  }
+  .hrAlbum {
+    color: $customGrey;
+  }
+  .bi {
+    color: $customGrey;
+    &:hover {
+      cursor:pointer;
+      color: $customGreen;
+    }
+    .bi-play-circle-fill {
+      color: $customGreen
+    }
+  }
+  .featuringTracks {
+    font-size: 0.75rem;
+    color: $customGrey;
+  }
+  .indice {
+    &:hover{
+      color: $customGreen;
+      cursor: pointer;
+    }
+  }
 }
 
-.dropdown button img {
-  width: 2em;
-  border-radius: 50%;
-}
-
-div.bg-transparent div.m-3 h1 {
-  font-size: 4em;
-}
-
-div.bg-transparent div.m-3 p span img {
-  width: 1em;
-  border-radius: 50%;
-}
-
-div.bg-transparent div.m-3 p span {
-  font-size: 0.9em;
-}
-
-
-div.bg-black div.d-flex i.bi-play-circle-fill {
-  color: #1ED760;
-}

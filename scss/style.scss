@@ -274,6 +274,7 @@ body{
 
 
 /* Stile della scrollbar */
+
 .centroLeo::-webkit-scrollbar,
 .centroFelipe::-webkit-scrollbar,
 .commenti::-webkit-scrollbar {
@@ -286,7 +287,6 @@ body{
     background-color: transparent; /* Colore del pollice */
     border-radius: 6px; /* Bordo arrotondato del pollice */
     height: 5px; /* Altezza del pollice */
-
 }
 
 /* Stile della traccia (la parte fissa) della scrollbar */

@@ -64,7 +64,6 @@ function artistFetch(artistid) {
             let tracklistUrl = artistData.tracklist; //secondo URL per Fetch
             console.log(artistData.name);
             return fetch(tracklistUrl)
-            
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
