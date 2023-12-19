@@ -97,7 +97,7 @@
 }
 .colonnaDestra {
   height: 88vh;
-  width: 210px !important;
+  width: 220px !important;
   background-color: rgb(25, 25, 25);
   color: #636363;
 }
@@ -672,8 +672,15 @@ body {
   overflow-y: hidden;
 }
 
+.bottoniMobile {
+  display: none;
+}
+
 .riga {
   height: 100vh;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 24px;
 }
 
 /* --- CENTRO --- */
@@ -895,6 +902,9 @@ body {
 
 /* ----- MOBILE ----*/
 @media (max-width: 530px) {
+  .riga {
+    padding: 0 !important;
+  }
   /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
   .leftBar {
     display: none;
@@ -1039,6 +1049,13 @@ body {
   }
   .player {
     padding-bottom: 60px;
+    justify-content: center;
+  }
+  .player .iconsDX {
+    padding-right: 12px !important;
+  }
+  .playerImg {
+    margin-left: 0.4em;
   }
   .round-time-bar {
     margin: 0.5rem auto;
