@@ -255,7 +255,7 @@ function prendoArtisti() {
 function mettoArtisti(data) {
     const contenitore = document.querySelector(".longCard");
     let div = document.createElement("div");
-    div.classList.add("card");
+    div.classList.add("card", "carousel-slide");
     div.style.width = "22%";
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
@@ -397,7 +397,7 @@ function prendoAlbum1() {
 function mettoAlbum1(data) {
     const contenitore = document.querySelector(".longCard2");
     let div = document.createElement("div");
-    div.classList.add("card");
+    div.classList.add("card", "carousel-slide");
     div.style.width = "22%";
     div.innerHTML = `
                 <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 

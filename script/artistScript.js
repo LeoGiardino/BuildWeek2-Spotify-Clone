@@ -159,7 +159,7 @@ function artistFetch(artistid) {
             //inserire primo contenuto
             let tracklistUrl = artistData.tracklist + ultimoPezzoUrl; //secondo URL per Fetch
             return fetch(tracklistUrl)
-
+            
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 

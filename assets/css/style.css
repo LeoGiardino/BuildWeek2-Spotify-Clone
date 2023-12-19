@@ -99,7 +99,7 @@
 }
 .colonnaDestra {
   height: 88vh;
-  width: 210px !important;
+  width: 220px !important;
   background-color: rgb(25, 25, 25);
   color: #636363;
 }
@@ -157,9 +157,11 @@
 }
 
 .playerImg {
-  width: 4rem;
-  height: 4rem;
-  padding-bottom: 0.5rem;
+  width: 3.4em;
+  height: 3.4em;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  margin-left: 0.2em;
 }
 
 .truncate-text {
@@ -539,43 +541,54 @@ input[type=range]:focus::-moz-range-thumb {
   background-color: #282828;
 }
 
-/*-----CENTRO LOUIS-----*/
-body {
-  height: 100vh;
+.copertinaAlbumSmall {
+  width: 200px;
+  height: 200px;
+  float: left;
 }
 
-.centroLouis {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(253, 187, 45) 100%);
+.centroAnna {
+  margin: 0 5px;
+  height: 88vh;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  padding-bottom: 130px;
 }
-
-.dropdown button img {
-  width: 2em;
-  border-radius: 50%;
+.centroAnna .rigaAlbum {
+  color: #9B9B9B;
+  font-size: 0.9rem;
 }
-
-div.bg-transparent div.m-3 h1 {
-  font-size: 4em;
+.centroAnna .hrAlbum {
+  color: #9B9B9B;
 }
-
-div.bg-transparent div.m-3 p span img {
-  width: 1em;
-  border-radius: 50%;
+.centroAnna .bi {
+  color: #9B9B9B;
 }
-
-div.bg-transparent div.m-3 p span {
-  font-size: 0.9em;
-}
-
-div.bg-black div.d-flex i.bi-play-circle-fill {
+.centroAnna .bi:hover {
+  cursor: pointer;
   color: #1ED760;
+}
+.centroAnna .bi .bi-play-circle-fill {
+  color: #1ED760;
+}
+.centroAnna .featuringTracks {
+  font-size: 0.75rem;
+  color: #9B9B9B;
+}
+.centroAnna .indice:hover {
+  color: #1ED760;
+  cursor: pointer;
 }
 
 /*-----CENTRO PAGINA SEARCH-----*/
 .searchPage {
-  height: 100vh;
+  flex: 1;
+  margin: 0 8px;
+  border-radius: 5px 5px 7px 7px/7px 7px 5px 5px;
+  width: 62% !important;
+  height: 88vh;
   overflow-y: auto;
-  padding-bottom: 130px;
+  padding-bottom: 100px;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .searchPage .freccette {
@@ -614,6 +627,7 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
 .searchPage .divCard {
   background: none;
   overflow: hidden !important;
+  cursor: pointer;
 }
 .searchPage .arancio {
   background-color: #E13200;
@@ -641,6 +655,22 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
   background-color: #242424;
   flex-wrap: nowrap !important;
 }
+.searchPage .searchInp:hover {
+  color: white;
+  background-color: #242424;
+  flex-wrap: nowrap !important;
+  border-color: white !important;
+  border-left: none !important;
+  box-shadow: none !important;
+}
+.searchPage .searchInp:focus {
+  color: white;
+  background-color: #242424;
+  flex-wrap: nowrap !important;
+  border-color: white !important;
+  border-left: none !important;
+  box-shadow: none !important;
+}
 .searchPage .btnInput {
   border-right: none !important;
 }
@@ -666,14 +696,71 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
   top: 7rem;
   left: 8rem;
 }
+.searchPage .cardRisRil {
+  background-color: #181818;
+}
+.searchPage .playPCard {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.8rem;
+  bottom: 7rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.searchPage .playPCard i {
+  font-size: 1.5rem;
+}
+.searchPage .card:hover .playPCard {
+  cursor: pointer;
+  display: block;
+}
+.searchPage .playPCard:hover {
+  transition: all 0.3s ease;
+}
+.searchPage .playPCard:hover:hover {
+  transform: scale(1.1);
+}
+.searchPage .card:hover {
+  cursor: pointer;
+  background-color: #282828;
+}
+.searchPage .pBrani {
+  font-size: 0.8rem;
+}
+.searchPage .cardPlayl {
+  background-color: rgb(29, 29, 29);
+  color: snow;
+}
+.searchPage .cardPlayl img {
+  padding: 10px;
+  border-radius: 14px;
+}
+.searchPage .cardPlayl .card-body p:nth-child(1) {
+  font-weight: bold;
+}
+.searchPage .cardPlayl .card-body p:nth-child(2) {
+  font-size: 0.8em;
+  color: #9B9B9B;
+}
 
 body {
   color: white !important;
   overflow-y: hidden;
 }
 
+.bottoniMobile {
+  display: none;
+}
+
 .riga {
   height: 100vh;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 24px;
 }
 
 /* --- CENTRO --- */
@@ -795,18 +882,22 @@ body {
 .centroLeo .para {
   font-size: 0.7em;
 }
-.centroLeo .longCard .card, .centroLeo .rigaNascosta .card {
+.centroLeo .longCard .card,
+.centroLeo .rigaNascosta .card {
   background-color: rgb(29, 29, 29);
   color: snow;
 }
-.centroLeo .longCard .card img, .centroLeo .rigaNascosta .card img {
+.centroLeo .longCard .card img,
+.centroLeo .rigaNascosta .card img {
   padding: 10px;
   border-radius: 14px;
 }
-.centroLeo .longCard .card .card-body p:nth-child(1), .centroLeo .rigaNascosta .card .card-body p:nth-child(1) {
+.centroLeo .longCard .card .card-body p:nth-child(1),
+.centroLeo .rigaNascosta .card .card-body p:nth-child(1) {
   font-weight: bold;
 }
-.centroLeo .longCard .card .card-body p:nth-child(2), .centroLeo .rigaNascosta .card .card-body p:nth-child(2) {
+.centroLeo .longCard .card .card-body p:nth-child(2),
+.centroLeo .rigaNascosta .card .card-body p:nth-child(2) {
   font-size: 0.8em;
   color: #9B9B9B;
 }
@@ -864,10 +955,12 @@ body {
   cursor: pointer;
   background-color: #282828;
 }
-.centroLeo .mostraAltro p, .centroLeo .mostraAltro h4 {
+.centroLeo .mostraAltro p,
+.centroLeo .mostraAltro h4 {
   cursor: pointer;
 }
-.centroLeo .mostraAltro p:hover, .centroLeo .mostraAltro h4:hover {
+.centroLeo .mostraAltro p:hover,
+.centroLeo .mostraAltro h4:hover {
   text-decoration: underline;
 }
 .centroLeo .mostraMeno p {
@@ -887,32 +980,218 @@ body {
   }
 }
 
+/* ----- MOBILE ----*/
+@media (max-width: 530px) {
+  .riga {
+    padding: 0 !important;
+  }
+  /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+  .leftBar {
+    display: none;
+  }
+  .contenitore {
+    padding: 0 !important;
+  }
+  .centroLeo {
+    margin: 0;
+  }
+  .centroLeo .canzonciona {
+    display: none;
+  }
+  .centroLeo .artisti {
+    flex: none !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+  }
+  .centroLeo .artisti .card {
+    width: 33% !important;
+    background-color: transparent !important;
+    border: 0 !important;
+  }
+  .centroLeo .artisti .card .card-body {
+    padding-top: 0;
+    background-color: transparent;
+  }
+  .centroLeo .artisti .card .card-body p:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+  .centroLeo .artisti .card .card-body .card-text {
+    display: none;
+  }
+  .centroLeo .artisti .carousel-container {
+    width: 100% !important;
+    padding-block: 16px 32px !important;
+    margin: 16px 32px !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    width: 100% !important;
+    gap: 8px !important;
+    align-items: center !important;
+    scroll-snap-type: x mandatory !important;
+  }
+  .centroLeo .artisti .carousel-slide {
+    flex: 1 0 30% !important;
+    aspect-ratio: 1 !important;
+    flex-flow: column nowrap !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    scroll-snap-align: center !important;
+  }
+  .centroLeo .album {
+    flex: none !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    background-color: transparent !important;
+  }
+  .centroLeo .album .centroLeo::-webkit-scrollbar-thumb,
+  .centroLeo .album .centroFelipe::-webkit-scrollbar-thumb,
+  .centroLeo .album .commenti::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    /* Colore del pollice */
+    border-radius: 6px;
+    /* Bordo arrotondato del pollice */
+    height: 5px;
+    /* Altezza del pollice */
+  }
+  .centroLeo .album .card {
+    width: 33% !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    margin-right: 10px;
+  }
+  .centroLeo .album .card .card-img-top {
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .centroLeo .album .card .card-body {
+    padding: 0;
+    font-size: 0.8em;
+    width: 100%;
+  }
+  .centroLeo .album .card .card-body p:nth-child(1) {
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
+  .centroLeo .album .carousel-container {
+    width: 100% !important;
+    padding-block: 16px 32px !important;
+    margin: 16px 32px !important;
+    overflow-x: auto !important;
+    display: flex !important;
+    width: 100% !important;
+    gap: 8px !important;
+    align-items: center !important;
+    scroll-snap-type: x mandatory !important;
+    background-color: transparent !important;
+  }
+  .centroLeo .album .carousel-slide {
+    flex: 1 0 30% !important;
+    aspect-ratio: 1 !important;
+    flex-flow: column nowrap !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: transparent !important;
+    scroll-snap-align: center !important;
+  }
+  .centroLeo .longCard3 .card {
+    width: 33% !important;
+  }
+  .centroLeo .freccette {
+    display: none;
+  }
+  .centroLeo .rigaMobile {
+    margin: 0 !important;
+    display: flex;
+  }
+  .centroLeo .rigaMobile ul {
+    background-color: transparent;
+    display: flex;
+  }
+  .centroLeo .rigaMobile ul .primo {
+    background-color: #1db954;
+    color: #0e0e0e;
+  }
+  .centroLeo .rigaMobile ul li > button {
+    border: none;
+    border-radius: 20px;
+    margin-right: 5px;
+    font-size: 0.7em;
+    padding: 5px 10px;
+    background-color: rgb(48, 48, 48);
+    color: white;
+  }
+  .nomeProfilo {
+    display: none;
+  }
+  .player {
+    padding-bottom: 60px;
+    justify-content: center;
+  }
+  .player .iconsDX {
+    padding-right: 12px !important;
+  }
+  .playerImg {
+    margin-left: 0.4em;
+  }
+  .round-time-bar {
+    margin: 0.5rem auto;
+    overflow: hidden;
+    height: 2px;
+    width: 70%;
+    background: linear-gradient(to bottom, #1ED760, #43e57d);
+    border-radius: 5px;
+  }
+  .round-time-bar div {
+    height: 2px;
+    width: 105%;
+    animation: roundtime calc(var(--duration) 1s) steps(var(--duration)) linear;
+    transform-origin: right center;
+    background-color: #9B9B9B;
+  }
+  .sizeBtn::before,
+  .scritta,
+  .btn {
+    color: white !important;
+  }
+  /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+}
 /* Stile della scrollbar */
 .centroLeo::-webkit-scrollbar,
 .centroFelipe::-webkit-scrollbar,
 .commenti::-webkit-scrollbar {
-  width: 4px; /* Larghezza della scrollbar */
+  width: 4px;
+  /* Larghezza della scrollbar */
 }
 
 .centroLeo::-webkit-scrollbar-thumb,
 .centroFelipe::-webkit-scrollbar-thumb,
 .commenti::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Colore del pollice */
-  border-radius: 6px; /* Bordo arrotondato del pollice */
-  height: 5px; /* Altezza del pollice */
+  background-color: transparent;
+  /* Colore del pollice */
+  border-radius: 6px;
+  /* Bordo arrotondato del pollice */
+  height: 5px;
+  /* Altezza del pollice */
 }
 
 /* Stile della traccia (la parte fissa) della scrollbar */
 .centroLeo::-webkit-scrollbar-track,
 .centroFelipe::-webkit-scrollbar-track,
 .commenti::-webkit-scrollbar-track {
-  background-color: transparent; /* Colore della traccia */
-  height: 5px; /* Altezza della traccia */
+  background-color: transparent;
+  /* Colore della traccia */
+  height: 5px;
+  /* Altezza della traccia */
 }
 
 /* Cambia lo stile della scrollbar quando è attiva (quando l'utente la sta trascinando) */
 .centroLeo::-webkit-scrollbar-thumb:active,
 .centroFelipe::-webkit-scrollbar-thumb:active,
 .commenti::-webkit-scrollbar-thumb:active {
-  background-color: #555; /* Cambia il colore del pollice quando è attivo */
+  background-color: #555;
+  /* Cambia il colore del pollice quando è attivo */
 }/*# sourceMappingURL=style.css.map */

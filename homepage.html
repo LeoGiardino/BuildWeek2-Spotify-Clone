@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row riga d-flex justify-content-between pt-4 px-2">
+    <div class="container-fluid contenitore">
+        <div class="row riga d-flex justify-content-between">
 
             <!-- LEFT COLUMN-->
 
@@ -37,19 +37,9 @@
                                             d-flex justify-content-center "></i>
                                         <span class="scritta ps-3">Cerca</span></a>
                                 </li>
-                                <!-- <li><a href="#" class="text-decoration-none btn"><i
-                                            class="bi bi-music-note-list me-2 SizeBtn"></i> La tua libreria</a></li> -->
+                                
                             </ul>
-                            <!-- <ul class="secondUl list-unstyled d-flex flex-column ">
-                                <li><a href="#" class="text-decoration-none btn"><i
-                                            class="bi bi-plus-square-fill me-2 SizeBtn"></i> Crea playlist</a></li>
-                                <li><a href="#" class="text-decoration-none btn "><i
-                                            class="bi bi-suit-heart-fill me-2 btnHeart"></i> Brani che ti piacciono</a>
-                                </li>
-                                <li><a href="#" class="text-decoration-none btn "><i
-                                            class="bi bi-bookmark-fill me-2 btnBookmark"></i> I tuoi episodi</a></li>
-                            </ul> -->
-
+                        
                         </div>
 
                     </div>
@@ -156,7 +146,7 @@
                             <i class="bi bi-chevron-right rounded-circle"></i>
                         </div>
 
-                        <div class="ms-auto">
+                        <div class="ms-auto rigaMobile">
                             <ul class="d-flex me-auto mb-2 mb-lg-0">
                                 <li class="nav-item fotoProfilo">
                                     <img class="rounded-circle" src="assets/imgs/main/image-17.jpg" alt="">
@@ -175,6 +165,17 @@
                                         </li>
                                         <li><a class="dropdown-item text-white dropMenu" href="#">Log Out</a></li>
                                     </ul>
+                                </li>
+                            </ul>
+                            <ul class="bottoniMobile d-sm-none">
+                                <li class="nav-item">
+                                    <button class="primo">Tutti</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button>Musica</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button>Poadcast</button>
                                 </li>
                             </ul>
                         </div>
@@ -372,7 +373,7 @@
                     </div>
 
 
-                    <div class="longCard d-flex flex-wrap justify-content-between">
+                    <div class="longCard artisti d-flex flex-wrap justify-content-between carousel-container">
                     </div>
 
                     <div class="longCard rigaNascosta d-flex flex-wrap justify-content-between d-none">
@@ -385,7 +386,7 @@
                     </div>
 
 
-                    <div class="longCard2 longCard d-flex flex-wrap justify-content-between">
+                    <div class="longCard2 album carousel-container longCard d-flex flex-wrap justify-content-between">
                     </div>
 
 
@@ -464,7 +465,7 @@
 
                     <!--  COL DX, iconcine varie e volume -->
                     <div
-                        class="ms-auto iconsDx d-none  col-md-3 col-3 d-md-flex justify-content-end align-items-center pe-1">
+                        class="ms-auto iconsDx d-none  col-md-3 col-3 d-md-flex justify-content-end align-items-center">
                         <a href=""><i class="bi bi-mic"></i></a>
                         <a href=""><i class="bi bi-view-list"></i></a>
                         <a href=""><i class="bi bi-music-player"></i></a>
@@ -494,7 +495,7 @@
 
                     <!--  COL DX, iconcine varie e volume -->
                     <div
-                        class="ms-auto d-md-none iconsDx col-md-3 col-3 d-flex justify-content-end align-items-center pe-1">
+                        class="ms-auto d-md-none iconsDx col-md-3 col-3 d-flex justify-content-end align-items-center">
 
                         <a href=""><i class="bi bi-music-player px-2"></i></a>
                         <a href="#" id="playPause"><i class="bi bi-play-circle-fill"></i></a>
@@ -507,10 +508,57 @@
                             <div></div>
                         </div>
 
+
+                        
+
                     </div>
+                    <!-- BARRA SOTTO PLAYER MOBILE -->
+
+                    <div class=" px-0 pt-2">
+                        <ul class="firstUl list-unstyled d-flex justify-content-around">
+                            <!-- <li>
+                            <a href="#" class="text-decoration-none btn  "><i
+                                        class="bi bi-three-dots me-2 SizeBtn"></i></a></li> -->
+                            <li class="pb-4">
+                                <a href="#" class="text-decoration-none btn d-flex flex-column justify-content-around">
+                                    <i
+                                        class="bi bi-house-door-fill SizeBtn pb-2">
+                                    </i>
+                                    <span
+                                        class="scritta">Home
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="pb-4">
+                                <a href="#" class="text-decoration-none btn d-flex flex-column justify-content-center">
+                                    <i class="bi bi-search SizeBtn
+                                    d-flex justify-content-center pb-2"></i>
+                                    <span
+                                        class="scritta">Ricerca
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="pb-4">
+                                <a href="#" class="text-decoration-none btn d-flex flex-column justify-content-center">
+                                    <i class="bi bi-collection-play SizeBtn pb-2"></i>
+                                    <span
+                                        class="scritta">La tua libreria
+                                    </span>
+                                </a>
+                            </li>
+
+                            
+                            
+                        </ul>
+                    
+                    </div>
+                    
                 </div>
             </div>
+
+           
         </div>
+         
     </div>
     <!-- FINE PLAYER -->
 
