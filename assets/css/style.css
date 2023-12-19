@@ -4,7 +4,9 @@
   width: 20% !important;
   background-color: rgb(25, 25, 25);
 }
-
+#canzonciona{
+  cursor: default;
+}
 .innerLeft {
   background-color: black;
   height: 100vh;

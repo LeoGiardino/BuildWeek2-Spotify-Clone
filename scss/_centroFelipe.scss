@@ -10,6 +10,8 @@
 }
 
 .centroFelipe {
+
+
   flex: 1;
   margin: 0 8px;
 
@@ -212,7 +214,14 @@
         }
         
     }
-    
+
+
+    p.mostraMeno, .mostraAltro, .mostraListaNascosta{
+      cursor: pointer;
+    }
+    p.mostrameno:hover, .mostraAltro:hover, .mostraListaNascosta:hover{
+      text-decoration: underline;
+    }
 }
 
 .playHover {

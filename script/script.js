@@ -248,10 +248,6 @@ function prendoArtisti() {
             indiceArtisti++;
         }
         giàMesso = false;
-
-
-
-
     }
 }
 
@@ -282,7 +278,7 @@ function mettoArtistiNascosti(data) {
     const contenitore = document.querySelectorAll(`.carteNascoste`)[0]
     let div = document.createElement("div");
     div.classList.add("card");
-    div.classList.add("mb-3");
+    div.classList.add("mb-3");9
     div.style.width = "22%";
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
@@ -629,7 +625,7 @@ function mettoAlbum2(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard3 > .card");
     carte[indiceAlbum2].addEventListener("click", () => {
-    
+        
     })
  
 }

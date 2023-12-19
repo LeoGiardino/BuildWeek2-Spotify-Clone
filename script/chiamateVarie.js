@@ -1,5 +1,6 @@
 let urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/"
 let urlArtist = "https://striveschool-api.herokuapp.com/api/deezer/artist/"
+
 let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
 let idAlbum = "75621062";
 let idArtist = "412";
@@ -517,3 +518,9 @@ function stampaNomi(tracce) {
     }
 
 } */
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
