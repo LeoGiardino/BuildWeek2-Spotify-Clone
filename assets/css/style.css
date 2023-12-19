@@ -573,9 +573,13 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
 
 /*-----CENTRO PAGINA SEARCH-----*/
 .searchPage {
-  height: 100vh;
+  flex: 1;
+  margin: 0 8px;
+  border-radius: 5px 5px 7px 7px/7px 7px 5px 5px;
+  width: 62% !important;
+  height: 88vh;
   overflow-y: auto;
-  padding-bottom: 130px;
+  padding-bottom: 100px;
   background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 }
 .searchPage .freccette {
@@ -614,6 +618,7 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
 .searchPage .divCard {
   background: none;
   overflow: hidden !important;
+  cursor: pointer;
 }
 .searchPage .arancio {
   background-color: #E13200;
@@ -641,6 +646,22 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
   background-color: #242424;
   flex-wrap: nowrap !important;
 }
+.searchPage .searchInp:hover {
+  color: white;
+  background-color: #242424;
+  flex-wrap: nowrap !important;
+  border-color: white !important;
+  border-left: none !important;
+  box-shadow: none !important;
+}
+.searchPage .searchInp:focus {
+  color: white;
+  background-color: #242424;
+  flex-wrap: nowrap !important;
+  border-color: white !important;
+  border-left: none !important;
+  box-shadow: none !important;
+}
 .searchPage .btnInput {
   border-right: none !important;
 }
@@ -665,6 +686,56 @@ div.bg-black div.d-flex i.bi-play-circle-fill {
   position: absolute;
   top: 7rem;
   left: 8rem;
+}
+.searchPage .cardRisRil {
+  background-color: #181818;
+}
+.searchPage .playPCard {
+  width: 2.3rem;
+  height: 2.3rem;
+  right: 0.8rem;
+  bottom: 7rem;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #1ED760;
+  display: none;
+}
+.searchPage .playPCard i {
+  font-size: 1.5rem;
+}
+.searchPage .card:hover .playPCard {
+  cursor: pointer;
+  display: block;
+}
+.searchPage .playPCard:hover {
+  transition: all 0.3s ease;
+}
+.searchPage .playPCard:hover:hover {
+  transform: scale(1.1);
+}
+.searchPage .card:hover {
+  cursor: pointer;
+  background-color: #282828;
+}
+.searchPage .pBrani {
+  font-size: 0.8rem;
+}
+.searchPage .cardPlayl {
+  background-color: rgb(29, 29, 29);
+  color: snow;
+}
+.searchPage .cardPlayl img {
+  padding: 10px;
+  border-radius: 14px;
+}
+.searchPage .cardPlayl .card-body p:nth-child(1) {
+  font-weight: bold;
+}
+.searchPage .cardPlayl .card-body p:nth-child(2) {
+  font-size: 0.8em;
+  color: #9B9B9B;
 }
 
 body {
