@@ -97,7 +97,7 @@
 }
 .colonnaDestra {
   height: 88vh;
-  width: 10%;
+  width: 210px !important;
   background-color: rgb(25, 25, 25);
   color: #636363;
 }
@@ -142,9 +142,6 @@
 
 @media (max-width: 1151px) {
   /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
-  .colonnaDestra {
-    width: 173.16px !important;
-  }
   /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
 }
 /* --- PLAYER --- */
@@ -877,6 +874,15 @@ body {
 }
 .centroLeo .mostraMeno p:hover {
   text-decoration: underline;
+}
+@media (max-width: 1300px) {
+  .centroLeo {
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+  }
+  .centroLeo .cards .card {
+    width: 47% !important;
+  }
 }
 
 /* Stile della scrollbar */

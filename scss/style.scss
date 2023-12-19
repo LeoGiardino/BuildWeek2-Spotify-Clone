@@ -270,6 +270,18 @@ body{
             text-decoration: underline;
         }
     }
+
+
+    @media (max-width: 1300px) {
+        /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+        .cards {
+            .card {
+                width: 47%!important;
+            }
+        }
+      
+        /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
+      }
 }
 
 
