@@ -82,7 +82,7 @@ function artistFetch(artistid) {
             console.log(dato);
             discografia(dato.data);
         })
-        .catch(error => console.log("Error " + error))
+        .catch(error => console.log(error))
 }
 
 
@@ -107,7 +107,22 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
 
 }
 
+document.addEventListener("DOMContentLoaded",()=>{
+   let listaNascosta = document.querySelector(".listaNascosta");
+   let mostraNasconti = document.querySelector(".mostraListaNascosta");
+   
+   mostraNasconti.addEventListener("click",()=>{
+    if(listaNascosta.classList.contains("d-none")){
+        mostraNasconti.innerText = "Mostra meno";
+        listaNascosta.classList.remove("d-none");
+    }else{
+        mostraNasconti.innerText = "Visualizza Altro";
+        listaNascosta.classList.add("d-none");
+    }
 
+
+   })
+})
 /* 
 - FUNZIONE MODIFIGHE :
 - AGGIUNTO INDEX AGLI LI
@@ -118,14 +133,16 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
 
 function compilareHtmlTracklist(trackData) {
     console.log(trackData);
-
-    const cont = document.querySelector(".listaPrincipale");
+    let cont;    
     let audioCorrente = null;
     let rowCorrente = null;
 
     for (let i = 0; i < trackData.length; i++) {
-        if(i == 5){
-            break;
+        if(i <5){
+            cont = document.querySelector(".listaPrincipale");
+        }else {
+
+            cont = document.querySelector(".listaNascosta");
         }
         const row = document.createElement('div');
         row.classList.add('row', 'mb-3');
@@ -210,6 +227,7 @@ function compilareHtmlTracklist(trackData) {
         audio.addEventListener('error', function (event) {
             console.error(`Errore durante il caricamento o la riproduzione dell'audio per la traccia ${i + 1}:`, event.message);
         });
+        console.log(i);
 
         cont.appendChild(row);
     }
