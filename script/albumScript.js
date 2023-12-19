@@ -24,6 +24,7 @@ fetch(urlAlbum + idAlbum, { method: 'GET' })
     .then(response2 => response2.json()) //Secondo fetch, album correlati
     .then(correlati => {
         console.log(correlati);
+        discografia(correlati.data)
     })
 
 function albumPage(album) {
