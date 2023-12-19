@@ -29,7 +29,6 @@ let arrayParole = [
     'Breeze',
     'Infinite',
     'Harbor',
-    'Tranquility',
     'Reflection',
     'Serene',
     'Velvet',
@@ -44,7 +43,6 @@ let arrayParole = [
     'Cradle',
     'Whimsical',
     'Calmness',
-    'Starlight',
     'Sylvan',
     'Sublime',
     'Luminescent',
@@ -67,11 +65,9 @@ let arrayParole = [
     'Celebrate',
     'Spark',
     'Rhythm',
-    'Vibrant',
     'Energetic',
     'Pulse',
     'Sway',
-    'Uplift',
     'Radiate',
     'Shimmer',
     'Spiral',
@@ -84,24 +80,16 @@ let arrayParole = [
     'Vortex',
     'Stellar',
     'Reverie',
-    'Harbor',
-    'Crescent',
     'Serenity',
-    'Joyful',
-    'Spirited',
     'Vivid',
     'Radiant',
     'Blissful',
     'Ecstasy',
     'Lively',
-    'Upbeat',
     'Radiate',
-    'Vibrant',
     'Sparkle',
     'Ecliptic',
     'Solar',
-    'Mirage',
-    'Sunrise',
     'Pinnacle',
     'Celebrate',
     'Sway',
@@ -115,22 +103,17 @@ let arrayParole = [
     'Vortex',
     'Stellar',
     'Reverie',
-    'Harbor',
     'Crescent',
-    'Serenity',
     'Joyful',
     'Spirited',
     'Vivid',
     'Radiant',
     'Blissful',
-    'Ecstasy',
     'Lively',
     'Upbeat',
-    'Radiate',
     'Vibrant',
     'Sparkle',
     'Ecliptic',
-    'Solar',
     'Mirage',
     'Sunrise'
 ];
@@ -276,7 +259,7 @@ function prendoArtisti() {
 function mettoArtisti(data) {
     const contenitore = document.querySelector(".longCard");
     let div = document.createElement("div");
-    div.classList.add("card");
+    div.classList.add("card", "carousel-slide");
     div.style.width = "22%";
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
@@ -418,7 +401,7 @@ function prendoAlbum1() {
 function mettoAlbum1(data) {
     const contenitore = document.querySelector(".longCard2");
     let div = document.createElement("div");
-    div.classList.add("card");
+    div.classList.add("card", "carousel-slide");
     div.style.width = "22%";
     div.innerHTML = `
                 <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
@@ -464,12 +447,16 @@ function mettoAlbumNascosti1(data) {
 }
 
 function mettoCanzonciona(data) {
-    const titoloBC = document.querySelector(".card-title");
-    titoloBC.textContent = data.title;
+    console.log("Sono dentro canzonciona",data);
+    const titoloBC = document.querySelector(".canzonciona .card-title");
+    titoloBC.innerText = data.title;
     const imgBC = document.querySelector(".imgBC");
     imgBC.src = data.album.cover;
-    const text1 = document.querySelector(".card-text1");
+    const text1 = document.querySelector(".canzonciona .card-text1");
     text1.textContent = data.artist.name;
+    text1.addEventListener("click",()=>{
+        onArtist(data.artist.id);
+    })
     const playPause = document.querySelector("#playPause");
     const muteButton = document.getElementById("muteButton");
     const audio = new Audio(data.preview);
@@ -580,7 +567,7 @@ function prendoAlbum2() {
         posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
         for (const ele of albumMessi2) {
             try {
-                if (tracceAlbum2[posizioneCasuale].album.title == ele) {
+                if (tracceAlbum2[posizioneCasuale].artist.id == ele) {
                     giàMesso = true;
                     break
                 }
@@ -590,7 +577,7 @@ function prendoAlbum2() {
         }
         if (!giàMesso) {
             try {
-                albumMessi2.push(tracceAlbum2[posizioneCasuale].album.title);
+                albumMessi2.push(tracceAlbum2[posizioneCasuale].artist.id);
                 mettoAlbumNascosti2(tracceAlbum2[posizioneCasuale]);
                 mettoAlbum2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
                 indiceAlbum2++;
@@ -613,7 +600,7 @@ function prendoAlbum2() {
             }
         }
         if (!giàMesso) {
-            albumMessi.push(tracceAlbum2[posizioneCasuale].artist.id);
+            albumMessi2.push(tracceAlbum2[posizioneCasuale].artist.id);
             mettoAlbumNascosti2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);            
             indiceAlbum2++;
         }
@@ -642,7 +629,7 @@ function mettoAlbum2(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard3 > .card");
     carte[indiceAlbum2].addEventListener("click", () => {
-        onArtist(data.album.id);
+    
     })
  
 }
@@ -681,14 +668,14 @@ function creaAmici(tracce) {
         indiceCanzoneCasuale = Math.floor(Math.random() * tracce.length);
         contenitoreAmici.innerHTML += ` <div class="d-flex amico">
             <a href="" class="imgAmico">
-                <img src="https://cdn-static.dagospia.com/img/patch/09-2017/accoppiamento-canguri-936209.jpg" alt=""
-                    class="rounded-circle d-none d-lg-block" style="width:2.4em ">
+                <img src="../assets/imgs/colleghi/pax.jpg" alt=""
+                    class="rounded-circle" style="width:2.4em ">
             </a>
             <div class="container-fluid pe-0">
                 <ul>
                     <li class="d-flex ">
                     <a href="#" class="nomeAmico">${amici.splice(Math.floor(Math.random() * amici.length), 1)[0]}</a>
-                    <span class="ms-auto d-none d-lg-block truncate-text">
+                    <span class="ms-auto truncate-text">
                 4 ore
             </span></li>
                     <li><a href="#" class="tracciaAmico">${tracce[indiceCanzoneCasuale].title_short}</a><i class="bi bi-dot"></i><a

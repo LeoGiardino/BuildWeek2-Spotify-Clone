@@ -1,6 +1,6 @@
 .colonnaDestra {
     height: 88vh;
-    width: 10%;
+    width: 220px!important;
     background-color: rgb(25, 25, 25);
     color: #636363;
   
@@ -53,7 +53,7 @@
 @media (max-width: 1151px) {
     /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
     .colonnaDestra{
-        width: 173.16px!important;
+        
         
     }
   
