@@ -348,7 +348,7 @@ fetch(urlSearch + `${parola2}`, {
 
 
 function prendoAlbum1() {
-    mettoCanzonciona(tracceAlbum1[Math.floor(Math.random())*tracceAlbum1.length]);
+    mettoCanzonciona(tracceAlbum1[Math.floor(Math.random()*tracceAlbum1.length)]);
     let giàMesso = false;
     let posizioneCasuale;
     while (indiceAlbum < 4) {

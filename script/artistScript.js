@@ -142,8 +142,9 @@ amici.addEventListener("click", () => {
 
 
 function artistFetch(artistid) {
-    let numeroTracce;
+    
     let tracce;
+    let musicista;
 
     fetch(ARTIST_URL + artistid, { method: "GET" }) //Primo fetch
         .then(response => {
@@ -155,17 +156,18 @@ function artistFetch(artistid) {
             }
         }).then(artistData => { //Qui lavorare con primo fetch 
             console.log("artista;", artistData);
+            musicista = artistData;
             compilareHtmlArtist(artistData);
             //inserire primo contenuto
             let tracklistUrl = artistData.tracklist + ultimoPezzoUrl; //secondo URL per Fetch
-            return fetch(tracklistUrl)
+            return fetch(tracklistUrl);
             
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
             console.log("Tracklist: ", trackData.data);
+            creaCardLaterale(musicista,trackData.data.length);
             tracce = [...trackData.data];
-            console.log("Tracce", tracce);
             compilareHtmlTracklist(trackData.data); //si deve entrare nel oggeto con .data
             //inserire secondo contenuto
             let x = trackData.data[0].artist.name;
@@ -182,9 +184,6 @@ function artistFetch(artistid) {
         .catch(error => console.log(error))
 }
 
-
-
-console.log("artist: ");
 artistFetch(artistid);
 
 
@@ -207,7 +206,6 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
 document.addEventListener("DOMContentLoaded", () => {
     let listaNascosta = document.querySelector(".listaNascosta");
     let mostraNasconti = document.querySelector(".mostraListaNascosta");
-
     mostraNasconti.addEventListener("click", () => {
         if (listaNascosta.classList.contains("d-none")) {
             mostraNasconti.innerText = "Mostra meno";
@@ -338,90 +336,6 @@ function compilareHtmlTracklist(trackData) {
 
 
 
-// function compilareHtmlTracklist(trackData) {
-//     let parentUl = document.getElementById('parentUl');
-//     parentUl.innerHTML = "";
-
-//     trackData.forEach((td, index) => {
-//         let li = document.createElement('li');
-//         li.classList.add('list-group-item', 'd-flex', 'align-items-center', 'bg-transparent');
-
-//         let trackDataHtml = `<span class="mr-5 px-3 text-lightgray">${index + 1}</span>
-//             <img src=${td.album.cover_small} alt="Song 1" class="rounded"
-//                 style="width: 50px; height: 50px; object-fit: cover;">
-//             <div class="ml-3 text-white d-flex ">
-//                 <div class="font-weight-bold d-flex  mb-0 "><p class="px-4 mt-3">${td.title}</p></div>
-//                 <div class="px-5 d-none d-md-block"><p class="px-4 mt-3 text-lightgray ">${td.rank.toLocaleString('it-IT')}</p></div>
-//                 <div class="px-5 d-none d-xl-block"><p class="px-4 mt-3 text-lightgray">${td.duration}</p> </div>
-//             </div>`;
-
-//         const audio = new Audio(td.preview);
-
-//         li.innerHTML = trackDataHtml;
-//         let isPlaying = false;
-
-//         const span = li.querySelector('.text-lightgray');
-
-//         // Salva l'originalText in una variabile locale
-//         const originalText = span.textContent;
-
-//         li.addEventListener('mouseover', function () {
-//             span.innerHTML = '<i class="bi bi-play-fill"></i>';
-//         });
-
-//         li.addEventListener('mouseout', function () {
-//             span.textContent = originalText;
-//         });
-
-//         span.addEventListener("click", () => {
-//             if (!isPlaying) {
-//                 audio.play().then(() => {
-//                     isPlaying = true;
-//                     span.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
-//                 }).catch(error => {
-//                     console.error("Errore durante la riproduzione dell'audio:", error);
-//                 });
-//             } else {
-//                 audio.pause();
-//                 isPlaying = false;
-//                 span.innerHTML = '<i class="bi bi-play-fill"></i>';
-//             }
-//         });
-
-//         audio.addEventListener('error', function (event) {
-//             console.error(`Errore durante il caricamento o la riproduzione dell'audio per la traccia ${index + 1}:`, event);
-//         });
-
-//         parentUl.appendChild(li);
-//     });
-// }
-
-/* function discografia(data) {
-    const contenitore = document.querySelector(".longCard");
-    
-
-    for (let i = 0; i < data.length; i++) {
-        if(i == 5){
-            break;
-        }
-    let div = document.createElement("div");
-    div.classList.add("card");
-    div.style.width = "18%";
-    div.innerHTML = `
-                <a href="#" class=""><img src="${data[i].album.cover_medium}" class="card-img-top " alt="..."></a> 
-                <button class="playHoverLongCard position-absolute">
-                <i class="bi bi-play-fill"></i>
-            </button>       
-                <div class="card-body">
-                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data[i].album.title}</a></p>
-                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data[i].artist.name}</a></p>
-                  
-                </div>        
-                `
-    contenitore.appendChild(div);
-
-    }
-} */
 
 function discografia1(tracce) {
     let giàMesso = false;
@@ -467,6 +381,8 @@ function mettoAlbum(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard > .card");
     carte[indiceAlbum].addEventListener("click", () => {
+        onAlbum(data.album.id);
+        console.log("ciao Anna");
 
     })
 
@@ -493,6 +409,7 @@ function mettoAlbumNascosti(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".card");
     carte[indiceAlbum].addEventListener("click", () => {
+        console.log("ciao Anna");
 
     })
 
@@ -514,6 +431,28 @@ function nascondiRigaNascosta() {
     colonnaNascosta.classList.add("d-none");
 }
 
-function creaCardLaterale(data) {
+function creaCardLaterale(musicista, numeroTracce) {
+    document.querySelector(".cardLaterale").innerHTML=`
+    
+    <h4 class="px-md-0 px-5">Brani che ti piacciono</h4>
+                        <div class="d-flex mt-3">
+                            <div class="position-relative">
+                            <img src="${musicista.picture_small}" class="img-fluid rounded-circle" alt="">
+
+                                <div class="cuore">
+                                    <i class="bi bi-suit-heart-fill"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="ml-2 d-flex flex-column justify-content-center cardLateraleDati">
+                                <p class="small px-3 mb-1 fw-bold">Hai messo mi piace a ${Math.floor(Math.random()*numeroTracce)} brani</p>
+                                <p class="small px-3 piccoloFont ">${musicista.name}</p>
+                            </div>
+
+                        </div>
+    
+    
+    `
 
 }
