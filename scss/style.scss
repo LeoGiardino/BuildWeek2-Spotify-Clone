@@ -547,6 +547,7 @@ body {
 
 
 /* Stile della scrollbar */
+
 .centroLeo::-webkit-scrollbar,
 .centroFelipe::-webkit-scrollbar,
 .commenti::-webkit-scrollbar {
@@ -557,13 +558,15 @@ body {
 .centroLeo::-webkit-scrollbar-thumb,
 .centroFelipe::-webkit-scrollbar-thumb,
 .commenti::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Colore del pollice */
+    border-radius: 6px; /* Bordo arrotondato del pollice */
+    height: 5px; /* Altezza del pollice */
     background-color: transparent;
     /* Colore del pollice */
     border-radius: 6px;
     /* Bordo arrotondato del pollice */
     height: 5px;
     /* Altezza del pollice */
-
 }
 
 /* Stile della traccia (la parte fissa) della scrollbar */

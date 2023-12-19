@@ -1,102 +1,69 @@
-/* album_url = "https://striveschool-api.herokuapp.com/api/deezer/album/725251"; */
+let urlAlbum = "https://striveschool-api.herokuapp.com/api/deezer/album/"
+let idAlbum = "75621062";
+let idAlbumProva = "12207660"
 
-album_url = "https://striveschool-api.herokuapp.com/api/deezer/album/";
-
-let album_id = "725251";
-
-
-const urlParams = new URLSearchParams(window.location.search);
-const album_url = urlParams.get("album_url");
-
-if (album_url) {
-    album_id = album_url.split("/").pop();
-
-    if (urlParams.has('id')) {
-        const num = urlParams.get('id');
-
-        album_id = num;
-    }
-}
-
-console.log(artistid);
-
-const freccia_sinistra = document.querySelector(".sinistra");
-const freccia_destra = document.querySelector(".destra");
-
-freccia_sinistra.addEventListener("click", () => {
-    window.history.back();
+fetch(urlAlbum + idAlbum, {
+    method: 'GET',
 })
-
-freccia_destra.addEventListener("click", () => {
-    window.history.forward();
+.then(response => response.json())
+.then(jsonAlbum => {
+    console.log("album", jsonAlbum);
+    albumPage(jsonAlbum)
 })
 
 
-const centroLouis = document.querySelector(".centroLouis");
-const bi_x_lg = document.querySelector(".bi-x-lg");
-const amici = document.querySelector(".amici");
+function albumPage(album) {
 
-bi_x_lg.addEventListener("click", () => {
-    bi_x_lg.closest(".colonnaDestra").style.display = "none";
-    centroLouis.classList.add("col-9");
+    //Sezione principale Album 
+    document.querySelector(".copertinaAlbumLarge").src = album.artist.picture_xl
+    document.querySelector(".copertinaAlbumSmall").src = album.cover_medium
+    let albumTitle = document.querySelector(".albumInfo .albumName")
+    albumTitle.innerText = album.title
+    let artistAlbumName = document.querySelector(".artistAlbumName")
+    artistAlbumName.innerText = album.artist.name
 
-})
+    let tracksAlbum = document.querySelector(".tracksAlbumContainer")
+    console.log(tracksAlbum);
+    //Tracks 
+    for (let t= 0; t< album.tracks.data.length; t++) {
 
-amici.addEventListener("click", () => {
-    bi_x_lg.closest(".colonnaDestra").style.display = "block";
-    centroFelipe.classList.remove("col-9");
-})
-
-
-function albumFetch(album_id) {
-
-    fetch(album_url + album_id, { method: "GET" })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                console.error('Errore :', response);
-                throw new Error('Bad request');
-            }
-        }).then(albumData => {
-            console.log(albumData.nb_fan);
-            compilareHtmlAlbum(albumData);
+            const row = document.createElement('div');
+            row.classList.add('row', 'mb-3');
             
-            let tracklistUrl = albumData.tracklist; 
-            return fetch(tracklistUrl)
-        })
-        .then(response2 => response2.json())
-        .then(trackData => { 
-            console.log("Tracklist: ", trackData);
-            compilareHtmlTracklist(trackData.data); 
-        })
-        .catch(error => console.log("Error " + error))
-}
+            const ore = Math.floor(album.tracks.data[t].duration / 100);
+            const minuti = album.tracks.data[t].duration % 100;
+            const orarioFormat = ore + ':' + (minuti < 10 ? '0' : '') + minuti;
 
+            row.setAttribute('data-indice-originale', t + 1);
+            row.indiceOriginale = t + 1; 
+            row.innerHTML =
+            `
+                <div class="col-1 indice">${t + 1}</div>
+                <div class="col-5 d-flex flex-column">
+                    ${album.tracks.data[t].title}
+                    <span class="featuringTracks"> ${album.artist.name} </span>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-3"> ${album.tracks.data[t].rank} </div>
+                <div class="col-2">${orarioFormat}</div>
+            `
+            tracksAlbum.appendChild(row);
 
+            const indice = row.querySelector('.indice');
+            let isPlaying = false;
 
-console.log("Album: ");
-albumFetch(album_id);
-
-
-function compilareHtmlAlbum(albumData) { 
-    let imgAlbum = document.getElementById("#imgAlbum");
-    imgAlbum.src = albumData.picture_xl;
-
-    let albumTitle = document.querySelector(".albumTitle")
-    albumTitle.textContent = albumData.title;
-
-    let albumIconImg = document.getElementById("#albumIconImg");
-    albumIconImg.src = albumData.picture_xl;
-
-    let albumDescription = document.querySelector(".albumDescription")
-    albumDescription.textContent = albumDescription.title;
+            row.addEventListener('mouseover', function () {
+                if (!isPlaying) {
+                    indice.innerHTML = '<i class="bi bi-play-fill fs-5"></i>';
+                }
+            });
     
-    let albumFans = document.getElementById(".albumAscolti");
-    albumFans.textContent = albumData.nb_fan.toLocaleString('it-IT') + " ascoltati mensili";
-}
+            row.addEventListener('mouseout', function () {
+                if (!isPlaying) {
+                    // Ripristina l'indice originale
+                    indice.textContent = row.indiceOriginale;
+                }
+            });
 
-
-function compilareHtmlTracklist(params) {
-    
+        } /* Fine For Tracks */
 }
