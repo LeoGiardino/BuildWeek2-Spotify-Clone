@@ -224,6 +224,7 @@ function prendoArtisti() {
         if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
             artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
             mettoArtistiNascosti(primaChiamata[posizioneCasuale]);
+            mettoArtistiMobile(primaChiamata[posizioneCasuale]);
             mettoArtisti(primaChiamata.splice(posizioneCasuale, 1)[0]);
             indiceArtisti++;
         }
@@ -235,6 +236,7 @@ function prendoArtisti() {
         for (const ele of artistiMessi) {
             try {
                 if (primaChiamata[posizioneCasuale].artist.id == ele) {
+
                     giàMesso = true;
                     break
                 }
@@ -244,14 +246,11 @@ function prendoArtisti() {
         }
         if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
             artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
+            mettoArtistiMobile(primaChiamata[posizioneCasuale]);
             mettoArtistiNascosti(primaChiamata.splice(posizioneCasuale, 1)[0]);
             indiceArtisti++;
         }
         giàMesso = false;
-
-
-
-
     }
 }
 
@@ -264,7 +263,7 @@ function mettoArtisti(data) {
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
             <div class="card-body pb-1">
-                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-title text-truncate"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
                 <p class="card-text">Artist</p>
                 <button class="playHoverLongCard position-absolute">
                     <i class="bi bi-play-fill"></i>
@@ -277,12 +276,34 @@ function mettoArtisti(data) {
     })
 }
 
+function mettoArtistiMobile(data) {
+    console.log("Sono dentro mettoArtistiNascosti");
+    const contenitore = document.querySelector(".artistiMobile")
+    let div = document.createElement("div","carousel-slide");
+    div.classList.add("card", "carousel-slide");
+    div.style.width = "22%";
+    div.innerHTML = `
+            <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
+            <div class="card-body pb-1">
+                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-text">Artist</p>
+                <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>`
+    contenitore.appendChild(div);
+    const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length - 1].addEventListener("click", () => {
+        onArtist(data.artist.id);
+    })
+}
+
 function mettoArtistiNascosti(data) {
     console.log("Sono dentro mettoArtistiNascosti");
     const contenitore = document.querySelectorAll(`.carteNascoste`)[0]
     let div = document.createElement("div");
     div.classList.add("card");
-    div.classList.add("mb-3");
+    div.classList.add("mb-3");9
     div.style.width = "22%";
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
@@ -352,7 +373,7 @@ fetch(urlSearch + `${parola2}`, {
 
 
 function prendoAlbum1() {
-    mettoCanzonciona(tracceAlbum1[Math.floor(Math.random())*tracceAlbum1.length]);
+    mettoCanzonciona(tracceAlbum1[Math.floor(Math.random()*tracceAlbum1.length)]);
     let giàMesso = false;
     let posizioneCasuale;
     while (indiceAlbum < 4) {
@@ -629,7 +650,7 @@ function mettoAlbum2(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard3 > .card");
     carte[indiceAlbum2].addEventListener("click", () => {
-    
+        
     })
  
 }

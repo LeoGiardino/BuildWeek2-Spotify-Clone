@@ -1,21 +1,115 @@
-// const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=50"; //
-const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+// Aggiunte tipo creaAmici e altre cosine mlmlml---------------------------------
+let indiceAlbum = 0;
+let urlSearch = "https://striveschool-api.herokuapp.com/api/deezer/search?q="
+let label = [
+    "Syco Music",
+    "Atlantic Records",
+    "Columbia Records",
+    "BMG",
+    "Interscope Records",
+    "Epic Records",
+    "Motown",
+    "Sub Pop",
+    "Arista Records",
+    "Roc Nation",
+    "Wind-Up Records",
+    "Geffen Records",
+    "Nuclear Blast",
+    "Fueled by Ramen",
+    "Metal Blade Records",
+    "Napalm Records",
+    "Season of Mist",
+    "Relapse Records",
+    "Earache Records",
+    "Peaceville Records",
+    "AFM Records",
+    "Unique Leader Records",
+    "Mighty Music",
+    "Debemur Morti Productions",
+    "Agonia Records",
+    "Eisenwald",
+    "Scarlet Records",
+    "Capitol Records",
+    "Elektra Records",
+    "Island Records",
+    "Imperial Records",
+    "Warner Bros. Records",
+    "Chrysalis Records",
+    "Blue Note Records",
+    "United Artists Records",
+    "Virgin Records",
+    "A&M Records",
+];
+let parola1 = label.splice(Math.floor(Math.random() * label.length), 1)[0];
+let amicissimi = [
+    ["Anna Cerasoli"],
+    ["Gregorio Vecchio"],
+    ["Monica Misciagna"],
+    ["Louis Djembou"],
+    ["Leo Giardino"],
+    ["Felipe Carrasco"]
+];
 
-/* we need to pass an ID to make this beaty work */
-let artistid = "465";
+fetch(urlSearch + `label:"${parola1}"`, {
+    method: 'GET',
+})
+    .then(response => response.json())
+    .then(json => {
+        console.log("label", `${parola1}`, json);
+        creaAmici(json.data);
+    })
+    .catch(error => console.log(error))
 
-// Ottieni i parametri di query dalla URL
-const urlParams = new URLSearchParams(window.location.search);
 
-    // Controlla se il parametro 'dato' è presente
-    if (urlParams.has('id')) {
-      // Recupera il valore del parametro 'dato'
-      const num = urlParams.get('id');
-  
-      artistid = num;
+function creaAmici(tracce) {
+    console.log("dono dentro creaAmici");
+    let contenitoreAmici = document.querySelectorAll(".amici")[1];
+    console.log(contenitoreAmici);
+    let indiceCanzoneCasuale;
+    for (let i = 0; i < 6; i++) {
+        indiceCanzoneCasuale = Math.floor(Math.random() * tracce.length);
+        contenitoreAmici.innerHTML += ` <div class="d-flex amico">
+                <a href="" class="imgAmico">
+                    <img src="https://liceoberchet.edu.it/ricerche/geo5d_04/America_Nord/Canada/immagini/ghiottone4.jpg" alt=""
+                        class="rounded-circle" style="width:2.4em ">
+                </a>
+                <div class="container-fluid pe-0">
+                    <ul>
+                        <li class="d-flex ">
+                        <a href="#" class="nomeAmico">${amicissimi.splice(Math.floor(Math.random() * amicissimi.length), 1)[0]}</a>
+                        <span class="ms-auto truncate-text">
+                    4 ore
+                </span></li>
+                        <li><a href="#" class="tracciaAmico">${tracce[indiceCanzoneCasuale].title_short}</a><i class="bi bi-dot"></i><a
+                                href="">${tracce[indiceCanzoneCasuale].artist.name}</a></li>
+                        <li><i class="bi bi-music-note-beamed me-1"></i><a href=""
+                                class="album amico">${tracce[indiceCanzoneCasuale].album.title}</a></li>
+                    </ul>
+                </div>
+                `
     }
 
-console.log(artistid);
+
+}
+
+
+
+
+
+
+
+
+
+// const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/412/top?limit=50"; //
+const ARTIST_URL = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const ultimoPezzoUrl = "top?limit=1000";
+const urlParams = new URLSearchParams(window.location.search);
+let artistid = "65409";
+
+if (urlParams.has('id')) {
+    const num = urlParams.get('id');
+    artistid = num;
+}
 
 const leftArrow = document.querySelector(".lefty");
 const rightArrow = document.querySelector(".righty");
@@ -48,6 +142,9 @@ amici.addEventListener("click", () => {
 
 
 function artistFetch(artistid) {
+    
+    let tracce;
+    let musicista;
 
     fetch(ARTIST_URL + artistid, { method: "GET" }) //Primo fetch
         .then(response => {
@@ -57,36 +154,36 @@ function artistFetch(artistid) {
                 console.error('Error en la respuesta:', response);
                 throw new Error('Bad request');
             }
-        }).then(artistData => { //Qui lavorare con primo fetch
-            console.log(artistData.nb_fan);
+        }).then(artistData => { //Qui lavorare con primo fetch 
+            console.log("artista;", artistData);
+            musicista = artistData;
             compilareHtmlArtist(artistData);
             //inserire primo contenuto
-            let tracklistUrl = artistData.tracklist; //secondo URL per Fetch
-            console.log(artistData.name);
-            return fetch(tracklistUrl)
+            let tracklistUrl = artistData.tracklist + ultimoPezzoUrl; //secondo URL per Fetch
+            return fetch(tracklistUrl);
+            
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
             console.log("Tracklist: ", trackData.data);
+            creaCardLaterale(musicista,trackData.data.length);
+            tracce = [...trackData.data];
             compilareHtmlTracklist(trackData.data); //si deve entrare nel oggeto con .data
             //inserire secondo contenuto
             let x = trackData.data[0].artist.name;
             let y = x.replace(/ /g, '-');
-            
+
             let thirdUrl = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${y}`; //terzo URL per Fetch trackData.data[0].artist.name;
             console.log(thirdUrl);
             return fetch(thirdUrl)
         }).then(response3 => response3.json())
-            .then(dato => {
-            console.log(dato);
-            discografia(dato.data);
+        .then(dato => {
+            tracce = [...tracce, ...dato.data];
+            discografia1(tracce);
         })
         .catch(error => console.log(error))
 }
 
-
-
-console.log("artist: ");
 artistFetch(artistid);
 
 
@@ -106,21 +203,28 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
 
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-   let listaNascosta = document.querySelector(".listaNascosta");
-   let mostraNasconti = document.querySelector(".mostraListaNascosta");
-   
-   mostraNasconti.addEventListener("click",()=>{
-    if(listaNascosta.classList.contains("d-none")){
-        mostraNasconti.innerText = "Mostra meno";
-        listaNascosta.classList.remove("d-none");
-    }else{
-        mostraNasconti.innerText = "Visualizza Altro";
-        listaNascosta.classList.add("d-none");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    let listaNascosta = document.querySelector(".listaNascosta");
+    let mostraNasconti = document.querySelector(".mostraListaNascosta");
+    mostraNasconti.addEventListener("click", () => {
+        if (listaNascosta.classList.contains("d-none")) {
+            mostraNasconti.innerText = "Mostra meno";
+            listaNascosta.classList.remove("d-none");
+        } else {
+            mostraNasconti.innerText = "Visualizza Altro";
+            listaNascosta.classList.add("d-none");
+        }
+    })
+    console.log(document.querySelector("h4.mostraAltro"));
+
+        document.querySelector("h4.mostraAltro").addEventListener("click", () => {
+            mostraRigaNascosta();
+        });
 
 
-   })
+        document.querySelector("p.mostraMeno ").addEventListener("click", () => {
+            nascondiRigaNascosta();
+        });
 })
 /* 
 - FUNZIONE MODIFIGHE :
@@ -132,14 +236,14 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 function compilareHtmlTracklist(trackData) {
     console.log(trackData);
-    let cont;    
+    let cont;
     let audioCorrente = null;
     let rowCorrente = null;
 
     for (let i = 0; i < trackData.length; i++) {
-        if(i <5){
+        if (i < 5) {
             cont = document.querySelector(".listaPrincipale");
-        }else {
+        } else {
 
             cont = document.querySelector(".listaNascosta");
         }
@@ -219,111 +323,136 @@ function compilareHtmlTracklist(trackData) {
                 audio.pause();
                 isPlaying = false;
                 indice.innerHTML = '<i class="bi bi-play-fill"></i>';
-               // title.classList.remove('text-success'); // Rimuove la classe per il colore verde
+                // title.classList.remove('text-success'); // Rimuove la classe per il colore verde
             }
         });
 
         audio.addEventListener('error', function (event) {
             console.error(`Errore durante il caricamento o la riproduzione dell'audio per la traccia ${i + 1}:`, event.message);
         });
-        console.log(i);
-
         cont.appendChild(row);
     }
 }
 
 
 
-// function compilareHtmlTracklist(trackData) {
-//     let parentUl = document.getElementById('parentUl');
-//     parentUl.innerHTML = "";
 
-//     trackData.forEach((td, index) => {
-//         let li = document.createElement('li');
-//         li.classList.add('list-group-item', 'd-flex', 'align-items-center', 'bg-transparent');
-
-//         let trackDataHtml = `<span class="mr-5 px-3 text-lightgray">${index + 1}</span>
-//             <img src=${td.album.cover_small} alt="Song 1" class="rounded"
-//                 style="width: 50px; height: 50px; object-fit: cover;">
-//             <div class="ml-3 text-white d-flex ">
-//                 <div class="font-weight-bold d-flex  mb-0 "><p class="px-4 mt-3">${td.title}</p></div>
-//                 <div class="px-5 d-none d-md-block"><p class="px-4 mt-3 text-lightgray ">${td.rank.toLocaleString('it-IT')}</p></div>
-//                 <div class="px-5 d-none d-xl-block"><p class="px-4 mt-3 text-lightgray">${td.duration}</p> </div>
-//             </div>`;
-
-//         const audio = new Audio(td.preview);
-
-//         li.innerHTML = trackDataHtml;
-//         let isPlaying = false;
-
-//         const span = li.querySelector('.text-lightgray');
-
-//         // Salva l'originalText in una variabile locale
-//         const originalText = span.textContent;
-
-//         li.addEventListener('mouseover', function () {
-//             span.innerHTML = '<i class="bi bi-play-fill"></i>';
-//         });
-
-//         li.addEventListener('mouseout', function () {
-//             span.textContent = originalText;
-//         });
-
-//         span.addEventListener("click", () => {
-//             if (!isPlaying) {
-//                 audio.play().then(() => {
-//                     isPlaying = true;
-//                     span.innerHTML = '<i class="bi bi-pause-circle-fill"></i>';
-//                 }).catch(error => {
-//                     console.error("Errore durante la riproduzione dell'audio:", error);
-//                 });
-//             } else {
-//                 audio.pause();
-//                 isPlaying = false;
-//                 span.innerHTML = '<i class="bi bi-play-fill"></i>';
-//             }
-//         });
-
-//         audio.addEventListener('error', function (event) {
-//             console.error(`Errore durante il caricamento o la riproduzione dell'audio per la traccia ${index + 1}:`, event);
-//         });
-
-//         parentUl.appendChild(li);
-//     });
-// }
-
-
-
-
-
-
-
-
-
-
-function discografia(data) {
-    const contenitore = document.querySelector(".longCard");
-    
-
-    for (let i = 0; i < data.length; i++) {
-        if(i == 5){
-            break;
+function discografia1(tracce) {
+    let giàMesso = false;
+    let albumMessi = [];
+    tracce.forEach(ele => {
+        for (const j of albumMessi) {
+            if (ele.album.id == j) {
+                giàMesso = true;
+                break
+            }
         }
-        let div = document.createElement("div");
+        if (!giàMesso && ele.artist.id == artistid) {
+            albumMessi.push(ele.album.id);
+            mettoAlbumNascosti(ele);
+            if (indiceAlbum < 4) {
+                mettoAlbum(ele);
+            }
+            indiceAlbum++;
+        }
+        giàMesso = false;
+    });
+}
+
+
+
+function mettoAlbum(data) {
+    const contenitore = document.querySelector(".longCard.visibile");
+    let div = document.createElement("div");
     div.classList.add("card");
-    div.style.width = "18%";
+    div.style.width = "22%";
+   
     div.innerHTML = `
-                <a href="#" class=""><img src="${data[i].album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
                 <button class="playHoverLongCard position-absolute">
                 <i class="bi bi-play-fill"></i>
             </button>       
                 <div class="card-body">
-                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data[i].album.title}</a></p>
-                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data[i].artist.name}</a></p>
+                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
                   
                 </div>        
                 `
     contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".longCard > .card");
+    carte[indiceAlbum].addEventListener("click", () => {
+        onAlbum(data.album.id);
+        console.log("ciao Anna");
 
-    }
+    })
+
+}
+
+
+function mettoAlbumNascosti(data) {
+    const contenitore = document.querySelector(".carteNascoste");
+    let div = document.createElement("div");
+    div.classList.add("card");
+    div.classList.add("mb-3");
+    div.style.width = "22%";
+    div.innerHTML = `
+                <a href="#" class=""><img src="${data.album.cover_medium}" class="card-img-top " alt="..."></a> 
+                <button class="playHoverLongCard position-absolute">
+                <i class="bi bi-play-fill"></i>
+            </button>       
+                <div class="card-body">
+                    <p class="card-title truncate-text"><a href="#" class="text-decoration-none text-white">${data.album.title}</a></p>
+                    <p class="card-text"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                  
+                </div>        
+                `
+    contenitore.appendChild(div);
+    const carte = document.querySelectorAll(".card");
+    carte[indiceAlbum].addEventListener("click", () => {
+        console.log("ciao Anna");
+
+    })
+
+}
+
+
+
+
+function mostraRigaNascosta() {
+    let colonnaNascosta = document.querySelector(".colonnaNascosta")
+    document.querySelector(".colonnaPrincipale").classList.add("d-none")
+    colonnaNascosta.classList.remove('d-none');
+}
+
+function nascondiRigaNascosta() {
+    console.log("sono in mostraMeno");
+    let colonnaNascosta = document.querySelector(".colonnaNascosta")
+    document.querySelector(".colonnaPrincipale").classList.remove('d-none');
+    colonnaNascosta.classList.add("d-none");
+}
+
+function creaCardLaterale(musicista, numeroTracce) {
+    document.querySelector(".cardLaterale").innerHTML=`
+    
+    <h4 class="px-md-0 px-5">Brani che ti piacciono</h4>
+                        <div class="d-flex mt-3">
+                            <div class="position-relative">
+                            <img src="${musicista.picture_small}" class="img-fluid rounded-circle" alt="">
+
+                                <div class="cuore">
+                                    <i class="bi bi-suit-heart-fill"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="ml-2 d-flex flex-column justify-content-center cardLateraleDati">
+                                <p class="small px-3 mb-1 fw-bold">Hai messo mi piace a ${Math.floor(Math.random()*numeroTracce)} brani</p>
+                                <p class="small px-3 piccoloFont ">${musicista.name}</p>
+                            </div>
+
+                        </div>
+    
+    
+    `
+
 }
