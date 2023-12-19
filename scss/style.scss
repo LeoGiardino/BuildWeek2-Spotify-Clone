@@ -23,16 +23,27 @@ body {
     overflow-y: hidden;
 }
 
+.foto{
+    padding: 20px 0;
+}
+
 .bottoniMobile {
     display: none;
 }
 
+.artistiMobile {
+    display: none!important;
+}
 
 .riga {
     height: 100vh;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 24px;
+}
+
+.finestrona {
+    padding: 16px;
 }
 
 /* --- CENTRO --- */
@@ -54,7 +65,7 @@ body {
 
     flex: 1;
     margin: 0 8px;
-
+    padding-right: 0!important;
     border-radius: 5px 5px 7px 7px / 7px 7px 5px 5px;
 
     width: 62% !important;
@@ -64,6 +75,10 @@ body {
 
     background-image: linear-gradient(to bottom, #3c3b3b, #343434, #2d2d2d, #262626, #1f1f1f, #1c1c1c, #191919, #161616, #161616, #151515, #151515, #141414);
 
+    .testoBC{
+        flex: 1;
+        margin-left: 10px;
+    }
     .freccette {
         width: 2rem;
         height: 2rem;
@@ -150,7 +165,7 @@ body {
 
         button:nth-child(1) {
             background-color: #1db954;
-            padding: 1.5% 6%;
+            padding: 1.1% 6%;
             border: none;
             border-radius: 20px;
             font-weight: bold;
@@ -160,7 +175,7 @@ body {
 
         button:nth-child(2) {
             background-color: #141414;
-            padding: 1.5% 5%;
+            padding: 1.1% 5%;
             border: none;
             border-radius: 20px;
             font-weight: bold;
@@ -331,6 +346,39 @@ body {
 }
 
 
+@media (max-width: 1100px) {
+    .artisti {
+        .card {
+            width: 32% !important;
+        }
+
+        .card:last-child {
+            display: none;
+        }
+    }
+
+    .album{
+        .card {
+            width: 32% !important;
+        }
+
+        .card:last-child {
+            display: none;
+        }
+    }
+
+    .longCard3 {
+        .card {
+            width: 32% !important;
+        }
+
+        .card:last-child {
+            display: none;
+        }
+    }
+}
+
+
 
 /* ----- MOBILE ----*/
 
@@ -339,27 +387,41 @@ body {
     .riga{
         padding: 0!important;
     }
-    
 
-    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
-    .leftBar {
+    .para {
         display: none;
     }
 
-    .contenitore {
-        padding: 0!important;
+    .cards{
+        padding-right: 10px;
     }
 
-    .centroLeo {
+    h4 {
+        margin-bottom: 0.7em!important;
+    }
 
-        .canzonciona {
-            display: none;
-        }
+    .carousel-container::-webkit-scrollbar {
+        height: 14px;
+        width: calc(100% - 48px);
+      }
+      
+      .carousel-container::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      
+      .carousel-container::-webkit-scrollbar-thumb {
+        background-color: transparent;
+      }
+      
+      .carousel-container::-webkit-scrollbar-track-piece:start {
+        background-color: transparent;
+      }
 
-        .artisti{
-            flex: none!important;
-            flex-wrap: nowrap!important;
-            overflow-x: auto!important;
+    .artistiMobile {
+        display: flex!important;
+        flex-wrap: nowrap!important;
+        overflow-x: auto!important;
+        background-color: transparent!important;
             .card {
                 width: 33%!important;
                 background-color: transparent!important;
@@ -388,6 +450,7 @@ body {
                 gap: 8px !important;
                 align-items: center !important;
                 scroll-snap-type: x mandatory !important;
+                background-color: transparent!important;
             }
             
     
@@ -398,11 +461,32 @@ body {
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
-           
+                background-color: transparent!important;
                 scroll-snap-align: center !important;
             }
-            
+    }
+    
+    .finestrona {
+        padding-right: 0!important; 
+    }
 
+    /* Regole CSS da applicare quando la larghezza è 1278px o inferiore */
+    .leftBar {
+        display: none;
+    }
+
+    .contenitore {
+        padding: 0!important;
+    }
+
+    .centroLeo {
+
+        .canzonciona {
+            display: none;
+        }
+
+        .artisti{
+            display: none!important;
         }
 
         .album {
@@ -432,7 +516,7 @@ body {
                 }
 
                 .card-body {
-                    padding: 0;
+                    padding: 10px 0;
                     font-size: 0.8em;
                     width: 100%;
                     

@@ -224,6 +224,7 @@ function prendoArtisti() {
         if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
             artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
             mettoArtistiNascosti(primaChiamata[posizioneCasuale]);
+            mettoArtistiMobile(primaChiamata[posizioneCasuale]);
             mettoArtisti(primaChiamata.splice(posizioneCasuale, 1)[0]);
             indiceArtisti++;
         }
@@ -235,6 +236,7 @@ function prendoArtisti() {
         for (const ele of artistiMessi) {
             try {
                 if (primaChiamata[posizioneCasuale].artist.id == ele) {
+
                     giàMesso = true;
                     break
                 }
@@ -244,6 +246,7 @@ function prendoArtisti() {
         }
         if (!giàMesso && primaChiamata[posizioneCasuale].artist !== undefined && primaChiamata[posizioneCasuale].album !== undefined) {
             artistiMessi.push(primaChiamata[posizioneCasuale].artist.id);
+            mettoArtistiMobile(primaChiamata[posizioneCasuale]);
             mettoArtistiNascosti(primaChiamata.splice(posizioneCasuale, 1)[0]);
             indiceArtisti++;
         }
@@ -260,7 +263,7 @@ function mettoArtisti(data) {
     div.innerHTML = `
             <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
             <div class="card-body pb-1">
-                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-title text-truncate"><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
                 <p class="card-text">Artist</p>
                 <button class="playHoverLongCard position-absolute">
                     <i class="bi bi-play-fill"></i>
@@ -269,6 +272,28 @@ function mettoArtisti(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard > .card");
     carte[indiceArtisti].addEventListener("click", () => {
+        onArtist(data.artist.id);
+    })
+}
+
+function mettoArtistiMobile(data) {
+    console.log("Sono dentro mettoArtistiNascosti");
+    const contenitore = document.querySelector(".artistiMobile")
+    let div = document.createElement("div","carousel-slide");
+    div.classList.add("card", "carousel-slide");
+    div.style.width = "22%";
+    div.innerHTML = `
+            <a href="#" class=""><img src="${data.artist.picture_medium}" class="card-img-top rounded-circle" alt="..."></a>        
+            <div class="card-body pb-1">
+                <p class="card-title "><a href="#" class="text-decoration-none text-white">${data.artist.name}</a></p>
+                <p class="card-text">Artist</p>
+                <button class="playHoverLongCard position-absolute">
+                    <i class="bi bi-play-fill"></i>
+                </button>
+            </div>`
+    contenitore.appendChild(div);
+    const carte = contenitore.querySelectorAll(".card");
+    carte[carte.length - 1].addEventListener("click", () => {
         onArtist(data.artist.id);
     })
 }
