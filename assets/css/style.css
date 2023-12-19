@@ -16,6 +16,10 @@
   background-color: rgb(25, 25, 25);
 }
 
+.firstUl {
+  margin: 10px 0;
+}
+
 .riga {
   background-color: black;
 }
@@ -94,6 +98,9 @@
   }
   .leftBar .bi-search {
     margin: 0 auto;
+  }
+  .commenti {
+    height: 79vh;
   }
   /* Altre regole CSS specifiche per larghezza inferiore a 1278px */
 }
