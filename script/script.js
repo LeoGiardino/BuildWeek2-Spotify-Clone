@@ -447,12 +447,16 @@ function mettoAlbumNascosti1(data) {
 }
 
 function mettoCanzonciona(data) {
-    const titoloBC = document.querySelector(".card-title");
-    titoloBC.textContent = data.title;
+    console.log("Sono dentro canzonciona",data);
+    const titoloBC = document.querySelector(".canzonciona .card-title");
+    titoloBC.innerText = data.title;
     const imgBC = document.querySelector(".imgBC");
     imgBC.src = data.album.cover;
-    const text1 = document.querySelector(".card-text1");
+    const text1 = document.querySelector(".canzonciona .card-text1");
     text1.textContent = data.artist.name;
+    text1.addEventListener("click",()=>{
+        onArtist(data.artist.id);
+    })
     const playPause = document.querySelector("#playPause");
     const muteButton = document.getElementById("muteButton");
     const audio = new Audio(data.preview);
@@ -563,7 +567,7 @@ function prendoAlbum2() {
         posizioneCasuale = Math.floor(Math.random() * tracceAlbum2.length);
         for (const ele of albumMessi2) {
             try {
-                if (tracceAlbum2[posizioneCasuale].album.title == ele) {
+                if (tracceAlbum2[posizioneCasuale].artist.id == ele) {
                     giàMesso = true;
                     break
                 }
@@ -573,7 +577,7 @@ function prendoAlbum2() {
         }
         if (!giàMesso) {
             try {
-                albumMessi2.push(tracceAlbum2[posizioneCasuale].album.title);
+                albumMessi2.push(tracceAlbum2[posizioneCasuale].artist.id);
                 mettoAlbumNascosti2(tracceAlbum2[posizioneCasuale]);
                 mettoAlbum2(tracceAlbum2.splice(posizioneCasuale, 1)[0]);
                 indiceAlbum2++;
@@ -625,7 +629,7 @@ function mettoAlbum2(data) {
     contenitore.appendChild(div);
     const carte = document.querySelectorAll(".longCard3 > .card");
     carte[indiceAlbum2].addEventListener("click", () => {
-        onArtist(data.album.id);
+    
     })
  
 }

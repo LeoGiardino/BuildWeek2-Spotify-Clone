@@ -68,7 +68,7 @@ function artistFetch(artistid) {
         })
         .then(response2 => response2.json())
         .then(trackData => { //Qui lavorare con secondo fetch 
-            console.log("Tracklist: ", trackData.data[0].artist.name);
+            console.log("Tracklist: ", trackData.data);
             compilareHtmlTracklist(trackData.data); //si deve entrare nel oggeto con .data
             //inserire secondo contenuto
             let x = trackData.data[0].artist.name;
@@ -119,7 +119,7 @@ function compilareHtmlArtist(artistData) {  /*Collegato con il primo fetch  */
 function compilareHtmlTracklist(trackData) {
     console.log(trackData);
 
-    const cont = document.querySelector(".bg-transparent");
+    const cont = document.querySelector(".listaPrincipale");
     let audioCorrente = null;
     let rowCorrente = null;
 
@@ -281,7 +281,7 @@ function compilareHtmlTracklist(trackData) {
 
 
 
-compilareHtmlTracklist();
+
 
 
 function discografia(data) {
